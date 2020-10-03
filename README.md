@@ -1,24 +1,29 @@
-# README
+# ウォーリー
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+ユーザー同士が悩みを共有するサイト
 
-Things you may want to cover:
+### サイトテーマ
+悩みをみんなで共有しよう
 
-* Ruby version
+### テーマを選んだ理由
+1人で悩みを抱えている人を助けたい。ひいては、自殺防止に貢献できるようなサイトにしたい。
 
-* System dependencies
+### ターゲットユーザ
+周りに悩みを話せない若者(10代、20代)
 
-* Configuration
+### 主な利用シーン
+悩みを抱えているとき
 
-* Database creation
+## 設計書
 
-* Database initialization
 
-* How to run the test suite
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1CBbIQNIQbrVjKMD6DbJ79udHYTlOz-4ogUZ9HLB0Kgc/edit?usp=sharing
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- 仮想環境：Vagrant,VirtualBox
