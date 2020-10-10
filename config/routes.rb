@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'post_comments/create'
+  get 'post_comments/destroy'
+  get 'posts/index'
+  get 'posts/show'
+  get 'posts/edit'
+  get 'posts/new'
+  get 'users/show'
+  get 'users/edit'
   get 'posts/index'
   devise_for :users, controllers:{
   	sessions: "devise/sessions",
