@@ -10,9 +10,6 @@
   </head>
 
   <body>
-    <div class = gazou>
-      <%= image_tag '/assets/images/nagano.png', :size => '200x200' %>
-    </div>
     
     <header>
       <div>
@@ -20,12 +17,13 @@
           <% if user_signed_in? %>
             
             <li><%= link_to "ホーム", root_path %></li>
-            <li><%= link_to "投稿一覧", posts_index_path %></li>
+            <li><%= link_to "投稿一覧", posts_path %></li>
+            <li><%= link_to "投稿する", new_post_path %></li>
             <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
           <% else %>
-            <li><%= image_tag '/assets/images/logo.png', :size => '90x90' %></li>
+            
             <li><%= link_to "relaxについて", home_about_path %></li>
-            <li><%= link_to "投稿一覧", posts_index_path %></li>
+            <li><%= link_to "投稿一覧", posts_path %></li>
             <li><%= link_to "sign up", new_user_registration_path %></li>
             <li><%= link_to "login", new_user_session_path %></li>
           <% end %>
