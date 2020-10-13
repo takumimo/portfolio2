@@ -1,0 +1,11 @@
+投稿確認画面
+
+
+
+	<%= @post.text %>
+<%= form_with(model: @post, local: true, url: posts_path(current_user)) do |f| %>
+	<%= f.hidden_field :user_id, value: current_user.id %>
+	<%= f.hidden_field :text %>
+	<%= link_to "修正する", new_post_path %>
+	<%= f.submit "投稿する" %>
+<% end %>

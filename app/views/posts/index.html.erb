@@ -1,1 +1,5 @@
 ログイン後の一覧ページ
+
+<% @posts.each do |post| %>
+	<%= post.text %>
+<% end %>
