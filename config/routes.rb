@@ -13,12 +13,9 @@ Rails.application.routes.draw do
   resources :posts, only:[:index, :new, :create, :edit, :update, :show, :destroy]
   post 'posts/confirm' => 'posts#confirm'
 
-  get 'users/show'
-  get 'users/edit'
+  resources :users, only:[:show, :edit, :update]
 
   root to: "homes#top"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get "/home/about" => "homes#about"
   post "/home/guest_sign_in" => "homes#new_guest"
-  get "/home/index" => "homes#index"
 end
