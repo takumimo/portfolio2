@@ -1,5 +1,6 @@
 ログイン後の一覧ページ
 
 <% @posts.each do |post| %>
-	<%= post.text %>
+	<%= link_to post.text, post_path(post) %>
 <% end %>
+

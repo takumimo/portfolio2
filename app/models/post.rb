@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
 	belongs_to :user, optional: true
-	validates :text, presence: true, length: { maximum: 3 }
+	has_many :post_comments, dependent: :destroy
+	validates :text, presence: true, length: { maximum: 30 }
 end

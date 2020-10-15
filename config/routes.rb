@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   	registrations: "devise/registrations"
   }
 
-  get 'post_comments/create'
-  get 'post_comments/destroy'
   
-  resources :posts, only:[:index, :new, :create, :edit, :update, :show, :destroy]
   post 'posts/confirm' => 'posts#confirm'
+  resources :posts, only:[:index, :new, :create, :edit, :update, :show, :destroy] do
+    resource :post_comments, only:[:create, :destroy]
+  end
+  
 
   resources :users, only:[:show, :edit, :update]
 
