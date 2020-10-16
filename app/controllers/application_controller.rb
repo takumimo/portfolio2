@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 	def after_sign_in_path_for(resource)
 	  case resource
       when User
-        users_show_path
+        user_path(current_user)
       when AdminUser
         #AdminUser（管理ユーザ）がログインしたときの処理
         stored_location_for(resource) ||
