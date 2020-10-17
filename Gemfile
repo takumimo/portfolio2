@@ -72,5 +72,5 @@ gem "pry-rails"
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
-en
+end
 
