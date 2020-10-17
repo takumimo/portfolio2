@@ -1,0 +1,8 @@
+New Post
+
+<%= form_with(model:@post, local: true, url:posts_confirm_path) do |f| %>
+	
+	<%= f.text_field :text %>
+	<%= f.submit "投稿内容を確認する" %>
+
+<% end %>

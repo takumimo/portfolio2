@@ -1,0 +1,13 @@
+<h3>My page</h3>
+<h4>名前</h4>
+<%= @user.name %><br>
+
+<h4>自己紹介</h4>
+<%= @user.introduction %><br>
+
+<h4>メールアドレス</h4>
+<%= @user.email %><br>
+
+<% if @user.id == current_user.id %>
+      <%= link_to "プロフィールを編集する", edit_user_path(@user) %>
+<% end %>

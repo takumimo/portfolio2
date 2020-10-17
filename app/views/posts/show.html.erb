@@ -1,0 +1,13 @@
+<% @posts.each do |post| %>
+	<%= post.text %>
+<% end %>
+
+
+
+<div>
+	<%= form_with(model:[@post,@post_comment], url:post_post_comments_path(@post.id), local: true) do |f| %>
+	
+		<%= f.text_area :text %>
+		<%= f.submit "コメントする" %>
+	<% end %>
+</div>
