@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root "homes#top"
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
@@ -16,7 +19,7 @@ Rails.application.routes.draw do
 
   resources :users, only:[:show, :edit, :update]
 
-  root to: "homes#top"
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   post "/home/guest_sign_in" => "homes#new_guest"
 end
