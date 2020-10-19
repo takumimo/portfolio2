@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   
   post 'posts/confirm' => 'posts#confirm'
   resources :posts, only:[:index, :new, :create, :edit, :update, :show, :destroy] do
+    resource :likes, only:[:create, :destroy]
     resource :post_comments, only:[:create, :destroy]
   end
   
