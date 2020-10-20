@@ -7,14 +7,16 @@
 
 
 
-<div>
-	<%= form_with(model:[@post,@post_comment], url:post_post_comments_path(@post.id), local: true) do |f| %>
-		<%= f.text_area :text %>
-		<%= f.submit "コメントする" %>
-	<% end %>
+<div id="post_comments_area">
+    <%= render partial: 'post_comments/postcomment', remote: true, locals: { post: @post } %>
 </div>
 
 
+
+
+<% if user_signed_in? %>
+    <%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post } %>
+<% end %>
 
 
 

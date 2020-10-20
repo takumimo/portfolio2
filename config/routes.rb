@@ -14,8 +14,10 @@ Rails.application.routes.draw do
   post 'posts/confirm' => 'posts#confirm'
   resources :posts, only:[:index, :new, :create, :edit, :update, :show, :destroy] do
     resource :likes, only:[:create, :destroy]
-    resource :post_comments, only:[:create, :destroy]
+    resource :post_comments, only:[:create]
+
   end
+  delete "posts/:post_id/post_comments/:post_comment_id", to: "post_comments#destroy", as: :post_comment
 
   resource :tags, only:[:create, :destroy]
   resources :users, only:[:show, :edit, :update]
