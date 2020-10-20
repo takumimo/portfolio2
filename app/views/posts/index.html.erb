@@ -2,20 +2,7 @@
 
 <% @posts.each do |post| %>
 	<%= link_to post.text, post_path(post) %>
-<% end %>
-
-<% if @post.liked_by?(current_user) %>
-<li>
-  <%= link_to post_likes_path(@post), method: :delete do %>
-    <i class="fas fa-heart" style="color: red;"></i>
-    <%= @post.likes.count %> いいね
-  <% end %>
-</li>
-<% else %>
-<li>
-  <%= link_to post_likes_path(@post), method: :post do %>
-    <i class="far fa-heart"></i>
-    <%= @post.likes.count %> いいね
-  <% end %>
-</li>
+	<div id="likes_buttons_<%= post.id %>">
+		<%= render 'likes/like', post: post %>
+	</div>
 <% end %>
