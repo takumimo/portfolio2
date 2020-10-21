@@ -1,8 +1,9 @@
-New Post
-
-<%= form_with(model:@post, local: true, url:posts_confirm_path) do |f| %>
+<h3><strong>New Post</strong></h3>
+<div class="form-group row">
+<%= form_with(model:@post, local: true, url:posts_confirm_path, class: 'container') do |f| %>
 	
-	<%= f.text_field :text %>
+	<%= f.text_field :text, autofocus: true, class: "form-control" %>
 	<%= f.submit "投稿内容を確認する" %>
 
 <% end %>
+</div>

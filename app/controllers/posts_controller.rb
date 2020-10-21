@@ -30,7 +30,10 @@ class PostsController < ApplicationController
     @post_comments = @post.post_comments.order(created_at: :desc)
   end
 
-  
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+  end
   
 
   private

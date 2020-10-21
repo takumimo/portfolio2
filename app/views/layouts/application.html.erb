@@ -5,32 +5,22 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"> <!-- font awesome-->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    
-    <header>
-      <div>
-        <ul>
-          <% if user_signed_in? %>
-            
-            <li><%= link_to "ホーム", root_path %></li>
-            <li><%= link_to "投稿一覧", posts_path %></li>
-            <li><%= link_to "投稿する", new_post_path %></li>
-            <li><%= link_to "マイページ", user_path(current_user) %></li>
-            <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            
-            
-            <li><%= link_to "投稿一覧", posts_path %></li>
-            <li><%= link_to "sign up", new_user_registration_path %></li>
-            <li><%= link_to "login", new_user_session_path %></li>
-          <% end %>
-        </ul>
-      </div>
-    </header>
+    <div class="container">
+        <%= render 'layouts/header' %>
     <%= yield %>
+    </div>
   </body>
 </html>
+
+
+
+
+
+
