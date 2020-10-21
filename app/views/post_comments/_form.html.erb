@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+    <div>
+		<%= form_with(model:[post,post_comment], url:post_post_comments_path(post)) do |f| %>
+			<%= f.text_area :text %>
+			<%= f.submit "コメントする" %>
+		<% end %>
+	</div>
+<% end %>
