@@ -1,0 +1,9 @@
+
+<% post.post_comments.each do |post_comment| %>
+	<%= link_to post_comment.user.name, user_path(post_comment.user) %>
+	<%= post_comment.text %>
+	<% if post_comment.user == current_user %>
+		<%= link_to 'Destroy',post_comment_path(post_comment.post,post_comment), method: :delete, remote: true, data: {confirm: "本当に消しますか" } %>
+	<% end %>
+<% end %>
+
