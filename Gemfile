@@ -74,3 +74,4 @@ group :production do
   gem 'mysql2'
 end
 gem 'active_admin_flat_skin'
+gem 'bootstrap-sass'
