@@ -13,12 +13,14 @@
 				<%= f.text_area :text, class: "form-control" %>
 			</div>
 		</div>
+		 <%= f.fields_for :tags do |tag| %>
 		<div class="row">
 			<div class="col-md-3">
 				<h5><%= f.label :タグ %></h5>
-			    <%= f.text_area :name, class: "form-control" %>
+			  <%= tag.text_area :name, class: "form-control" %>
 			</div>
 		</div>
+		<% end %>
 		<div class="row">
 			<div class="col-md-1">
 				<%= f.submit "投稿内容を確認する", class: "new-post-submit" %>

@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def new
   	@post = Post.new
   	@user = current_user
+    @tag = @post.tags.new
   end
 
   def confirm
@@ -9,10 +10,12 @@ class PostsController < ApplicationController
   	@post = Post.new
   	@post.text = params[:post][:text]
     @post.title = params[:post][:title]
+    byebug
+    @name = params[:post][:tags_attributes][:name]
   end
 
   def create
-    @post = Post.tags.create(post_params)
+    @post = Post.new(post_params)
     @post.save
     redirect_to posts_path
   end
@@ -34,7 +37,7 @@ class PostsController < ApplicationController
 
   private
   	def post_params
-  	 params.require(:post).permit(:user_id, :title, :text)
+  	 params.require(:post).permit(:user_id, :title, :text, tags_attributes:[:name])
   	end
 
 end

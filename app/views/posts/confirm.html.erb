@@ -15,14 +15,14 @@
 	<div class="row">
 		<div class="col-md-3">
 			<h5>タグ</h5>
-			<%= @post.tags %>
+			<%= @name %>
 		</div>
 	</div>
 	<%= form_with(model: @post, local: true, url: posts_path) do |f| %>
 		<%= f.hidden_field :user_id, value: current_user.id %>
 		<%= f.hidden_field :title %>
 		<%= f.hidden_field :text %>
-		<%= f.hidden_field :name %>
+		<%= f.hidden_field :name　%>
 	<div class="row">
 		<div class="col-md-1">
 			<%= link_to "修正する", new_post_path(@post), class: 'btn btn-success' %>
