@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  
   def new
   	@post = Post.new
   	@user = current_user
@@ -9,16 +8,14 @@ class PostsController < ApplicationController
 
   	@post = Post.new
   	@post.text = params[:post][:text]
-  	
+    @post.title = params[:post][:title]
   end
 
   def create
-  	@post = Post.new(post_params)
-  	@post.save
-  	redirect_to posts_path
+    @post = Post.tags.create(post_params)
+    @post.save
+    redirect_to posts_path
   end
-
-
 
   def index
   	@posts = Post.all
@@ -34,11 +31,10 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
   end
-  
 
   private
   	def post_params
-  	 params.require(:post).permit(:user_id, :text)
+  	 params.require(:post).permit(:user_id, :title, :text)
   	end
 
 end
