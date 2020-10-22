@@ -1,20 +1,20 @@
-
 <div class="row">
+	<h2><strong>相談一覧</strong></h2>
 	<% @posts.each do |post| %>
-			<div class="col-md-4">
-				<ul class="post_index">
-					<%= link_to post.text, post_path(post) %>
-					<li id="likes_buttons_<%= post.id %>">
-						<%= render 'likes/like', post: post %>
-					</li>
-					<% if current_user.posts == post %>
-						<li class="post_destroy">
-							<p><%= link_to '削除する', post_path(post), method: :delete %></p>
-						</li>
-					<% end %>
-				</ul>
-			</div>
-			
+		<div class="col-md-6">
+			<ul class="post_index">
+
+				<h3><%= link_to post.text, post_path(post) %></h3>
+				<%= attachment_image_tag @user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'image' %>
+				<li id="likes_buttons_<%= post.id %>">
+					<%= render 'likes/like', post: post %>
+				</li>
+				<li class="post_destroy">
+					<p><%= link_to '削除する', post_path(post), method: :delete %></p>
+				</li>
+
+			</ul>
+		</div>
 	<% end %>
  </div>
 
