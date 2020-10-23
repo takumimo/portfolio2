@@ -1,3 +1,97 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.row {
+	
+	a {
+	text-decoration: none;
+}
+	}
+	
+.top-topic {
+	margin-top: 30px;
+}
+
+.top-btn {
+	margin-top: 30px;
+}
+
+li {
+	display: inline-block;
+}
+
+.top-about {
+	margin-left: 10px;
+}
+
+.about-top {
+	text-align: center;
+	font-size: 55px;
+	line-height: 1.25;
+	margin-top: 100px;
+}
+
+.about-features {
+	margin-top: 150px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.topic-1 {
+	background-color: #EDF5FF;
+	border-radius: 16px;
+	margin-right: 50px;
+}
+
+.row {
+	h1 {
+		padding-left: 21px;
+	}
+
+	p {
+		padding-left: 21px;
+	}
+}
+
+li {
+	p {
+		padding:40px;
+		font-weight: bold;
+	}
+}
+
+.topic-2 {
+	background-color: #EDF5FF;
+	border-radius: 16px;
+	margin-right: 50px;
+}
+
+.topic-3 {
+	background-color: #EDF5FF;
+	border-radius: 16px;
+}
+
+.main-topic {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.sub-topic {
+	margin-top: 100px;
+	text-align:center;
+}
+
+.side-left {
+	display: inline-block;
+}
+
+.side-right {
+	display: inline-block;
+
+	p {
+		line-height: 2;
+	}
+}
+
