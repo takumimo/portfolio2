@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   def new
   	@post = Post.new
   	@user = current_user
-    @tag = @post.tags.new
+    @post.post_tags.build
   end
 
   def confirm
@@ -10,8 +10,7 @@ class PostsController < ApplicationController
   	@post = Post.new
   	@post.text = params[:post][:text]
     @post.title = params[:post][:title]
-    byebug
-    @name = params[:post][:tags_attributes][:name]
+    @name = params[:name]
   end
 
   def create
@@ -37,7 +36,7 @@ class PostsController < ApplicationController
 
   private
   	def post_params
-  	 params.require(:post).permit(:user_id, :title, :text, tags_attributes:[:name])
+  	 params.require(:post).permit(:user_id, :title, :text, post_tags_attributes: [:name, :_destroy, :id])
   	end
 
 end
