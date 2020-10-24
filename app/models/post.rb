@@ -11,6 +11,6 @@ class Post < ApplicationRecord
     	likes.where(user_id: user.id).exists?
   	end
 
-  	accepts_nested_attributes_for :post_tags, allow_destroy: true
+
 
 end
