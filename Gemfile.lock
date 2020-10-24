@@ -364,6 +364,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.1)
+  ransack
   refile!
   refile-mini_magick
   sass-rails (~> 5.0)
