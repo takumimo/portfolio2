@@ -60,11 +60,6 @@ ActiveRecord::Schema.define(version: 2020_10_24_023626) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_tags", force: :cascade do |t|
-    t.integer "post_id"
-    t.integer "tag_id"
-  end
-
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.string "text"

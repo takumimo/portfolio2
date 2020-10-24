@@ -12,7 +12,9 @@
 				<li class="post_destroy">
 					<p><%= link_to '削除する', post_path(post), method: :delete %></p>
 				</li>
-
+				<%= @tags.each do |tag| %>
+				<li><%= tag.name %></li>
+				<% end %>
 			</ul>
 		</div>
 	<% end %>
