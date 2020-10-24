@@ -76,3 +76,4 @@ end
 gem 'active_admin_flat_skin'
 gem 'bootstrap-sass'
 gem 'acts-as-taggable-on'
+gem 'ransack'

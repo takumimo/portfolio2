@@ -21,10 +21,17 @@ class PostsController < ApplicationController
   end
 
   def index
-  	@posts = Post.all
+      @q = Post.ransack(params[:q])
+      
     if params[:tag_name]
-      @posts = Post.tagged_with("#{params[:tag_name]}")
+      @posts = Post.tagged_with("#{params[:tag_name]}").includes(:tags)
+    elsif 
+      @posts = @q.result
+    else
+      
+      @posts = Post.all
     end
+
   end
 
   def show
