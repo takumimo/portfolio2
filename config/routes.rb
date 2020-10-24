@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'searches/index'
+  
   root "homes#top"
   get "homes/about" => "homes#about"
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   	registrations: "devise/registrations"
   }
 
-  
   post 'posts/confirm' => 'posts#confirm'
   resources :posts, only:[:index, :new, :create, :edit, :update, :show, :destroy] do
     resource :likes, only:[:create, :destroy]
@@ -19,6 +18,7 @@ Rails.application.routes.draw do
 
   end
   delete "posts/:post_id/post_comments/:post_comment_id", to: "post_comments#destroy", as: :post_comment
+ 
 
   resource :tags, only:[:create, :destroy]
   resources :users, only:[:show, :edit, :update]
