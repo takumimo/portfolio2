@@ -3,8 +3,8 @@
 	<% @posts.each do |post| %>
 		<div class="col-md-6">
 			<ul class="post_index">
-
-				<h3><%= link_to post.text, post_path(post) %></h3>
+				<h3><%= link_to post.title, post_path(post) %></h3>
+				<h5><%= link_to post.text, post_path(post) %></h5>
 				<%= attachment_image_tag @user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'image' %>
 				<li id="likes_buttons_<%= post.id %>">
 					<%= render 'likes/like', post: post %>
@@ -12,7 +12,12 @@
 				<li class="post_destroy">
 					<p><%= link_to '削除する', post_path(post), method: :delete %></p>
 				</li>
-
+				<% post.tags.each do |tag| %>
+				<div class="btn btn-success">
+					<li><%= link_to tag.name, posts_path(tag_name: tag.name) %></li>
+				</div>
+				
+				<% end %>
 			</ul>
 		</div>
 	<% end %>

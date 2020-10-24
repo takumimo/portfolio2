@@ -63,6 +63,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (6.5.0)
+      activerecord (>= 5.0, < 6.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
@@ -343,6 +345,7 @@ PLATFORMS
 DEPENDENCIES
   active_admin_flat_skin
   activeadmin
+  acts-as-taggable-on
   bootsnap (>= 1.1.0)
   bootstrap-sass
   byebug

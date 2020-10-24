@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   def new
   	@post = Post.new
   	@user = current_user
-    @post.post_tags.build
   end
 
   def confirm
@@ -10,17 +9,22 @@ class PostsController < ApplicationController
   	@post = Post.new
   	@post.text = params[:post][:text]
     @post.title = params[:post][:title]
-    @name = params[:name]
+    @post.tag_list = params[:post][:tag_list]
   end
 
   def create
     @post = Post.new(post_params)
+   
     @post.save
+
     redirect_to posts_path
   end
 
   def index
   	@posts = Post.all
+    if params[:tag_name]
+      @posts = Post.tagged_with("#{params[:tag_name]}")
+    end
   end
 
   def show
@@ -36,7 +40,7 @@ class PostsController < ApplicationController
 
   private
   	def post_params
-  	 params.require(:post).permit(:user_id, :title, :text, post_tags_attributes: [:name, :_destroy, :id])
+  	 params.require(:post).permit(:user_id, :title, :text, :tag_list)
   	end
 
 end
