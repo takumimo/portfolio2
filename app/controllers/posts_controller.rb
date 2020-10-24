@@ -22,6 +22,9 @@ class PostsController < ApplicationController
 
   def index
   	@posts = Post.all
+    if params[:tag_name]
+      @posts = Post.tagged_with("#{params[:tag_name]}")
+    end
   end
 
   def show
