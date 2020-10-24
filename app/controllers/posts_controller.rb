@@ -16,13 +16,12 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
    
     @post.save
-     binding.pry
+
     redirect_to posts_path
   end
 
   def index
   	@posts = Post.all
-    @tags = Post.tag_counts_on(:tags).order('count DESC')
   end
 
   def show
