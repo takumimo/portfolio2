@@ -17,7 +17,7 @@
 					<%= render 'likes/like', post: post %>
 				</li>
 				<li class="post_destroy">
-					<p><%= link_to '削除する', post_path(post), method: :delete %></p>
+					<p><%= link_to '削除する', post_path(post), method: :delete, data: {confirm: "本当に消しますか" }%></p>
 				</li>
 				<% post.tags.each do |tag| %>
 				<div class="btn btn-success">
