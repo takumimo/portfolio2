@@ -9,16 +9,18 @@
 	<h2><strong>相談一覧</strong></h2>
 	<% @posts.each do |post| %>
 		<div class="col-md-6">
-			<ul class="post_index">
+			<ul class="post-index">
 				<h3><%= link_to post.title, post_path(post) %></h3>
 				<h5><%= link_to post.text, post_path(post) %></h5>
-				<%= link_to user_path(post.user) do %>
-					<%= attachment_image_tag @user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
-				<% end %>
+				<li class="post-image">
+					<%= link_to user_path(post.user) do %>
+						<%= attachment_image_tag @user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
+					<% end %>
+				</li>
 				<li id="likes_buttons_<%= post.id %>">
 					<%= render 'likes/like', post: post %>
 				</li>
-				<li class="post_destroy">
+				<li class="post-destroy">
 					<p><%= link_to '削除する', post_path(post), method: :delete, data: {confirm: "本当に消しますか" }%></p>
 				</li>
 				<% post.tags.each do |tag| %>
