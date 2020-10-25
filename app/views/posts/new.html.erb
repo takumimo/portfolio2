@@ -1,3 +1,8 @@
+<div class="gretel">
+	<% breadcrumb :postnew, @post %>
+	<%= breadcrumbs separator: " &rsaquo; " %>
+</div>
+
 <h3><strong>New Post</strong></h3>
 <div class="form-group">
 	<%= form_with(model:@post, local: true, url:posts_confirm_path, class: 'container') do |f| %>
