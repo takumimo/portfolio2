@@ -1,3 +1,9 @@
+<div class="gretel">
+	<% breadcrumb :user, @user %>
+	<%= breadcrumbs separator: " &rsaquo; " %>
+</div>
+
+
 <h3><strong>My page</strong></h3>
 
 <%= attachment_image_tag @user, :profile_image, :fill, 80, 80, class: "image", fallback: "no_image.jpg" %>
@@ -11,7 +17,7 @@
 <h4>メールアドレス</h4>
 <%= @user.email %><br>
 
-<% if @user.id == current_user.id %>
+<% if @user == current_user %>
       <%= link_to "プロフィールを編集する", edit_user_path(@user) %>
 <% end %>
 

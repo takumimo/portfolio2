@@ -1,6 +1,20 @@
+<div class="gretel">
+	<% if params[:q] %>
+	<% breadcrumb :postsq, @posts %>
+	<%= breadcrumbs separator: " &rsaquo; " %>
+	<% elsif params[:tag_name] %>
+	<% breadcrumb :tag, @posts %>
+	<%= breadcrumbs separator: " &rsaquo; " %>
+	<% else %>
+	<% breadcrumb :posts, @posts %>
+	<%= breadcrumbs separator: " &rsaquo; " %>
+	<% end %>
+</div>
+
+
 <div class="row">
 	<%= search_form_for @q do |f| %>
-  <%= f.label :text_cont, "Keyword" %>
+  <%= f.label :text_cont, "キーワード検索" %>
   <%= f.search_field :text_cont %>
 
   <%= f.submit "検索" %>
