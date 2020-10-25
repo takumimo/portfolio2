@@ -20,9 +20,11 @@
 				<li id="likes_buttons_<%= post.id %>">
 					<%= render 'likes/like', post: post %>
 				</li>
+				<% if current_user == post.user %>
 				<li class="post-destroy">
 					<p><%= link_to '削除する', post_path(post), method: :delete, data: {confirm: "本当に消しますか" }%></p>
 				</li>
+				<% end %>
 				<% post.tags.each do |tag| %>
 				<div class="btn btn-success">
 					<li><%= link_to tag.name, posts_path(tag_name: tag.name) %></li>
