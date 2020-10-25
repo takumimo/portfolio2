@@ -21,6 +21,7 @@ class PostsController < ApplicationController
   end
 
   def index
+
       @q = Post.ransack(params[:q])
       
     if params[:tag_name]
@@ -31,6 +32,8 @@ class PostsController < ApplicationController
       
       @posts = Post.all
     end
+
+    @user = current_user
 
   end
 

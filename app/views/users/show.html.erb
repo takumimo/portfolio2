@@ -1,8 +1,11 @@
 <h3><strong>My page</strong></h3>
+
+<%= attachment_image_tag @user, :profile_image, :fill, 80, 80, class: "image", fallback: "no_image.jpg" %>
+
 <h4>名前</h4>
 <%= @user.name %><br>
 
-<h4>自己紹介</h4>
+<h4>職務、経歴</h4>
 <%= @user.introduction %><br>
 
 <h4>メールアドレス</h4>
@@ -11,3 +14,8 @@
 <% if @user.id == current_user.id %>
       <%= link_to "プロフィールを編集する", edit_user_path(@user) %>
 <% end %>
+
+
+
+
+

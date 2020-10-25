@@ -9,23 +9,39 @@
 	<h2><strong>相談一覧</strong></h2>
 	<% @posts.each do |post| %>
 		<div class="col-md-6">
-			<ul class="post_index">
-				<h3><%= link_to post.title, post_path(post) %></h3>
-				<h5><%= link_to post.text, post_path(post) %></h5>
-				<%= attachment_image_tag @user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'image' %>
-				<li id="likes_buttons_<%= post.id %>">
-					<%= render 'likes/like', post: post %>
-				</li>
-				<li class="post_destroy">
-					<p><%= link_to '削除する', post_path(post), method: :delete, data: {confirm: "本当に消しますか" }%></p>
-				</li>
-				<% post.tags.each do |tag| %>
-				<div class="btn btn-success">
-					<li><%= link_to tag.name, posts_path(tag_name: tag.name) %></li>
+			<div class="post-index">
+				<div class="post-article">
+					<h3><%= link_to post.title, post_path(post) %></h3>
+					<h5 class="post-text"><%= post.text.truncate(20) %>
+							<% if post.text.length > 20 %>
+							<%= link_to '詳しくはこちら', post_path(post) %>
+						<% end %>
+					</h5>
 				</div>
+				<div class="post-name"><%= link_to post.user.name, user_path(post.user) %></div>
+				<ul>
+					<li class="post-image">
+						<%= link_to user_path(post.user) do %>
+							<%= attachment_image_tag post.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
+						<% end %>
+					</li>
+					
+					<li id="likes_buttons_<%= post.id %>">
+						<%= render 'likes/like', post: post %>
+					</li>
+					<% if current_user == post.user %>
+					<li class="post-destroy">
+						<p><%= link_to '削除する', post_path(post), method: :delete, data: {confirm: "本当に消しますか" }%></p>
+					</li>
+					<% end %>
+					<% post.tags.each do |tag| %>
+					<div class="btn btn-success">
+						<li><%= link_to tag.name, posts_path(tag_name: tag.name) %></li>
+					</div>
+					<% end %>
+				</ul>
 				
-				<% end %>
-			</ul>
+			</div>
 		</div>
 	<% end %>
  </div>
