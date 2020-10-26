@@ -3,18 +3,19 @@
 	<%= breadcrumbs separator: " &rsaquo; " %>
 </div>
 <div class="row">
-	<div class="show col-md-5">
-		<div class="show-top">
+	<div class="show">
+
 			<h2><strong><%= @post.title %></strong></h2>
 			<div id="likes_buttons_<%= @post.id %>">
 				<%= render 'likes/like', post: @post %>
 			</div>
-		</div>
-		<div class="show-text">
+
+
 			<h3><%= @post.text %></h3>
-		</div>
+
+
 	</div>
-	<div class="comment-area col-md-5", id="post_comments_area">
+	<div class="comment-area", id="post_comments_area">
 	    <%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
 	</div>
 	<div class="comment-form col-lg-12">
