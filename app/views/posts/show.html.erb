@@ -2,25 +2,28 @@
 	<% breadcrumb :post, @post %>
 	<%= breadcrumbs separator: " &rsaquo; " %>
 </div>
-
-	<%= @post.text %>
-
-<div id="likes_buttons_<%= @post.id %>">
-	<%= render 'likes/like', post: @post %>
+<div class="row">
+	<div class="show col-md-5">
+		<div class="show-top">
+			<h2><strong><%= @post.title %></strong></h2>
+			<div id="likes_buttons_<%= @post.id %>">
+				<%= render 'likes/like', post: @post %>
+			</div>
+		</div>
+		<div class="show-text">
+			<h3><%= @post.text %></h3>
+		</div>
+	</div>
+	<div class="comment-area col-md-5", id="post_comments_area">
+	    <%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
+	</div>
+	<div class="comment-form col-lg-12">
+		<% if user_signed_in? %>
+	    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post } %>
+		<% end %>
+	</div>
+	
 </div>
-
-
-
-<div id="post_comments_area">
-    <%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
-</div>
-
-
-
-
-<% if user_signed_in? %>
-    <%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post } %>
-<% end %>
 
 
 
