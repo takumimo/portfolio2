@@ -13,13 +13,13 @@
 
 
 <div class="row">
-	<%= search_form_for @q do |f| %>
-  <%= f.label :text_cont, "キーワード検索" %>
-  <%= f.search_field :text_cont %>
-
-  <%= f.submit "検索" %>
-
-<% end %>
+	<div class="search-window">
+		<%= search_form_for @q do |f| %>
+  			<%= f.label :text_cont, "キーワード検索" %>
+  			<%= f.search_field :text_cont %>
+			<%= f.submit "検索" %>
+		<% end %>
+	</div>
 	<h2><strong>相談一覧</strong></h2>
 	<% @posts.each do |post| %>
 		<div class="col-md-6">
