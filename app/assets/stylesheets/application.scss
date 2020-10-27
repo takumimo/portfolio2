@@ -18,8 +18,14 @@
 
  * {
 	font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-	list-style: none;
  }
+
+nav {
+	
+	li {
+	list-style: none;
+	}
+}
 
 header {
 	background-color: #4cb5f5;
