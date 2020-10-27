@@ -15,9 +15,11 @@
 
 
 	</div>
+	<% if @post_comment.present? %>
 	<div class="comment-area", id="post_comments_area">
 	    <%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
 	</div>
+	<% end %>
 	<div class="comment-form col-lg-12">
 		<% if user_signed_in? %>
 	    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post } %>
