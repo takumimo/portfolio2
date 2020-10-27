@@ -1,13 +1,39 @@
-
-	<%= @post.text %>
-
-
-
-
-<div>
-	<%= form_with(model:[@post,@post_comment], url:post_post_comments_path(@post.id), local: true) do |f| %>
-	
-		<%= f.text_area :text %>
-		<%= f.submit "コメントする" %>
-	<% end %>
+<div class="gretel">
+	<% breadcrumb :post, @post %>
+	<%= breadcrumbs separator: " &rsaquo; " %>
 </div>
+<div class="row">
+	<div class="show">
+
+			<h2><strong><%= @post.title %></strong></h2>
+			<div id="likes_buttons_<%= @post.id %>">
+				<%= render 'likes/like', post: @post %>
+			</div>
+
+
+			<h3><%= @post.text %></h3>
+
+
+	</div>
+	<% if @post_comment.present? %>
+	<div class="comment-area", id="post_comments_area">
+	    <%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
+	</div>
+	<% end %>
+	<div class="comment-form col-lg-12">
+		<% if user_signed_in? %>
+	    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post } %>
+		<% end %>
+	</div>
+	
+</div>
+
+
+
+
+
+
+
+
+
+

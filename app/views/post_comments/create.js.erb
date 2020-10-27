@@ -1,0 +1,2 @@
+$("#post_comments_area").html("<%= j(render partial:'post_comments/postcomment', locals: {post: @post})%>");
+$("textarea").val('');

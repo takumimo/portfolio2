@@ -1,8 +1,35 @@
-New Post
+<div class="gretel">
+	<% breadcrumb :postnew, @post %>
+	<%= breadcrumbs separator: " &rsaquo; " %>
+</div>
 
-<%= form_with(model:@post, local: true, url:posts_confirm_path) do |f| %>
-	
-	<%= f.text_field :text %>
-	<%= f.submit "投稿内容を確認する" %>
+<h3><strong>New Post</strong></h3>
+<div class="form-group">
+	<%= form_with(model:@post, local: true, url:posts_confirm_path, class: 'container') do |f| %>
+		<div class="row">
+			<div class="col-md-5">
+				<h5><%= f.label :タイトル %></h5>
+				<%= f.text_area :title, autofocus: true, class: "form-control new-post-title" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<h5><%= f.label :相談内容 %></h5>
+				<%= f.text_area :text, class: "form-control" %>
+			</div>
+		</div>
 
-<% end %>
+		<div class="row">
+			<div class="new-tag col-md-3">
+				<h5><%= f.label :タグ %></h5>
+			  <%= f.text_area :tag_list, value: @post.tag_list.join(','), class: "form-control" %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-1">
+				<%= f.submit "投稿内容を確認する", class: "new-post-submit" %>
+			</div>
+		</div>
+	<% end %>
+</div>

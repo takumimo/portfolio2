@@ -13,7 +13,40 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ * {
+	font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+	list-style: none;
+ }
 
 header {
-	background-color: lime;
+	background-color: #4cb5f5;
+
+}
+
+.navbar a {
+	text-decoration: none;
+}
+
+body {
+	margin-top: 70px;
+}
+
+.header-ul {
+	margin-right: 50px;
+}
+
+.gretel {
+	margin-bottom: 30px;
+	padding-left: 3px;
+}
+
+.comment-form {
+	margin-bottom: 20px;
+}
+
+body {
+	background-color: #edf2f7;
 }
