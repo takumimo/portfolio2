@@ -20,9 +20,9 @@
 	    <%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
 	</div>
 	<% end %>
-	<div class="comment-form col-lg-12">
+	<div class="comment-form text-center center-block">
 		<% if user_signed_in? %>
-	    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post } %>
+	    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post }  %>
 		<% end %>
 	</div>
 	
