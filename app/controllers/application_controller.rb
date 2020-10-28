@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
         #AdminUser（管理ユーザ）がログインしたときの処理
         stored_location_for(resource) ||
          if resource.is_a?(AdminUser)
-           root_path
+           posts_path
          else
            super
          end

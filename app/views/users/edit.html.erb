@@ -2,25 +2,31 @@
 	<% breadcrumb :useredit, @user %>
 	<%= breadcrumbs separator: " &rsaquo; " %>
 </div>
+<div class="row">
+	<div class="user-edit">
+		<h3><strong>ユーザー編集画面</strong></h3>
 
-ユーザー編集画面
 
-<%= form_with(model: @user, url: user_path(@user)) do |f| %>
-	<h4>名前</h4>
-	<%= f.text_field :name, autofocus: true %><br>
+		<%= form_with(model: @user, url: user_path(@user)) do |f| %>
+			<h4>名前</h4>
+			<%= f.text_field :name, autofocus: true %><br>
 
-	<h4>プロフィール画像</h4>
-	<%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+			<h4>プロフィール画像</h4>
+			<%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
 
-	<h4>自己紹介</h4>
-	<%= f.text_area :introduction, placeholder: "例）大学卒業後、新卒で損害保険会社に入社し、リテール営業を2年間務めていました。
-主に保険代理店のマネジメントをやっていたので、間接営業については詳しくお話しできると思います。" %><br>
+			<h4>自己紹介</h4>
+			<%= f.text_area :introduction, placeholder: "例）大学卒業後、新卒で損害保険会社に入社し、リテール営業を2年間務めていました。
+		主に保険代理店のマネジメントをやっていたので、間接営業については詳しくお話しできると思います。" %><br>
+			<div class="edit-mail">
+				<h4>メールアドレス</h4>
+				<%= f.text_field :email %><br>
+			</div>
+			<%= f.submit "更新する" %>
+		<% end %>
+	</div>
+	
+</div>
 
-	<h4>メールアドレス</h4>
-	<%= f.text_field :email %><br>
-
-	<%= f.submit "更新する" %>
-<% end %>
 
 
 

@@ -137,17 +137,45 @@ h2 {
 	margin-bottom: 30px;
 }
 
-.index-btn{
-	a {
-		color: ivory;
-	}
+.post-ul {
+  list-style: none;
+  .post-image {
+    display: inline-block;
+  }
+
+
+  .post-like {
+    display: inline-block;
+    margin-right: 40px;
+    margin-left: 21px;
+  }
+
+  .post-tag {
+    display: inline-block;
+
+    a {
+      color: ivory;
+    }
+
+  }
+
+  .post-destroy {
+    display: inline-block;
+  }
+}
+
+.user-show-edit {
+    a {
+    color: ivory;
+    text-decoration: none;
+  }
 }
 
 .comment-form {
-
-
-}
-
-.post-ul {
-  list-style: none;
+  form {
+    width: 400px;
+    margin-left: 300px;
+    margin-top: 100px;
+  }
+  
 }
