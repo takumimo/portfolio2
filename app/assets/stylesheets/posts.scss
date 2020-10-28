@@ -137,17 +137,25 @@ h2 {
 	margin-bottom: 30px;
 }
 
-.index-btn{
-	a {
-		color: ivory;
-	}
-}
-
-.comment-form {
-
-
-}
-
 .post-ul {
   list-style: none;
+  .post-image {
+    display: inline-block;
+  }
+
+
+.post-like {
+    display: inline-block;
+    margin-right: 40px;
+    margin-left: 21px;
+  }
+
+  .post-tag {
+    display: inline-block;
+  }
+
+  .post-destroy {
+    display: inline-block;
+  }
 }
+

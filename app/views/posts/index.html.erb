@@ -39,21 +39,27 @@
 							<%= attachment_image_tag post.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
 						<% end %>
 					</li>
+					<!-- 興味あるボタン -->
 					<% if current_user != post.user %>
-					<li id="likes_buttons_<%= post.id %>">
+					<li class="post-like", id="likes_buttons_<%= post.id %>">
 						<%= render 'likes/like', post: post %>
 					</li>
 					<% end %>
+					<!-- 興味あるボタン -->
+					<!-- 削除ボタン -->
 					<% if current_user == post.user %>
 					<li class="post-destroy">
 						<p><%= link_to '削除する', post_path(post), method: :delete, data: {confirm: "本当に消しますか" }%></p>
 					</li>
 					<% end %>
+					<!-- 削除ボタン -->
+					<!-- タグ -->
 					<% post.tags.each do |tag| %>
-					<div class="index-btn btn btn-success">
+					<div class="post-tag btn btn-success">
 						<li><%= link_to tag.name, posts_path(tag_name: tag.name) %></li>
 					</div>
 					<% end %>
+					<!-- タグ -->
 				</ul>
 				
 			</div>
