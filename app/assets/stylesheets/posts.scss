@@ -144,7 +144,7 @@ h2 {
   }
 
 
-.post-like {
+  .post-like {
     display: inline-block;
     margin-right: 40px;
     margin-left: 21px;
@@ -152,10 +152,22 @@ h2 {
 
   .post-tag {
     display: inline-block;
+
+    a {
+      color: ivory;
+    }
+
   }
 
   .post-destroy {
     display: inline-block;
+  }
+}
+
+.user-show-edit {
+    a {
+    color: ivory;
+    text-decoration: none;
   }
 }
 
