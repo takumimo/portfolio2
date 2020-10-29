@@ -3,7 +3,7 @@
 	<%= breadcrumbs separator: " &rsaquo; " %>
 	</div>
 <div class="row">
-	<div class="user-show">
+	<div class="user-show-left col-md-3">
 		<h3><strong>ユーザー情報</strong></h3>
 		<%= attachment_image_tag @user, :profile_image, :fill, 80, 80, class: "image", fallback: "no_image.jpg" %>
 		<div class="show-name">
@@ -22,6 +22,19 @@
 			<% if @user == current_user %>
 		      	<%= link_to "プロフィールを編集する", edit_user_path(@user), class: 'btn btn-success' %>
 			<% end %>
+		</div>
+	</div>
+	<div class="user-show-right col-md-6">
+		<div class="show-article">
+			
+				<h3><strong>すべての投稿</strong></h3>
+				<% @posts.each do |post| %>
+					<div class="article-column">
+						<h4><strong><%= link_to post.title, post_path(post) %></strong></h4>投稿日時: <%= post.created_at.to_s(:datetime) %>
+						<h4 class="column-title"><%= "#{post.likes.count} 興味ある" %></h4>
+					</div>
+				<% end %>
+			
 		</div>
 	</div>
 </div>
