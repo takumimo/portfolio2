@@ -36,6 +36,20 @@ class PostsController < ApplicationController
     @post_comments = @post.post_comments.order(created_at: :desc)
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+       flash[:notice] = "更新しました"
+       redirect_to post_path
+    else
+       render :edit
+    end
+  end
+
   def destroy
     post = Post.find(params[:id])
     post.destroy

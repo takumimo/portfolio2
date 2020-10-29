@@ -1,2 +1,14 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class="row">
+	<div class="post-edit">
+		<h3><strong>投稿編集画面</strong></h3>
+		<%= form_with(model: @post, url: post_path(@post)) do |f| %>
+			<h4>タイトル</h4>
+			<%= f.text_field :title, autofocus: true %><br>
+			<h4>本文</h4>
+			<%= f.text_field :text, class: "post-edit-form" %>
+			<h4>タグ</h4>
+			<%= f.text_field :tag_list %>
+			<%= f.submit "更新する" %>
+		<% end %>
+	</div>
+</div>

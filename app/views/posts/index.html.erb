@@ -55,6 +55,13 @@
 					</li>
 					<% end %>
 					<!-- 削除ボタン -->
+					<!-- 編集ボタン -->
+					<% if current_user == post.user %>
+					<li class="post-edit">
+						<p><%= link_to '編集する', edit_post_path(post) %></p>
+					</li>
+					<% end %>
+					<!-- 編集ボタン -->
 					<!-- タグ -->
 					<% post.tags.each do |tag| %>
 					<div class="post-tag btn btn-success">
