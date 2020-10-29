@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     elsif
       @posts = @q.result
     else
-      @posts = Post.all
+      @posts = Post.all.includes(:tags)
     end
     @user = current_user
   end
