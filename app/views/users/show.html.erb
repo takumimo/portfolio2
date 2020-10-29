@@ -25,7 +25,7 @@
 		</div>
 	</div>
 	<div class="user-show-right col-md-6">
-		<div class="show-article">
+		<div class="show-right-top">
 			
 				<h3><strong>すべての投稿</strong></h3>
 				<% @posts.each do |post| %>
@@ -35,6 +35,18 @@
 					</div>
 				<% end %>
 			
+		</div>
+		<div class="show-right-bottom">
+			<h3><strong>すべてのコメント</strong></h3>
+			<% @comments.each do |comment| %>
+				<div class="column-title">
+					<% if comment %>
+						<h4><strong><%= link_to comment.text, post_path(comment.post) %></strong></h4>投稿日時: <%= comment.created_at.to_s(:datetime) %>
+					<% else %>
+						<h4>コメントがありません</h4>
+					<% end %>
+				</div>
+			<% end %>
 		</div>
 	</div>
 </div>
