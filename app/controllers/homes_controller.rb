@@ -10,6 +10,7 @@ class HomesController < ApplicationController
   		user.password = SecureRandom.urlsafe_base64
   	end
   	sign_in user
-  	redirect_to posts_path, notice: 'ゲストユーザーとしてログインしました。'
+    flash[:notice] = 'ゲストユーザーとしてログインしました。'
+  	redirect_to posts_path
   end
 end
