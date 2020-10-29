@@ -28,11 +28,6 @@
 			<div class="post-index">
 				<div class="post-article">
 					<h3><%= link_to post.title, post_path(post) %></h3>
-					<h5 class="post-text"><%= post.text.truncate(20) %>
-							<% if post.text.length > 20 %>
-							<%= link_to '詳しくはこちら', post_path(post) %>
-						<% end %>
-					</h5>
 				</div>
 				<div class="post-name">username:  <%= link_to post.user.name, user_path(post.user) %></div>
 				<ul class="post-ul">
