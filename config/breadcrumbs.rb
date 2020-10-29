@@ -65,3 +65,8 @@ crumb :useredit do |user|
   link "ユーザー編集", edit_user_path(user)
   parent :user, user
 end
+
+crumb :postedit do |post|
+  link "投稿編集", edit_post_path(post)
+  parent :post, post
+end
