@@ -12,8 +12,4 @@ class HomesController < ApplicationController
   	sign_in user
   	redirect_to posts_path, notice: 'ゲストユーザーとしてログインしました。'
   end
-
- 
-
-
 end

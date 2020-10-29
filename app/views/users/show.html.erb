@@ -5,7 +5,6 @@
 <div class="row">
 	<div class="user-show">
 		<h3><strong>ユーザー情報</strong></h3>
-
 		<%= attachment_image_tag @user, :profile_image, :fill, 80, 80, class: "image", fallback: "no_image.jpg" %>
 		<div class="show-name">
 			<h4>名前</h4>
@@ -21,8 +20,8 @@
 		</div>
 		<div class="user-show-edit">
 			<% if @user == current_user %>
-		      <%= link_to "プロフィールを編集する", edit_user_path(@user), class: 'btn btn-success' %>
-		<% end %>
+		      	<%= link_to "プロフィールを編集する", edit_user_path(@user), class: 'btn btn-success' %>
+			<% end %>
 		</div>
 	</div>
 </div>

@@ -14,27 +14,20 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-   
     @post.save
-
     redirect_to posts_path
   end
 
   def index
-
-      @q = Post.ransack(params[:q])
-      
+    @q = Post.ransack(params[:q])
     if params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}").includes(:tags)
-    elsif 
+    elsif
       @posts = @q.result
     else
-      
       @posts = Post.all
     end
-
     @user = current_user
-
   end
 
   def show
@@ -53,6 +46,5 @@ class PostsController < ApplicationController
   	def post_params
   	 params.require(:post).permit(:user_id, :title, :text, :tag_list)
   	end
-
 end
 

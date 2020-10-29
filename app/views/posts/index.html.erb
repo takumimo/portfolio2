@@ -1,13 +1,13 @@
 <div class="gretel">
 	<% if params[:q] %>
-	<% breadcrumb :postsq, @posts %>
-	<%= breadcrumbs separator: " &rsaquo; " %>
+		<% breadcrumb :postsq, @posts %>
+		<%= breadcrumbs separator: " &rsaquo; " %>
 	<% elsif params[:tag_name] %>
-	<% breadcrumb :tag, @posts %>
-	<%= breadcrumbs separator: " &rsaquo; " %>
+		<% breadcrumb :tag, @posts %>
+		<%= breadcrumbs separator: " &rsaquo; " %>
 	<% else %>
-	<% breadcrumb :posts, @posts %>
-	<%= breadcrumbs separator: " &rsaquo; " %>
+		<% breadcrumb :posts, @posts %>
+		<%= breadcrumbs separator: " &rsaquo; " %>
 	<% end %>
 </div>
 
@@ -61,7 +61,6 @@
 					<% end %>
 					<!-- タグ -->
 				</ul>
-				
 			</div>
 		</div>
 	<% end %>
