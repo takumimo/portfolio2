@@ -8,7 +8,7 @@
 		<div id="likes_buttons_<%= @post.id %>">
 			<%= render 'likes/like', post: @post %>
 		</div>
-		<h2><%= @post.text%></h2>
+		<h4><%= @post.text%></h4>
 	</div>
 	<% if @post_comment.present? %>
 		<div class="comment-area", id="post_comments_area">
@@ -16,7 +16,7 @@
 		</div>
 	<% end %>
 	<div class="comment-form text-center center-block">
-		<% if user_signed_in? %>
+		<% if current_user != @post.user%>
 	    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post }  %>
 		<% end %>
 	</div>
