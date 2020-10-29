@@ -34,7 +34,7 @@
 						<% end %>
 					</h5>
 				</div>
-				<div class="post-name"><%= link_to post.user.name, user_path(post.user) %></div>
+				<div class="post-name">username:  <%= link_to post.user.name, user_path(post.user) %></div>
 				<ul class="post-ul">
 					<li class="post-image">
 						<%= link_to user_path(post.user) do %>
