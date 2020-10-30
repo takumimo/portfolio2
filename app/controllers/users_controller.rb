@@ -19,6 +19,14 @@ class UsersController < ApplicationController
   	end
   end
 
+  def following
+      @users = User.find(params[:id]).following
+  end
+
+  def followers
+      @users = User.find(params[:id]).followers
+  end
+
   private
   def user_params
   	params.require(:user).permit(:email, :name, :introduction, :profile_image)
