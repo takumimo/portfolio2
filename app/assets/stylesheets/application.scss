@@ -40,9 +40,12 @@ body {
 }
 
 .header-ul {
-	margin-right: 50px;
+	margin-right: 300px;
 }
 
+.navbar-left {
+	margin-left: 250px;
+}
 .gretel {
 	margin-bottom: 30px;
 	padding-left: 3px;
@@ -60,4 +63,8 @@ body {
 	background-color: white;
 	border-radius: 16px;
 	padding: 20px;
+}
+
+.search-window {
+	margin-right: 100px;
 }
