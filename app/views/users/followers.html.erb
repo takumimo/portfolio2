@@ -1,3 +1,7 @@
+<div class="gretel">
+	<% breadcrumb :follower, @users %>
+	<%= breadcrumbs separator: " &rsaquo; " %>
+</div>
 <div class = "row">
 	<h2>Follower Users</h2>
 	<% if @users.empty? %>
