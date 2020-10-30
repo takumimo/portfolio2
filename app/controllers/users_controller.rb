@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
+    @posts = @user.posts
+    @comments = @user.post_comments
   end
 
   def edit
@@ -10,11 +12,19 @@ class UsersController < ApplicationController
   def update
   	@user = User.find(params[:id])
   	if @user.update(user_params)
-  		flash[:notice] = "更新しました"
-  		redirect_to user_path
+  		 flash[:notice] = "更新しました"
+  		 redirect_to user_path
   	else
-  		render :edit
+  		 render :edit
   	end
+  end
+
+  def following
+      @users = User.find(params[:id]).following
+  end
+
+  def followers
+      @users = User.find(params[:id]).followers
   end
 
   private

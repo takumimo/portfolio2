@@ -21,7 +21,6 @@
  }
 
 nav {
-	
 	li {
 	list-style: none;
 	}
@@ -55,4 +54,10 @@ body {
 
 body {
 	background-color: #edf2f7;
+}
+
+.login, .signup, .forgot-password {
+	background-color: white;
+	border-radius: 16px;
+	padding: 20px;
 }

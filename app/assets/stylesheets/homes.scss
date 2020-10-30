@@ -4,12 +4,11 @@
 
 
 .row {
-	
 	a {
 	text-decoration: none;
 }
 	}
-	
+
 .top-topic {
 	margin-top: 30px;
 }
@@ -40,7 +39,6 @@
 }
 
 .main-topic {
-	
 	li {
 		display: inline-block;
 	}
@@ -52,17 +50,17 @@
 	margin-right: 50px;
 }
 
-.row {
-	h1 {
+
+.top-slogan {
 		padding-left: 21px;
 	}
 
-	p {
+.top-topic {
 		padding-left: 21px;
 	}
-}
 
-li {
+
+.topic-1 {
 	p {
 		padding:40px;
 		font-weight: bold;
@@ -73,11 +71,19 @@ li {
 	background-color: #EDF5FF;
 	border-radius: 16px;
 	margin-right: 50px;
+	p {
+		padding:40px;
+		font-weight: bold;
+	}
 }
 
 .topic-3 {
 	background-color: #EDF5FF;
 	border-radius: 16px;
+	p {
+		padding:40px;
+		font-weight: bold;
+	}
 }
 
 .main-topic {
@@ -92,6 +98,10 @@ li {
 
 .side-left {
 	display: inline-block;
+	p {
+		padding:40px;
+		font-weight: bold;
+	}
 }
 
 .side-right {
@@ -99,6 +109,7 @@ li {
 
 	p {
 		line-height: 2;
+		font-weight: bold;
 	}
 }
 

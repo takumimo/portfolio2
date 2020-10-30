@@ -1,13 +1,15 @@
+
+
 <div class="gretel">
 	<% if params[:q] %>
-	<% breadcrumb :postsq, @posts %>
-	<%= breadcrumbs separator: " &rsaquo; " %>
+		<% breadcrumb :postsq, @posts %>
+		<%= breadcrumbs separator: " &rsaquo; " %>
 	<% elsif params[:tag_name] %>
-	<% breadcrumb :tag, @posts %>
-	<%= breadcrumbs separator: " &rsaquo; " %>
+		<% breadcrumb :tag, @posts %>
+		<%= breadcrumbs separator: " &rsaquo; " %>
 	<% else %>
-	<% breadcrumb :posts, @posts %>
-	<%= breadcrumbs separator: " &rsaquo; " %>
+		<% breadcrumb :posts, @posts %>
+		<%= breadcrumbs separator: " &rsaquo; " %>
 	<% end %>
 </div>
 
@@ -26,35 +28,43 @@
 			<div class="post-index">
 				<div class="post-article">
 					<h3><%= link_to post.title, post_path(post) %></h3>
-					<h5 class="post-text"><%= post.text.truncate(20) %>
-							<% if post.text.length > 20 %>
-							<%= link_to '詳しくはこちら', post_path(post) %>
-						<% end %>
-					</h5>
 				</div>
-				<div class="post-name"><%= link_to post.user.name, user_path(post.user) %></div>
+				<div class="post-name">username:  <%= link_to post.user.name, user_path(post.user) %></div>
 				<ul class="post-ul">
 					<li class="post-image">
 						<%= link_to user_path(post.user) do %>
 							<%= attachment_image_tag post.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
 						<% end %>
 					</li>
-					
-					<li id="likes_buttons_<%= post.id %>">
+					<!-- 興味あるボタン -->
+					<% if current_user != post.user %>
+					<li class="post-like", id="likes_buttons_<%= post.id %>">
 						<%= render 'likes/like', post: post %>
 					</li>
+					<% end %>
+					<!-- 興味あるボタン -->
+					<!-- 削除ボタン -->
 					<% if current_user == post.user %>
 					<li class="post-destroy">
 						<p><%= link_to '削除する', post_path(post), method: :delete, data: {confirm: "本当に消しますか" }%></p>
 					</li>
 					<% end %>
+					<!-- 削除ボタン -->
+					<!-- 編集ボタン -->
+					<% if current_user == post.user %>
+					<li class="post-edit">
+						<p><%= link_to '編集する', edit_post_path(post) %></p>
+					</li>
+					<% end %>
+					<!-- 編集ボタン -->
+					<!-- タグ -->
 					<% post.tags.each do |tag| %>
-					<div class="index-btn btn btn-success">
+					<div class="post-tag btn btn-success">
 						<li><%= link_to tag.name, posts_path(tag_name: tag.name) %></li>
 					</div>
 					<% end %>
+					<!-- タグ -->
 				</ul>
-				
 			</div>
 		</div>
 	<% end %>

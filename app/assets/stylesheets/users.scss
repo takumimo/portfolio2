@@ -5,3 +5,71 @@
 .image {
 	border-radius: 50%;
 }
+
+.user-show-left {
+	text-align: center;
+	background-color: white;
+	border-radius: 16px;
+	padding: 20px;
+	width: 300px;
+}
+
+.show-name-topic {
+	border-bottom: 1px solid #eee;
+}
+
+.show-introduction-topic {
+	border-bottom: 1px solid #eee;
+}
+
+.show-email-topic {
+	border-bottom: 1px solid #eee;
+}
+
+.user-edit {
+	background-color: white;
+	border-radius: 16px;
+	padding: 20px;
+	width: 500px;
+	text-align: center;
+	margin-left: 330px;
+}
+
+.edit-mail {
+	margin-bottom: 20px;
+}
+
+.user-edit-form {
+	margin-left: 58px;
+}
+
+.show-right-top {
+	background-color: white;
+	border-radius: 16px;
+	padding: 20px;
+	width: 400px;
+	margin-left: 30px;
+}
+
+.column-title {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 30px;
+	padding-bottom: 10px;
+}
+
+.show-right-bottom {
+	background-color: white;
+	border-radius: 16px;
+	padding: 20px;
+	width: 400px;
+	margin-left: 30px;
+	margin-top: 30px;
+}
+
+.show-details {
+	list-style-type: none;
+}
+
+.show-detail {
+	font-size: 20px;
+}

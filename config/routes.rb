@@ -21,9 +21,14 @@ Rails.application.routes.draw do
  
 
   resource :tags, only:[:create, :destroy]
-  resources :users, only:[:show, :edit, :update]
+  resources :users, only:[:show, :edit, :update] do
+    member do
+      get :following, :followers
+    end
+  end
 
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   post "/home/guest_sign_in" => "homes#new_guest"
+  resources :relationships, only: [:create, :destroy]
 end

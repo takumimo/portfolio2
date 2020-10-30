@@ -8,17 +8,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <script type="text/javascript" src="./footerFixed.js"></script>
   </head>
 
   <body>
     <div class="container">
         <%= render 'layouts/header' %>
-        <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
-  <script>bubbly();</script>
+  <div style="margin-bottom: 20px;">
+    <%= flash[:notice] %>
+  </div>
     <%= yield %>
+
     </div>
   </body>
+
 </html>
 
 

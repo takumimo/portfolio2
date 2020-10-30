@@ -3,8 +3,7 @@ class LikesController < ApplicationController
 
 	def create
 	    like = @post.likes.new(user_id: current_user.id)
-
-	    like.save
+		like.save
 	end
 
 	def destroy
