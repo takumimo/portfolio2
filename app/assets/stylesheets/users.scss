@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 .image {
 	border-radius: 50%;
 }
@@ -64,4 +66,12 @@
 	width: 400px;
 	margin-left: 30px;
 	margin-top: 30px;
+}
+
+.show-details {
+	list-style-type: none;
+}
+
+.show-detail {
+	font-size: 20px;
 }

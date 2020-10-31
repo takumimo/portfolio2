@@ -1,3 +1,4 @@
+<div class="container">
 <div class="gretel">
 	<% breadcrumb :user, @user %>
 	<%= breadcrumbs separator: " &rsaquo; " %>
@@ -6,6 +7,20 @@
 	<div class="user-show-left col-md-3">
 		<h3><strong>ユーザー情報</strong></h3>
 		<%= attachment_image_tag @user, :profile_image, :fill, 80, 80, class: "image", fallback: "no_image.jpg" %>
+		<div class="show-details row">
+			<div class="row">
+				<p class="show-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
+				<p class="show-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
+			</div>
+			<div class="row">
+				<p class="show-detail"><%= link_to @user.following.count, following_user_path %></p>
+				<p class="show-detail-letter"><%= link_to 'フォロー', following_user_path %></p>
+			</div>
+			<div class="row">
+				<p class="show-detail"><%= link_to @user.followers.count, followers_user_path %></p>
+			<p class="show-detail-letter"><%= link_to 'フォロワー', followers_user_path %></p>
+			</div>
+		</div>
 		<div class="show-name">
 			<h4>名前</h4>
 			<p class="show-name-topic"><%= @user.name %></p><br>
@@ -21,6 +36,12 @@
 		<div class="user-show-edit">
 			<% if @user == current_user %>
 		      	<%= link_to "プロフィールを編集する", edit_user_path(@user), class: 'btn btn-success' %>
+		    <% else %>
+		    	<% if current_user.following?(@user) %>
+			        <%= render 'users/unfollow', user: @user %>
+			    <% else %>
+			    	<%= render 'users/follow', user: @user %>
+			    <% end %>
 			<% end %>
 		</div>
 	</div>
@@ -31,7 +52,7 @@
 				<% @posts.each do |post| %>
 					<div class="article-column">
 						<h4><strong><%= link_to post.title, post_path(post) %></strong></h4>投稿日時: <%= post.created_at.to_s(:datetime) %>
-						<h4 class="column-title"><%= "#{post.likes.count} 興味ある" %></h4>
+						<h4 class="column-title"><%= "#{post.likes.count} 人が注目してます" %></h4>
 					</div>
 				<% end %>
 			
@@ -40,18 +61,22 @@
 			<h3><strong>すべてのコメント</strong></h3>
 			<% @comments.each do |comment| %>
 				<div class="column-title">
-					<% if comment %>
-						<h4><strong><%= link_to comment.text, post_path(comment.post) %></strong></h4>投稿日時: <%= comment.created_at.to_s(:datetime) %>
-					<% else %>
-						<h4>コメントがありません</h4>
-					<% end %>
+						<% if @comments.empty? %>
+							<h4>コメントはまだありません</h4>
+						<% else %>
+							<h4><strong><%= link_to comment.text, post_path(comment.post) %></strong></h4>
+							<p>send to  <%= link_to comment.post.user.name, user_path(comment.post.user) %></p>
+							<p>投稿日時:  <%= comment.created_at.to_s(:datetime) %></p>
+
+						<% end %>
+
 				</div>
 			<% end %>
 		</div>
 	</div>
 </div>
 
-
+</div>
 
 
 

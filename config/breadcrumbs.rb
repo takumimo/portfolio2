@@ -70,3 +70,13 @@ crumb :postedit do |post|
   link "投稿編集", edit_post_path(post)
   parent :post, post
 end
+
+crumb :followed do |user|
+  link "フォロー詳細", following_user_path(user)
+  parent :user, user
+end
+
+crumb :follower do |user|
+  link "フォロワー詳細", followers_user_path(user)
+  parent :user, user
+end

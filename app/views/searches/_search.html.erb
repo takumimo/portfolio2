@@ -1,0 +1,5 @@
+<%= search_form_for @q do |f| %>
+    <%= f.label :text_cont, "キーワード検索" %>
+    <%= f.search_field :text_cont %>
+    <%= f.submit "検索" %>
+<% end %>

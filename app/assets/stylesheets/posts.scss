@@ -2,13 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+
 .post-index {
-	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
-	border-radius: 16px;
-	padding: 12px;
+
+
+	padding: 40px;
 	margin-bottom: 25px;
 	margin-top: 20px;
-	background-color: #fff;
+  border-bottom: 1px solid #e8e8e8;
 
 }
 
@@ -46,95 +49,19 @@ h2 {
 	margin-right: 10px;
 }
 
-.post-text {
-}
-
-.search-window {
-	margin-bottom: 30px;
-	padding-left: 17px;
-}
-
 .show {
-	position: relative;
-  display: inline-block;
-  margin: 1.5em 0 1.5em 15px;
-  padding: 7px 10px;
-  min-width: 120px;
-  max-width: 500px;
-  color: #555;
-  font-size: 16px;
-  background: #FFF;
-  border: solid 3px #555;
-  box-sizing: border-box;
-  border-radius: 16px;
-  margin-bottom: 30px;
+  background-color: white;
+  padding: 20px;
+  width: 800px;
+  margin-bottom: 50px;
 }
 
-.show:before {
-	content: "";
-  position: absolute;
-  top: 50%;
-  left: -24px;
-  margin-top: -12px;
-  border: 12px solid transparent;
-  border-right: 12px solid #FFF;
-  z-index: 2;
 
-}
-
-.show:after {
-	content: "";
-  position: absolute;
-  top: 50%;
-  left: -30px;
-  margin-top: -14px;
-  border: 14px solid transparent;
-  border-right: 14px solid #555;
-  z-index: 1;
-
-}
 
 .comment-area {
-	position: relative;
-  display: inline-block;
-  margin: 1.5em 15px 1.5em 0;
-  padding: 20px 20px;
-  min-width: 500px;
-  max-width: 500px;
-  color: #555;
-  font-size: 16px;
-  background: #FFF;
-  border: solid 3px #555;
-  box-sizing: border-box;
-  border-radius: 16px;
-  margin-top: 30px;
-  margin-left: 600px;
-}
-
-.comment-area:before {
-	content: "";
-  position: absolute;
-  top: 50%;
-  right: -24px;
-  margin-top: -12px;
-  border: 12px solid transparent;
-  border-left: 12px solid #FFF;
-  z-index: 2;
-}
-
-.comment-area:after {
-	content: "";
-  position: absolute;
-  top: 50%;
-  right: -30px;
-  margin-top: -14px;
-  border: 14px solid transparent;
-  border-left: 14px solid #555;
-  z-index: 1;
-}
-
-.new-tag {
-	margin-bottom: 30px;
+	background-color: white;
+  padding: 20px;
+  width: 800px;
 }
 
 .post-ul {
@@ -191,4 +118,141 @@ h2 {
     margin-left: 300px;
     margin-top: 100px;
   }
+}
+
+.tab_wrap {
+  width: 800px;
+  margin: 10px auto;
+}
+
+input[type="radio"] {
+  display:none;
+}
+
+.tab_area {
+  font-size:0; margin:0 150px;
+}
+
+.tab_area label {
+  width:150px;
+  margin:0 5px;
+  display:inline-block;
+  padding:12px 0;
+  color:#999;
+  background:#ddd;
+  text-align:center;
+  font-size:13px;
+  cursor:pointer;
+  transition:ease 0.2s opacity;
+}
+
+.tab_area label:hover {
+  opacity:0.5;
+}
+
+.panel_area {
+  background:#fff;
+}
+
+.tab_panel {
+  width: 100%;
+  padding: 80px 0;
+  display: none;
+}
+
+.tab_panel p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+$i:1;
+$length:3;
+@while $i <= $length {
+  #tab#{$i}:checked {
+    ~ .tabarea1 .tab#{$i}_label {
+      background: #fff;
+      color:#000;
+    }
+    ~ .panel_area #panel#{$i} {
+    display: block;
+    }
+  }
+  $i:$i + 1;
+}
+
+.show-span-tag {
+  a {
+  color: ivory;
+  text-decoration: none;
+  }
+}
+
+.text-model {
+
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  height: 600px;
+  width: 600px;
+
+}
+
+.text-model-1 {
+  opacity: 0.5;
+
+}
+
+.text-form {
+  height: 600px;
+  width: 570px;
+}
+
+.new-post-title {
+  width: 1155px;
+}
+
+.new-post-tag {
+  width: 1155px;
+}
+
+.confirm-title {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 600px;
+}
+
+.confirm-text {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 600px;
+}
+
+.confirm-tag {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 600px;
+}
+
+.confirm-button {
+  margin-top: 20px;
+}
+
+.button-fix {
+  margin-right: 5px;
+}
+
+.rank-posts {
+  padding: 20px;
+}
+
+.rank-content {
+  a {
+  text-decoration: none;
+  }
+  
+
 }
