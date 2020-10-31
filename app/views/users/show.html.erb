@@ -51,7 +51,7 @@
 				<% @posts.each do |post| %>
 					<div class="article-column">
 						<h4><strong><%= link_to post.title, post_path(post) %></strong></h4>投稿日時: <%= post.created_at.to_s(:datetime) %>
-						<h4 class="column-title"><%= "#{post.likes.count} 興味ある" %></h4>
+						<h4 class="column-title"><%= "#{post.likes.count} 人が注目してます" %></h4>
 					</div>
 				<% end %>
 			
@@ -60,12 +60,14 @@
 			<h3><strong>すべてのコメント</strong></h3>
 			<% @comments.each do |comment| %>
 				<div class="column-title">
+						<% if @comments.empty? %>
+							<h4>コメントはまだありません</h4>
+						<% else %>
+							<h4><strong><%= link_to comment.text, post_path(comment.post) %></strong></h4>
+							<p>send to  <%= link_to comment.post.user.name, user_path(comment.post.user) %></p>
+							<p>投稿日時:  <%= comment.created_at.to_s(:datetime) %></p>
 
-						<h4><strong><%= link_to comment.text, post_path(comment.post) %></strong></h4>
-						<p>send to  <%= link_to comment.post.user.name, user_path(comment.post.user) %></p>
-						<p>投稿日時:  <%= comment.created_at.to_s(:datetime) %></p>
-
-						<!-- <h4>コメントがありません</h4> -->
+						<% end %>
 
 				</div>
 			<% end %>

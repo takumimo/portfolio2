@@ -88,7 +88,17 @@
 			<div id="panel2" class="tab_panel">
 				<% @all_ranks.each.with_index(1) do |post, i| %>
 				<div class="row">
-					<h4><%= "第#{i}位" %> <%= post.title %></h4>
+						<span><%= "第#{i}位" %></span>
+						<span>
+							<%= link_to user_path(post.user) do %>
+								<%= attachment_image_tag post.user, :profile_image, :fill, 30, 30,fallback: "no_image.jpg", class: 'image' %>
+							<% end %>
+						</span>
+						<span><%= post.user.name %></span>
+						<span><%= post.title %></span>
+						
+					
+					
 				</div>
 				
 				<% end %>
