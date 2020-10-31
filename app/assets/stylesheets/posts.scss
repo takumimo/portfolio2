@@ -46,9 +46,6 @@ h2 {
 	margin-right: 10px;
 }
 
-.post-text {
-}
-
 .show {
   background-color: white;
   padding: 20px;
@@ -142,4 +139,11 @@ $length:3;
     ~ .panel_area #panel#{$i}{display:block;}
   }
   $i:$i + 1;
+}
+
+.show-span-tag {
+  a {
+  color: ivory;
+  text-decoration: none;
+  }
 }

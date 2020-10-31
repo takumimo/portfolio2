@@ -7,11 +7,11 @@
 		<%= link_to user_path(@post.user) do %>
 			<%= attachment_image_tag @post.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
 		<% end %>
-		<span><%= @post.user.name %></span>
+		<span><%= link_to @post.user.name, user_path(@post.user) %></span>
 		<h2><strong><%= @post.title %></strong></h2>
 		<% @post.tags.each do |tag| %>
 			<div class="post-tag btn btn-success">
-				<span><%= link_to tag.name, posts_path(tag_name: tag.name) %></span>
+				<span class="show-span-tag"><%= link_to tag.name, posts_path(tag_name: tag.name) %></span>
 			</div>
 		<% end %>
 		<h4><%= @post.text%></h4>
