@@ -1,8 +1,10 @@
 
 
 
-
-
+<div class="container">
+	<div style="margin-bottom: 20px;">
+    <%= flash[:notice] %>
+  </div>
 <div class="row">
 	<div class="search-window">
 		<%= search_form_for @q do |f| %>
@@ -22,6 +24,7 @@
 		<% breadcrumb :posts, @posts %>
 		<%= breadcrumbs separator: " &rsaquo; " %>
 	<% end %>
+	</div>
 </div>
 	<div class="tab_wrap">
 		<input id="tab1" type="radio" name="tab_btn" checked>
