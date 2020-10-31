@@ -61,7 +61,7 @@
 			<% @comments.each do |comment| %>
 				<div class="column-title">
 					<% if comment %>
-						<h4><strong><%= link_to comment.text, post_path(comment.post) %></strong></h4>投稿日時: <%= comment.created_at.to_s(:datetime) %>
+						<h4><strong><%= link_to comment.text, post_path(comment.post) %></strong>send to <%= link_to comment.post.user.name, user_path(comment.post.user) %></h4>投稿日時: <%= comment.created_at.to_s(:datetime) %>
 					<% else %>
 						<h4>コメントがありません</h4>
 					<% end %>
