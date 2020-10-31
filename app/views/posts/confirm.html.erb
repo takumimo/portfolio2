@@ -1,40 +1,43 @@
-<h3><strong>投稿内容の確認</strong></h3>
+<div class="container">
+
 <div class="form-group">
-	<div class="row">
-		<div class="col-md-5">
-			<h5>タイトル</h5>
+	<div class="confirm-title row">
+
+
 			<%= @post.title %>
-		</div>
+
 	</div>
-	<div class="row">
-		<div class="col-md-8">
-			<h5>相談内容</h5>
+	<div class="confirm-text row">
+
+
 			<%= @post.text %>
-		</div>
+
 	</div>
-	<div class="row">
-		<div class="col-md-3">
-			<h5>タグ</h5>
+	<div class="confirm-tag row">
+
+
 			<%= @post.tag_list %>
-		</div>
+
 	</div>
 	<%= form_with(model: @post, local: true, url: posts_path) do |f| %>
 		<%= f.hidden_field :user_id, value: current_user.id %>
 		<%= f.hidden_field :title %>
 		<%= f.hidden_field :text %>
 		<%= f.hidden_field :tag_list %>
-		<div class="row">
-			<div class="col-md-1">
-				<%= link_to "修正する", new_post_path(@post), class: 'btn btn-success' %>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-1">
+		<div class="confirm-button row">
+
+				<%= link_to "修正する", new_post_path(@post), class: 'button-fix btn btn-success' %>
+
+
+
+
 				<%= f.submit "投稿する", class: 'btn btn-danger' %>
-			</div>
+
 		</div>
 	<% end %>
 </div>
+</div>
+
 
 
 

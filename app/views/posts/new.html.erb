@@ -5,14 +5,14 @@
 	<%= form_with(model:@post, local: true, url:posts_confirm_path, class: 'container') do |f| %>
 		<div>
 
-				<%= f.text_area :title, placeholder: "タイトル", autofocus: true, class: "new-post-title" %>
+				<%= f.text_area :title, placeholder: "タイトル[例：不動産業界から他業界へ転職]", autofocus: true, class: "new-post-title" %>
 
 		</div>
 
 		<div>
 
 
-			  <%= f.text_area :tag_list, placeholder: "タグ", value: @post.tag_list.join(','), class: "new-post-tag"%>
+			  <%= f.text_area :tag_list, placeholder: "タグ[例：不動産]", value: @post.tag_list.join(','), class: "new-post-tag"%>
 
 		</div>
 
@@ -21,10 +21,13 @@
 		<div class="row">
 			<div class="text col-md-6">
 
-				<%= f.text_area :text, placeholder: "気になることを質問してみよう", class: "text-form" %>
+				<%= f.text_area :text, placeholder: "相談内容（右の例を参考にしながら気になることを質問してみよう）", class: "text-form" %>
 			</div>
 			<div class="text-model col-md-6">
-				<span class="text-model-1">投稿例：私は新卒で不動産仲介会社に入社しました。</span>
+				<span class="text-model-1">[例：私は新卒で不動産仲介会社に入社しました。<br>
+				その後営業部に配属され、約3年間営業活動に励んでいましたがふと自分の将来について考えると、このまま同じように営業していていいのかと疑問に思ってしまいました。<br>
+				というのも、営業という仕事なので当然ですが数字に追われる毎日で、最初はやりがいを感じていたのですが次第にやる気もなくなってしまいました。<br>このままじゃまずいと思い上司に自分の気持ちを正直に伝えたところ、数字を追ってそれを達成することにやりがいを感じられなければこの業界で営業していくのは難しいかもなと言われました。<br>
+				営業自体は嫌いではないですし、他の業界も見てみたいという気持ちもありますがどうすればいいでしょうか。不動産業界から転職した方など、アドバイス頂けると嬉しいです。</span>
 			</div>
 		</div>
 
