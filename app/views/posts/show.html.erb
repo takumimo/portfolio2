@@ -4,10 +4,14 @@
 </div>
 <div class="row">
 	<div class="show">
-		<%= link_to user_path(@post.user) do %>
+		<div class="show-top">
+			<%= link_to user_path(@post.user) do %>
 			<%= attachment_image_tag @post.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
 		<% end %>
+		<span class="pull-right"><%= @post.created_at.to_s(:datetime) %></span>
 		<span><%= link_to @post.user.name, user_path(@post.user) %></span>
+		</div>
+		
 		<h2><strong><%= @post.title %></strong></h2>
 		<% @post.tags.each do |tag| %>
 			<div class="post-tag btn btn-success">
