@@ -18,7 +18,11 @@
 	</div>
 	<% if @post_comment.present? %>
 		<div class="comment-area", id="post_comments_area">
-	    	<%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
+		<i class="fas fa-comments"></i><span>コメント</span>
+			<div class="comment-topic">
+				<%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
+			</div>
+	    	
 		</div>
 	<% end %>
 
