@@ -1,23 +1,11 @@
-
-
-
 <div class="new-post">
 	<%= form_with(model:@post, local: true, url:posts_confirm_path, class: 'container') do |f| %>
 		<div>
-
-				<%= f.text_area :title, placeholder: "タイトル[例：不動産業界から他業界へ転職]", autofocus: true, class: "new-post-title" %>
-
+			<%= f.text_area :title, placeholder: "タイトル[例：不動産業界から他業界へ転職]", autofocus: true, class: "new-post-title" %>
 		</div>
-
 		<div>
-
-
-			  <%= f.text_area :tag_list, placeholder: "タグ[例：不動産]", value: @post.tag_list.join(','), class: "new-post-tag"%>
-
+			<%= f.text_area :tag_list, placeholder: "タグ[例：不動産]", value: @post.tag_list.join(','), class: "new-post-tag"%>
 		</div>
-
-
-
 		<div class="row">
 			<div class="text col-md-6">
 
@@ -30,14 +18,6 @@
 				営業自体は嫌いではないですし、他の業界も見てみたいという気持ちもありますがどうすればいいでしょうか。不動産業界から転職した方など、アドバイス頂けると嬉しいです。</span>
 			</div>
 		</div>
-
-		
-
-
-
-				<%= f.submit "投稿内容を確認する", class: "new-post-submit" %>
-
-
+		<%= f.submit "投稿内容を確認する", class: "new-post-submit" %>
 	<% end %>
 </div>
-	

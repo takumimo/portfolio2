@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def new
-  	@post = Post.new
+  	@post = params[:post].present? ? Post.new(post_params) : Post.new
   	@user = current_user
   end
 

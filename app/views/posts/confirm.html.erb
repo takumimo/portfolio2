@@ -1,41 +1,25 @@
 <div class="container">
-
-<div class="form-group">
-	<div class="confirm-title row">
-
-
+	<div class="form-group">
+		<div class="confirm-title row">
 			<%= @post.title %>
-
-	</div>
-	<div class="confirm-text row">
-
-
-			<%= @post.text %>
-
-	</div>
-	<div class="confirm-tag row">
-
-
-			<%= @post.tag_list %>
-
-	</div>
-	<%= form_with(model: @post, local: true, url: posts_path) do |f| %>
-		<%= f.hidden_field :user_id, value: current_user.id %>
-		<%= f.hidden_field :title %>
-		<%= f.hidden_field :text %>
-		<%= f.hidden_field :tag_list %>
-		<div class="confirm-button row">
-
-				<%= link_to "修正する", new_post_path(@post), class: 'button-fix btn btn-success' %>
-
-
-
-
-				<%= f.submit "投稿する", class: 'btn btn-danger' %>
-
 		</div>
-	<% end %>
-</div>
+		<div class="confirm-tag row">
+			<%= @post.tag_list %>
+		</div>
+		<div class="confirm-text row">
+			<%= @post.text %>
+		</div>
+		<%= form_with(model: @post, local: true, url: posts_path) do |f| %>
+			<%= f.hidden_field :user_id, value: current_user.id %>
+			<%= f.hidden_field :title %>
+			<%= f.hidden_field :text %>
+			<%= f.hidden_field :tag_list %>
+			<div class="confirm-button row">
+				<%= link_to "修正する", new_post_path(post: @post.attributes), class: 'button-fix btn btn-success' %>
+				<%= f.submit "投稿する", class: 'btn btn-danger' %>
+			</div>
+		<% end %>
+	</div>
 </div>
 
 
