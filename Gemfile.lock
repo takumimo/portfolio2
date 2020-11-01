@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: 89312ee89c618d9be4b0527da91048e80813c81c
+  revision: a65677484e246165735806da09a8f6e7c62f9c61
   branch: master
   specs:
     faker (2.14.0)
@@ -85,7 +85,7 @@ GEM
       execjs
     bcrypt (3.1.16)
     bindex (0.8.1)
-    bootsnap (1.4.8)
+    bootsnap (1.4.9)
       msgpack (~> 1.0)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
@@ -285,14 +285,14 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rspec-core (3.9.3)
-      rspec-support (~> 3.9.3)
-    rspec-expectations (3.9.3)
+    rspec-core (3.10.0)
+      rspec-support (~> 3.10.0)
+    rspec-expectations (3.10.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.9.0)
-    rspec-mocks (3.9.1)
+      rspec-support (~> 3.10.0)
+    rspec-mocks (3.10.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.9.0)
+      rspec-support (~> 3.10.0)
     rspec-rails (4.0.1)
       actionpack (>= 4.2)
       activesupport (>= 4.2)
@@ -301,7 +301,7 @@ GEM
       rspec-expectations (~> 3.9)
       rspec-mocks (~> 3.9)
       rspec-support (~> 3.9)
-    rspec-support (3.9.4)
+    rspec-support (3.10.0)
     ruby2_keywords (0.0.2)
     ruby_dep (1.5.0)
     rubyzip (2.3.0)

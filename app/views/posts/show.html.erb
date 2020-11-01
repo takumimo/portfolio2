@@ -40,27 +40,35 @@
 		<% end %>
 		<h4><%= @post.text%></h4>
 	</div>
-	<% if @post_comment.present? %>
-		<div class="comment-area", id="post_comments_area">
+
+
+	<div class="comment-bottom">
 		<i class="fas fa-comments"></i>
 		<span>コメント
 			<% if @post.user != current_user %>
-			(気になるボタンを押す事でコメントが出来るようになります）
+			<span>(気になるボタンを押す事でコメントが出来るようになります）</span>
 			<% end %>
 		</span>
-			<div class="comment-topic">
-				<%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
-			</div>
-	    	
+		<div class="comment-field">
+			<% if @post_comments.exists? %>
+				<div class="comment-area", id="post_comments_area">
+					<%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
+				</div>
+			<% else %>
+				コメントはまだありません
+			<% end %>
 		</div>
-	<% end %>
-
-	<div class="comment-form text-center center-block">
 		
-		<% if current_user != @post.user%>
-	    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post }  %>
-		<% end %>
+		
 	</div>
+	<div class="comment-form text-center center-block">
+			<% if current_user != @post.user%>
+		    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post }  %>
+			<% end %>
+	</div>
+
+
+	
 </div>
 </div>
 
