@@ -75,6 +75,10 @@ h2 {
     display: inline-block;
   }
 
+.btn-success {
+  list-style: none;
+}
+
 
   .post-like {
     display: inline-block;
@@ -106,9 +110,6 @@ h2 {
   }
 }
 
-.post-edit-tag {
-  margin-bottom: 15px;
-}
 
 .user-show-edit {
     a {
@@ -260,4 +261,17 @@ $length:3;
   }
   
 
+}
+
+.post-edit-title {
+  width: 1155px;
+}
+
+.post-edit-tag {
+  width: 1155px;
+}
+
+.post-edit-text {
+  height: 600px;
+  width: 570px;
 }

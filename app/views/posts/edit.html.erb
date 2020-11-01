@@ -3,19 +3,28 @@
 	<% breadcrumb :postedit, @post %>
 	<%= breadcrumbs separator: " &rsaquo; " %>
 </div>
-<div class="row">
+
 	<div class="post-edit">
-		<h3><strong>投稿編集画面</strong></h3>
 		<%= form_with(model: @post, url: post_path(@post)) do |f| %>
-			<h4>タイトル</h4>
-			<%= f.text_field :title, autofocus: true %><br>
-			<h4>本文</h4>
-			<%= f.text_field :text, class: "post-edit-form" %>
-			<h4>タグ</h4>
-			<%= f.text_field :tag_list, class: "post-edit-tag" %>
+		<div>
+			<%= f.text_area :title, autofocus: true, class: "post-edit-title" %>
+		</div>
+		<div>
+			<%= f.text_area :tag_list, class: "post-edit-tag" %>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<%= f.text_area :text, class: "post-edit-text" %>
+			</div>
+			<div class="text-model col-md-6">
+				<span class="text-model-1">[例：私は新卒で不動産仲介会社に入社しました。<br>
+				その後営業部に配属され、約3年間営業活動に励んでいましたがふと自分の将来について考えると、このまま同じように営業していていいのかと疑問に思ってしまいました。<br>
+				というのも、営業という仕事なので当然ですが数字に追われる毎日で、最初はやりがいを感じていたのですが次第にやる気もなくなってしまいました。<br>このままじゃまずいと思い上司に自分の気持ちを正直に伝えたところ、数字を追ってそれを達成することにやりがいを感じられなければこの業界で営業していくのは難しいかもなと言われました。<br>
+				営業自体は嫌いではないですし、他の業界も見てみたいという気持ちもありますがどうすればいいでしょうか。不動産業界から転職した方など、アドバイス頂けると嬉しいです。</span>
+			</div>
+		</div>
+			
 			<%= f.submit "更新する" %>
 		<% end %>
 	</div>
 </div>
-</div>
-

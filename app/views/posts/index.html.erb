@@ -57,7 +57,7 @@
 								<% end %>
 
 							</div>
-							<ul class="post-ul">
+							<div class="post-ul">
 								<%= link_to post.user.name, user_path(post.user) %>さんが投稿
 								
 
@@ -67,14 +67,17 @@
 								
 								
 								
-							</ul>
-							<!-- タグ -->
+							</div>
+							<div class="post-tag">
+								<!-- タグ -->
 								<% post.tags.each do |tag| %>
-								<div class="post-tag btn btn-success">
-									<li><%= link_to tag.name, posts_path(tag_name: tag.name) %></li>
+								<div class="btn btn-success">
+									<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %>
 								</div>
 								<% end %>
 								<!-- タグ -->
+							</div>
+							
 
 						</div>
 					</div>

@@ -42,7 +42,12 @@
 	</div>
 	<% if @post_comment.present? %>
 		<div class="comment-area", id="post_comments_area">
-		<i class="fas fa-comments"></i><span>コメント</span>
+		<i class="fas fa-comments"></i>
+		<span>コメント
+			<% if @post.user != current_user %>
+			(気になるボタンを押す事でコメントが出来るようになります）
+			<% end %>
+		</span>
 			<div class="comment-topic">
 				<%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
 			</div>
