@@ -3,14 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.image {
+  width: 40px;
+  height: 40px;
+}
 
 
 .post-index {
 
 
-	padding: 40px;
-	margin-bottom: 25px;
-	margin-top: 20px;
+	padding: 10px;
   border-bottom: 1px solid #e8e8e8;
 
 }
@@ -24,6 +26,9 @@
 	}
 }
 
+.index-title {
+  font-size: 20px;
+}
 
 h2 {
 	margin-left: 20px;
@@ -97,7 +102,7 @@ h2 {
 .post-edit {
   display: inline-block;
   p {
-  padding-right: 30px;
+  padding-right: 10px;
   }
 }
 
@@ -156,7 +161,7 @@ input[type="radio"] {
 
 .tab_panel {
   width: 100%;
-  padding: 80px 0;
+  padding: 1px 0;
   display: none;
 }
 
