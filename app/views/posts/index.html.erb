@@ -5,109 +5,147 @@
 	<div style="margin-bottom: 20px;">
     <%= flash[:notice] %>
   </div>
-<div class="row">
-	<div class="search-window">
-		<%= search_form_for @q do |f| %>
-  			<%= f.label :text_cont, "キーワード検索" %>
-  			<%= f.search_field :text_cont %>
-			<%= f.submit "検索" %>
+	<div class="row">
+		<div class="search-window">
+			<%= search_form_for @q do |f| %>
+	  			<%= f.label :text_cont, "キーワード検索" %>
+	  			<%= f.search_field :text_cont %>
+				<%= f.submit "検索" %>
+			<% end %>
+		</div>
+		<div class="gretel">
+		<% if params[:q] %>
+			<% breadcrumb :postsq, @posts %>
+			<%= breadcrumbs separator: " &rsaquo; " %>
+		<% elsif params[:tag_name] %>
+			<% breadcrumb :tag, @posts %>
+			<%= breadcrumbs separator: " &rsaquo; " %>
+		<% else %>
+			<% breadcrumb :posts, @posts %>
+			<%= breadcrumbs separator: " &rsaquo; " %>
 		<% end %>
-	</div>
-	<div class="gretel">
-	<% if params[:q] %>
-		<% breadcrumb :postsq, @posts %>
-		<%= breadcrumbs separator: " &rsaquo; " %>
-	<% elsif params[:tag_name] %>
-		<% breadcrumb :tag, @posts %>
-		<%= breadcrumbs separator: " &rsaquo; " %>
-	<% else %>
-		<% breadcrumb :posts, @posts %>
-		<%= breadcrumbs separator: " &rsaquo; " %>
-	<% end %>
-	</div>
-</div>
-	<div class="tab_wrap">
-		<input id="tab1" type="radio" name="tab_btn" checked>
-		<input id="tab2" type="radio" name="tab_btn">
-		<input id="tab3" type="radio" name="tab_btn">
-
-		<div class="tab_area">
-			<label class="tab1_label" for="tab1">相談一覧</label>
-			<label class="tab2_label" for="tab2">注目数</label>
-			<label class="tab3_label" for="tab3">tab3</label>
 		</div>
-
-		<div class="panel_area">
-
-			<div id="panel1" class="tab_panel">
-				<h2><strong>相談一覧</strong></h2>
-				<% @posts.each do |post| %>
-					<div>
-						<div class="post-index">
-							<div class="post-article">
-								<%= link_to user_path(post.user) do %>
-										<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'image' %>
-									<% end %>
-								<span class="index-title"><%= link_to post.title, post_path(post) %></span>
-								<!-- 興味あるボタン -->
-								<% if current_user != post.user %>
-								<span class="pull-right post-like", id="likes_buttons_<%= post.id %>">
-									<%= render 'likes/like', post: post %>
-								</span>
-								<% end %>
-
-							</div>
-							<div class="post-ul">
-								<%= link_to post.user.name, user_path(post.user) %>さんが投稿
-								
-
-
-								
-
-								
-								
-								
-							</div>
-							<div class="post-tag">
-								<!-- タグ -->
-								<% post.tags.each do |tag| %>
-								<div class="btn btn-success">
-									<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %>
-								</div>
-								<% end %>
-								<!-- タグ -->
-							</div>
-							
-
-						</div>
-					</div>
-				<% end %>
-
-			</div>
-			<div id="panel2" class="tab_panel">
-				<% @all_ranks.each.with_index(1) do |post, i| %>
-				<div class="rank-posts">
-						<span><%= "第#{i}位" %></span>
-						<span>
-							
-								<%= attachment_image_tag post.user, :profile_image, :fill, 30, 30,fallback: "no_image.jpg" %>
-
-						</span>
-						<span class="rank-content">by<%= link_to post.user.name, user_path(post.user) %>さん</span>
-						<span class="rank-content"><%= link_to post.title, post_path(post) %></span>
-						
-					
-					
+	</div>
+	<div class="row">
+		<div class="show-details col-md-3">
+			<div class="row">
+				<div class="col-md-4">
+					<p class="show-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
+					<p class="show-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
 				</div>
+					
 				
-				<% end %>
+				<div class="col-md-4">
+					<p class="show-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
+					<p class="show-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
+				</div>
+				<div class="col-md-4">
+					<p class="show-detail"><%= link_to @user.followers.count, followers_user_path(@user) %></p>
+					<p class="show-detail-letter"><%= link_to 'フォロワー', followers_user_path(@user) %></p>
+				</div>
 			</div>
-			<div id="panel3" class="tab_panel">
-				<p>panel3</p>
-			</div>
-
 		</div>
+		<div class="tab_wrap col-md-6">
+			<input id="tab1" type="radio" name="tab_btn" checked>
+			<input id="tab2" type="radio" name="tab_btn">
+			<input id="tab3" type="radio" name="tab_btn">
 
-	</div><!-- tab-wrap -->
- </div>
+			<div class="tab_area">
+				<label class="tab1_label" for="tab1">相談一覧</label>
+				<label class="tab2_label" for="tab2">注目数</label>
+				<label class="tab3_label" for="tab3">tab3</label>
+			</div>
 
+			<div class="panel_area">
+
+				<div id="panel1" class="tab_panel">
+					<h2><strong>相談一覧</strong></h2>
+					<% @posts.each do |post| %>
+						<div>
+							<div class="post-index">
+								<div class="post-article">
+									<%= link_to user_path(post.user) do %>
+											<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'image' %>
+										<% end %>
+									<span class="index-title"><%= link_to post.title, post_path(post) %></span>
+									<!-- 興味あるボタン -->
+									<% if current_user != post.user %>
+									<span class="pull-right post-like", id="likes_buttons_<%= post.id %>">
+										<%= render 'likes/like', post: post %>
+									</span>
+									<% end %>
+
+								</div>
+								<div class="post-ul">
+									<%= link_to post.user.name, user_path(post.user) %>さんが投稿
+									
+
+
+									
+
+									
+									
+									
+								</div>
+								<div class="post-tag">
+									<!-- タグ -->
+									<% post.tags.each do |tag| %>
+									<div class="btn btn-success">
+										<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %>
+									</div>
+									<% end %>
+									<!-- タグ -->
+								</div>
+								
+
+							</div>
+						</div>
+					<% end %>
+
+				</div>
+				<div id="panel2" class="tab_panel">
+					<% @all_ranks.each.with_index(1) do |post, i| %>
+					<div class="rank-posts">
+							<span><%= "第#{i}位" %></span>
+							<span>
+								
+									<%= attachment_image_tag post.user, :profile_image, :fill, 30, 30,fallback: "no_image.jpg" %>
+
+							</span>
+							<span class="rank-content">by<%= link_to post.user.name, user_path(post.user) %>さん</span>
+							<span class="rank-content"><%= link_to post.title, post_path(post) %></span>
+							
+						
+						
+					</div>
+					
+					<% end %>
+				</div>
+				<div id="panel3" class="tab_panel">
+					<p>panel3</p>
+				</div>
+
+			</div>
+
+		</div><!-- tab-wrap -->
+		<div class="show-details col-md-3">
+			<div class="row">
+				<div class="col-md-4">
+					<p class="show-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
+					<p class="show-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
+				</div>
+					
+				
+				<div class="col-md-4">
+					<p class="show-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
+					<p class="show-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
+				</div>
+				<div class="col-md-4">
+					<p class="show-detail"><%= link_to @user.followers.count, followers_user_path(@user) %></p>
+					<p class="show-detail-letter"><%= link_to 'フォロワー', followers_user_path(@user) %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>

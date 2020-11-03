@@ -64,3 +64,19 @@ body {
 	border-radius: 16px;
 	padding: 20px;
 }
+
+.header-mypage {
+	position: relative;
+}
+
+.header-dropdown {
+	display: none;
+	position: absolute;
+	top: 40px;
+	right: 320px;
+	background-color: white;
+	padding: 12px 16px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	box-shadow: 0 0 8px 0 rgba(0,0,0,.15);
+}
