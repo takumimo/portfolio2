@@ -13,12 +13,12 @@
 		
 	</div>
 	<% if post_comment.thanked_by?(current_user) %>
-	  <%= link_to thank_path(post_comment), method: :delete, local: true do %>
-	    <%= image_tag'7019.jpg', style="color: black;", :size => '30x30' %>
+	  <%= link_to thank_path(post_comment_id: post_comment.id, post_id: post.id), method: :delete, local: true do %>
+	  	<%= image_tag'7019.jpg', :size => '30x30' %>
 	    ありがとう数: <%= post_comment.thanks.count %>
 	  <% end %>
 	<% else %>
-	  <%= link_to thank_path(post_comment), method: :post, local: true do %>
+	  <%= link_to thank_path(post_comment_id: post_comment.id, post_id: post.id), method: :post, local: true do %>
 	    <%= image_tag'7019.jpg', :size => '30x30' %>
 	   	ありがとう数: <%= post_comment.thanks.count %>
 	  <% end %>
