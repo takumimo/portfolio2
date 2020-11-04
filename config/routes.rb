@@ -19,8 +19,8 @@ Rails.application.routes.draw do
 
   end
   delete "posts/:post_id/post_comments/:post_comment_id", to: "post_comments#destroy", as: :post_comment
-  post "posts/:post_id/post_comments/:post_comment_id/thanks/:thank_id", to: "thanks#create", as: :thank
-  delete "posts/:post_id/post_comments/:post_comment_id/thanks/thank_id", to: "thanks#destroy"
+  post "posts/:post_id/post_comments/:post_comment_id/thanks", to: "thanks#create", as: :thank
+  delete "posts/:post_id/post_comments/:post_comment_id/thanks", to: "thanks#destroy"
  
 
   resource :tags, only:[:create, :destroy]
