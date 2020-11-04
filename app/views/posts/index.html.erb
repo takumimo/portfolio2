@@ -52,7 +52,7 @@
 
 			<div class="tab_area">
 				<label class="tab1_label" for="tab1">相談一覧</label>
-				<label class="tab2_label" for="tab2">注目数</label>
+				<label class="tab2_label" for="tab2">注目ランキング</label>
 				<label class="tab3_label" for="tab3">tab3</label>
 			</div>
 
@@ -77,7 +77,7 @@
 
 								</div>
 								<div class="post-ul">
-									<%= link_to post.user.name, user_path(post.user) %>さんが投稿
+									<%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿
 									
 
 
@@ -106,14 +106,18 @@
 				<div id="panel2" class="tab_panel">
 					<% @all_ranks.each.with_index(1) do |post, i| %>
 					<div class="rank-posts">
-							<span><%= "第#{i}位" %></span>
+							<span><%= "#{i}位" %></span>
 							<span>
 								
-									<%= attachment_image_tag post.user, :profile_image, :fill, 30, 30,fallback: "no_image.jpg" %>
+									<%= attachment_image_tag post.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
 
 							</span>
-							<span class="rank-content">by<%= link_to post.user.name, user_path(post.user) %>さん</span>
-							<span class="rank-content"><%= link_to post.title, post_path(post) %></span>
+							<span><%= link_to post.title, post_path(post) %></span>
+							<div>
+								<span class="rank-content"><%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿</span>
+							
+							</div>
+							
 							
 						
 						

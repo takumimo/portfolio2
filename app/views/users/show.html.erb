@@ -67,7 +67,7 @@
 				<% @comments.each do |comment| %>
 					<div class="column-title">
 						<h4><strong><%= link_to comment.text, post_path(comment.post) %></strong></h4>
-						<p>send to  <%= link_to comment.post.user.name, user_path(comment.post.user) %></p>
+						<p>send to  <%= link_to comment.post.user.name, user_path(comment.post.user) %>さん</p>
 						<p>投稿日時:  <%= comment.created_at.to_s(:datetime) %></p>
 					</div>
 				<% end %>
