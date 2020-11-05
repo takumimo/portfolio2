@@ -3,14 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.image {
+  width: 40px;
+  height: 40px;
+}
 
 
 .post-index {
 
 
-	padding: 40px;
-	margin-bottom: 25px;
-	margin-top: 20px;
+	padding: 10px;
   border-bottom: 1px solid #e8e8e8;
 
 }
@@ -24,6 +26,9 @@
 	}
 }
 
+.index-title {
+  font-size: 20px;
+}
 
 h2 {
 	margin-left: 20px;
@@ -58,7 +63,7 @@ h2 {
 
 
 
-.comment-area {
+.comment-bottom {
 	background-color: white;
   padding: 20px;
   width: 800px;
@@ -69,6 +74,10 @@ h2 {
   .post-image {
     display: inline-block;
   }
+
+.btn-success {
+  list-style: none;
+}
 
 
   .post-like {
@@ -97,13 +106,10 @@ h2 {
 .post-edit {
   display: inline-block;
   p {
-  padding-right: 30px;
+  padding-right: 10px;
   }
 }
 
-.post-edit-tag {
-  margin-bottom: 15px;
-}
 
 .user-show-edit {
     a {
@@ -120,6 +126,12 @@ h2 {
   }
 }
 
+.comment-whole {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 10px;
+}
+
 .tab_wrap {
   width: 800px;
   margin: 10px auto;
@@ -130,7 +142,7 @@ input[type="radio"] {
 }
 
 .tab_area {
-  font-size:0; margin:0 150px;
+  font-size:0; margin:0 30px;
 }
 
 .tab_area label {
@@ -156,7 +168,7 @@ input[type="radio"] {
 
 .tab_panel {
   width: 100%;
-  padding: 80px 0;
+  padding: 1px 0;
   display: none;
 }
 
@@ -247,6 +259,7 @@ $length:3;
 
 .rank-posts {
   padding: 20px;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .rank-content {
@@ -255,4 +268,82 @@ $length:3;
   }
   
 
+}
+
+.post-edit-title {
+  width: 1155px;
+}
+
+.post-edit-tag {
+  width: 1155px;
+}
+
+.post-edit-text {
+  height: 600px;
+  width: 570px;
+}
+
+.index-details {
+  background-color: white;
+  margin-top: 52px;
+}
+
+.index-detail {
+  font-size: 20px;
+}
+
+.index-detail-letter {
+  font-size: 12px;
+}
+
+.detail-head-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.index-detail-head {
+  border-bottom: 1px solid #e8e8e8;
+  padding: 10px 0;
+  height: 80px;
+}
+
+.index-detail-left {
+  border-right: 1px solid #e8e8e8;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.index-detail-middle {
+  border-right: 1px solid #e8e8e8;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.index-detail-right {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.thank-image {
+  color: red;
+}
+
+.comment-rank {
+  background-color: white;
+  margin-top: 52px;
+}
+
+.comment-rank-count {
+  font-weight: bold;
+  text-align: center;
+}
+
+.thank-name {
+  font-weight: normal;
+}
+
+.rank-comments {
+  padding: 20px;
+  border-bottom: 1px solid #e8e8e8;
 }

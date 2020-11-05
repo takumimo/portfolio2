@@ -1,5 +1,5 @@
 # crumb :root do
-  # link "Home", root_path
+# link "Home", root_path
 # end
 
 # crumb :projects do
@@ -56,7 +56,7 @@ crumb :tag do |tag_name|
   parent :posts
 end
 
-crumb :postnew do 
+crumb :postnew do
   link "相談登録", new_post_path
   parent :posts
 end

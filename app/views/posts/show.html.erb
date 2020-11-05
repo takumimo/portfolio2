@@ -7,10 +7,29 @@
 	<div class="show">
 		<div class="show-top">
 			<%= link_to user_path(@post.user) do %>
-			<%= attachment_image_tag @post.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
-		<% end %>
-		<span class="pull-right"><%= @post.created_at.to_s(:datetime) %></span>
-		<span><%= link_to @post.user.name, user_path(@post.user) %></span>
+				<span>
+					<%= attachment_image_tag @post.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
+				</span>
+			<% end %>
+
+			
+
+			
+			<span><%= link_to @post.user.name, user_path(@post.user) %></span>
+			<% if current_user == @post.user %>
+				<span class="post-destroy">
+					<%= link_to '削除する', post_path(@post), method: :delete, data: {confirm: "本当に消しますか" }%>
+				</span>
+			<% end %>
+
+
+			<% if current_user == @post.user %>
+				<span class="post-edit">
+					<%= link_to '編集する', edit_post_path(@post) %>
+				</span>
+			<% end %>
+
+			<span class="pull-right"><%= @post.created_at.to_s(:datetime) %></span>
 		</div>
 		
 		<h2><strong><%= @post.title %></strong></h2>
@@ -21,22 +40,33 @@
 		<% end %>
 		<h4><%= @post.text%></h4>
 	</div>
-	<% if @post_comment.present? %>
-		<div class="comment-area", id="post_comments_area">
-		<i class="fas fa-comments"></i><span>コメント</span>
-			<div class="comment-topic">
-				<%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
-			</div>
-	    	
-		</div>
-	<% end %>
 
-	<div class="comment-form text-center center-block">
+
+	<div class="comment-bottom">
+		<i class="fas fa-comments"></i>
+		<span>コメント
+			<% if @post.user != current_user %>
+			<span>(気になるボタンを押す事でコメントが出来るようになります）</span>
+			<% end %>
+		</span>
+		<div class="comment-field">
+			
+				<div class="comment-area", id="post_comments_area">
+					<%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
+				</div>
+			
+		</div>
 		
-		<% if current_user != @post.user%>
-	    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post }  %>
-		<% end %>
+		
 	</div>
+	<div class="comment-form text-center center-block">
+			<% if current_user != @post.user%>
+		    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post }  %>
+			<% end %>
+	</div>
+
+
+	
 </div>
 </div>
 

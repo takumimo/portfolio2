@@ -7,16 +7,17 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :post_comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :thanks, dependent: :destroy
 
   attachment :profile_image
 
   validates :name, presence: true, length: { minimum: 2, maximum: 20 }
   validates :introduction, presence: true, length: { maximum: 300 }
 
-  has_many :active_relationships, class_name: "Relationship",foreign_key:"follower_id",dependent: :destroy
+  has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
 
-  has_many :passive_relationships, class_name: "Relationship",foreign_key:"followed_id",dependent: :destroy
+  has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
 
   def following?(other_user)

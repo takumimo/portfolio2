@@ -1,13 +1,12 @@
 class PostsController < ApplicationController
   def new
-  	@post = params[:post].present? ? Post.new(post_params) : Post.new
-  	@user = current_user
+    @post = params[:post].present? ? Post.new(post_params) : Post.new
+    @user = current_user
   end
 
   def confirm
-
-  	@post = Post.new
-  	@post.text = params[:post][:text]
+    @post = Post.new
+    @post.text = params[:post][:text]
     @post.title = params[:post][:title]
     @post.tag_list = params[:post][:tag_list]
   end
@@ -19,7 +18,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+    @all_ranking_posts = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+    @all_post_comments = PostComment.find(Thank.group(:post_comment_id).order('count(post_comment_id) desc').limit(3).pluck(:post_comment_id).uniq)
     @q = Post.ransack(params[:q])
     if params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}").includes(:tags)
@@ -29,12 +29,11 @@ class PostsController < ApplicationController
       @posts = Post.all.includes(:tags)
     end
     @user = current_user
-    
   end
 
   def show
-  	@post = Post.find(params[:id])
-  	@post_comment = PostComment.new
+    @post = Post.find(params[:id])
+    @post_comment = PostComment.new
     @post_comments = @post.post_comments.order(created_at: :desc)
   end
 
@@ -45,10 +44,10 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-       flash[:notice] = "更新しました"
-       redirect_to post_path
+      flash[:notice] = "更新しました"
+      redirect_to post_path
     else
-       render :edit
+      render :edit
     end
   end
 
@@ -59,8 +58,8 @@ class PostsController < ApplicationController
   end
 
   private
-  	def post_params
-  	 params.require(:post).permit(:user_id, :title, :text, :tag_list)
-  	end
-end
 
+  def post_params
+    params.require(:post).permit(:user_id, :title, :text, :tag_list)
+  end
+end

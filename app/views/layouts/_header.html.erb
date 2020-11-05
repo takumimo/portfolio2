@@ -1,13 +1,17 @@
 <header class="navbar navbar-fixed-top">
   <nav class="nav navbar-nav navbar-left">
-    <li><%= link_to "ホーム", root_path %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to "ホーム", homes_about_path %></li>
+    <% else %>
+      <li><%= link_to "ホーム", root_path %></li>
+    <% end %>
   </nav>
   <nav>
     <ul class="nav navbar-nav navbar-right header-ul">
       <% if user_signed_in? %>
         <li><%= link_to "相談一覧", posts_path %></li>
         <li><%= link_to "相談内容を書く", new_post_path %></li>
-        <li><%= link_to "マイページ", user_path(current_user) %></li>
+        <li id="mypage"><%= link_to "マイページ", user_path(current_user) %></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       <% else %>
         <li><%= link_to "ゲストログイン(閲覧用)", home_guest_sign_in_path, method: :post %></li></li>

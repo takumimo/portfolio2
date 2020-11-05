@@ -1,17 +1,18 @@
 <% if user_signed_in? %>
     <div>
 
-		<%= form_with(model:[post,post_comment], url:post_post_comments_path(post), local: true) do |f| %>
+		<%= form_with(model:[post,post_comment], url:post_post_comments_path(post)) do |f| %>
 			<!-- current_userがその投稿に気になるをしていたら -->
 			    <% ids = post.likes.pluck('user_id') %>
 				<% if ids.size > (ids - [current_user.id]).size %>
 					<%= f.text_area :text, class: "comment-form form-control" %>
 					<%= f.submit "コメントする" %>
 				<% else %>
-					<span id="likes_buttons_<%= @post.id %>">
-						<%= render 'likes/like', post: @post %>
+					<span>
+						<%= render 'likes/like', post: post %>
+					</span>
 				<% end %>
-				</span>
+				
 
 		<% end %>
 	</div>
