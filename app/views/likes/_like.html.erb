@@ -1,11 +1,11 @@
 <% if post.liked_by?(current_user) %>
   <%= link_to post_likes_path(post), method: :delete, local: true do %>
     <i class="fa fa-heart" style="color: red;" aria-hidden="true" ></i>
-    気になる: <%= post.likes.count %>
+    気になる
   <% end %>
 <% else %>
   <%= link_to post_likes_path(post), method: :post, local: true do %>
     <i class="far fa-heart" aria-hidden="true"></i>
-    気になる: <%= post.likes.count %>
+    気になる
   <% end %>
 <% end %>

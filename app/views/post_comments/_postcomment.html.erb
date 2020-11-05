@@ -1,38 +1,33 @@
 <% post.post_comments.each do |post_comment| %>
-<div class="comment-whole">
-	<div class="comment-top">
-		<%= link_to user_path(post_comment.user) do %>
-			<%= attachment_image_tag post_comment.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
+	<div class="comment-whole">
+		<div class="comment-top">
+			<%= link_to user_path(post_comment.user) do %>
+				<%= attachment_image_tag post_comment.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
+			<% end %>
+			<span style="margin-top: 10px;"><%= link_to post_comment.user.name, user_path(post_comment.user) %></span>
+			<span class="pull-right"><%= post_comment.created_at.to_s(:datetime) %></span>
+		</div>
+		<div class="comment-main">
+			<%= post_comment.text %>
+			<% if post_comment.user == current_user %>
+				<span class="pull-right">
+					<%= link_to '削除',post_comment_path(post_comment.post,post_comment), method: :delete, remote: true, data: {confirm: "本当に消しますか" } %>
+				</span>
+			<% end %>
+		</div>
+		<% if post_comment.user != current_user %>
+			<% if post_comment.thanked_by?(current_user) %>
+			  	<%= link_to thank_path(post_comment_id: post_comment.id, post_id: post.id), method: :delete, local: true do %>
+				  	<%= image_tag'7019.jpg', :size => '20x20', class: "thank-image" %>
+				    ありがとうを押しました
+			  	<% end %>
+			<% else %>
+			  	<%= link_to thank_path(post_comment_id: post_comment.id, post_id: post.id), method: :post, local: true do %>
+				    <%= image_tag'7019.jpg', :size => '20x20' %>
+				   	ありがとう
+			  	<% end %>
+			<% end %>
 		<% end %>
-		<span style="margin-top: 10px;"><%= link_to post_comment.user.name, user_path(post_comment.user) %></span>
-		<span class="pull-right"><%= post_comment.created_at.to_s(:datetime) %></span>
 	</div>
-	
-	<div class="comment-main">
-		<%= post_comment.text %>
-		<% if post_comment.user == current_user %>
-		<span class="pull-right">
-			<%= link_to '削除',post_comment_path(post_comment.post,post_comment), method: :delete, remote: true, data: {confirm: "本当に消しますか" } %>
-		</span>
-	<% end %>
-	</div>
-	<% if post_comment.user != current_user %>
-		<% if post_comment.thanked_by?(current_user) %>
-		  <%= link_to thank_path(post_comment_id: post_comment.id, post_id: post.id), method: :delete, local: true do %>
-		  	<%= image_tag'7019.jpg', :size => '20x20' %>
-		    ありがとう: <%= post_comment.thanks.count %>
-		  <% end %>
-		<% else %>
-		  <%= link_to thank_path(post_comment_id: post_comment.id, post_id: post.id), method: :post, local: true do %>
-		    <%= image_tag'7019.jpg', :size => '20x20' %>
-		   	ありがとう: <%= post_comment.thanks.count %>
-		  <% end %>
-		<% end %>
-	<% end %>
-
-	
-	
-</div>
-	
 <% end %>
 
