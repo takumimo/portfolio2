@@ -1,6 +1,10 @@
 <header class="navbar navbar-fixed-top">
   <nav class="nav navbar-nav navbar-left">
-    <li><%= link_to "ホーム", root_path %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to "ホーム", homes_about_path %></li>
+    <% else %>
+      <li><%= link_to "ホーム", root_path %></li>
+    <% end %>
   </nav>
   <nav>
     <ul class="nav navbar-nav navbar-right header-ul">
