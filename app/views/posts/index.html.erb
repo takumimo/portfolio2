@@ -27,24 +27,24 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-3">
-			<div class="row">
-				<div class="col-md-4">
-
-					<p class="index-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
-					<p class="index-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
+		<div class="comment-rank col-md-3">
+			<h4>コメント貢献ランキング</h4>
+			<% @all_post_comments.each.with_index(1) do |post_comment, i| %>
+				<div class="rank-comments row">
+					<div class="rank-left col-md-8">
+						<span><%= "#{i}位" %></span>
+						<span>
+							<%= attachment_image_tag post_comment.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
+						</span>
+							<%= post_comment.user.name %>
+					</div>
+					<div class="comment-rank-count col-md-4">
+						<%= post_comment.thanks.count * 70 %>
+						<span class="thank-name">Contributions</span>
+					</div>
+						
 				</div>
-					
-				
-				<div class="col-md-4">
-					<p class="index-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
-					<p class="index-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
-				</div>
-				<div class="col-md-4">
-					<p class="index-detail"><%= link_to @user.followers.count, followers_user_path(@user) %></p>
-					<p class="index-detail-letter"><%= link_to 'フォロワー', followers_user_path(@user) %></p>
-				</div>
-			</div>
+			<% end %>
 		</div>
 		<div class="tab_wrap col-md-6">
 			<input id="tab1" type="radio" name="tab_btn" checked>
@@ -53,12 +53,11 @@
 
 			<div class="tab_area">
 				<label class="tab1_label" for="tab1">相談一覧</label>
-				<label class="tab2_label" for="tab2">注目ランキング</label>
-				<label class="tab3_label" for="tab3">tab3</label>
+				<label class="tab2_label" for="tab2">注目の投稿</label>
+				<label class="tab3_label" for="tab3">解決済み</label>
 			</div>
 
 			<div class="panel_area">
-
 				<div id="panel1" class="tab_panel">
 					<h2><strong>相談一覧</strong></h2>
 					<% @posts.each do |post| %>
@@ -79,14 +78,6 @@
 								</div>
 								<div class="post-ul">
 									<%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿
-									
-
-
-									
-
-									
-									
-									
 								</div>
 								<div class="post-tag">
 									<!-- タグ -->
@@ -97,41 +88,28 @@
 									<% end %>
 									<!-- タグ -->
 								</div>
-								
-
 							</div>
 						</div>
 					<% end %>
-
 				</div>
 				<div id="panel2" class="tab_panel">
-					<% @all_ranks.each.with_index(1) do |post, i| %>
-					<div class="rank-posts">
+					<% @all_ranking_posts.each.with_index(1) do |post, i| %>
+						<div class="rank-posts">
 							<span><%= "#{i}位" %></span>
 							<span>
-								
-									<%= attachment_image_tag post.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
-
+								<%= attachment_image_tag post.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
 							</span>
 							<span><%= link_to post.title, post_path(post) %></span>
 							<div>
 								<span class="rank-content"><%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿</span>
-							
 							</div>
-							
-							
-						
-						
-					</div>
-					
+						</div>
 					<% end %>
 				</div>
 				<div id="panel3" class="tab_panel">
 					<p>panel3</p>
 				</div>
-
 			</div>
-
 		</div><!-- tab-wrap -->
 		<div class="index-details col-md-3">
 			<div class="index-detail-head">
@@ -143,8 +121,6 @@
 					<p class="index-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
 					<p class="index-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
 				</div>
-					
-				
 				<div class="index-detail-middle col-md-4">
 					<p class="index-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
 					<p class="index-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
@@ -156,5 +132,4 @@
 			</div>
 		</div>
 	</div>
-	
 </div>

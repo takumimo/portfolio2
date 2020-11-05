@@ -50,13 +50,11 @@
 			<% end %>
 		</span>
 		<div class="comment-field">
-			<% if @post_comments.exists? %>
+			
 				<div class="comment-area", id="post_comments_area">
 					<%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
 				</div>
-			<% else %>
-				コメントはまだありません
-			<% end %>
+			
 		</div>
 		
 		

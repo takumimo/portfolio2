@@ -18,8 +18,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
-
+    @all_ranking_posts = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+    @all_post_comments = PostComment.find(Thank.group(:post_comment_id).order('count(post_comment_id) desc').limit(3).pluck(:post_comment_id).uniq)
     @q = Post.ransack(params[:q])
     if params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}").includes(:tags)
