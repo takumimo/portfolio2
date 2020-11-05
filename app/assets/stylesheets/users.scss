@@ -49,8 +49,6 @@
 	background-color: white;
 	border-radius: 16px;
 	padding: 20px;
-	width: 400px;
-	margin-left: 30px;
 }
 
 .column-title {
@@ -63,17 +61,23 @@
 	background-color: white;
 	border-radius: 16px;
 	padding: 20px;
-	width: 400px;
-	margin-left: 30px;
 	margin-top: 30px;
 }
 
-.show-details {
-	list-style-type: none;
+.show-details-middle {
+	margin: 10px 0;
 }
 
 .show-detail {
 	font-size: 20px;
+}
+
+.show-detail-left {
+	text-align: center;
+}
+
+.show-detail-letter {
+  font-size: 10px;
 }
 
 .user-edit-introduction {
@@ -85,4 +89,24 @@
 	width: 50px;
 	height: 50px;
 	border-radius: 50px;
+}
+
+.user-show-right {
+	background-color: white;
+	border-radius: 16px;
+	padding: 20px;
+	text-align: center;
+}
+
+.user-edit-name {
+	text-align: center;
+}
+
+.user-edit-email {
+	text-align: center;
+}
+
+.show-detail-image {
+	width: 60px;
+	height: 60px;
 }

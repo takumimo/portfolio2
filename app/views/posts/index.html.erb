@@ -27,21 +27,22 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="show-details col-md-3">
+		<div class="col-md-3">
 			<div class="row">
 				<div class="col-md-4">
-					<p class="show-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
-					<p class="show-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
+
+					<p class="index-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
+					<p class="index-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
 				</div>
 					
 				
 				<div class="col-md-4">
-					<p class="show-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
-					<p class="show-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
+					<p class="index-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
+					<p class="index-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
 				</div>
 				<div class="col-md-4">
-					<p class="show-detail"><%= link_to @user.followers.count, followers_user_path(@user) %></p>
-					<p class="show-detail-letter"><%= link_to 'フォロワー', followers_user_path(@user) %></p>
+					<p class="index-detail"><%= link_to @user.followers.count, followers_user_path(@user) %></p>
+					<p class="index-detail-letter"><%= link_to 'フォロワー', followers_user_path(@user) %></p>
 				</div>
 			</div>
 		</div>
@@ -132,21 +133,25 @@
 			</div>
 
 		</div><!-- tab-wrap -->
-		<div class="show-details col-md-3">
-			<div class="row">
-				<div class="col-md-4">
-					<p class="show-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
-					<p class="show-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
+		<div class="index-details col-md-3">
+			<div class="index-detail-head">
+				<%= attachment_image_tag current_user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'detail-head-image' %>
+				<%= current_user.name %>
+			</div>
+			<div class="index-detail-foot row">
+				<div class="index-detail-left col-md-4">
+					<p class="index-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
+					<p class="index-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
 				</div>
 					
 				
-				<div class="col-md-4">
-					<p class="show-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
-					<p class="show-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
+				<div class="index-detail-middle col-md-4">
+					<p class="index-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
+					<p class="index-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
 				</div>
-				<div class="col-md-4">
-					<p class="show-detail"><%= link_to @user.followers.count, followers_user_path(@user) %></p>
-					<p class="show-detail-letter"><%= link_to 'フォロワー', followers_user_path(@user) %></p>
+				<div class="index-detail-right col-md-4">
+					<p class="index-detail"><%= link_to @user.followers.count, followers_user_path(@user) %></p>
+					<p class="index-detail-letter"><%= link_to 'フォロワー', followers_user_path(@user) %></p>
 				</div>
 			</div>
 		</div>

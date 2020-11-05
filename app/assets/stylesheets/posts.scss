@@ -282,3 +282,45 @@ $length:3;
   height: 600px;
   width: 570px;
 }
+
+.index-details {
+  background-color: white;
+  margin-top: 52px;
+}
+
+.index-detail {
+  font-size: 20px;
+}
+
+.index-detail-letter {
+  font-size: 12px;
+}
+
+.detail-head-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.index-detail-head {
+  border-bottom: 1px solid #e8e8e8;
+  padding: 10px 0;
+  height: 80px;
+}
+
+.index-detail-left {
+  border-right: 1px solid #e8e8e8;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.index-detail-middle {
+  border-right: 1px solid #e8e8e8;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.index-detail-right {
+  padding-top: 10px;
+  text-align: center;
+}
