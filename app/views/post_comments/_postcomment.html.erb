@@ -16,19 +16,21 @@
 					</span>
 				<% end %>
 			</div>
-			<% if post_comment.user != current_user %>
-				<% if post_comment.thanked_by?(current_user) %>
-				  	<%= link_to thank_path(post_comment_id: post_comment.id, post_id: post.id), method: :delete, local: true do %>
-					  	<%= image_tag'7019.jpg', :size => '20x20', class: "thank-image" %>
-					    ありがとうを押しました
-				  	<% end %>
-				<% else %>
-				  	<%= link_to thank_path(post_comment_id: post_comment.id, post_id: post.id), method: :post, local: true do %>
-					    <%= image_tag'7019.jpg', :size => '20x20' %>
-					   	ありがとう
-				  	<% end %>
+			<div class="thank-area">
+				<% if post_comment.user != current_user %>
+					<% if post_comment.thanked_by?(current_user) %>
+					  	<%= link_to thank_path(post_comment_id: post_comment.id, post_id: post.id), method: :delete, local: true do %>
+						  	<%= image_tag'7019.jpg', :size => '20x20', class: "thank-image" %>
+						    ありがとうを押しました
+					  	<% end %>
+					<% else %>
+					  	<%= link_to thank_path(post_comment_id: post_comment.id, post_id: post.id), method: :post, local: true do %>
+						    <%= image_tag'7019.jpg', :size => '20x20' %>
+						   	ありがとう
+					  	<% end %>
+					<% end %>
 				<% end %>
-			<% end %>
+			</div>
 		</div>
 	<% end %>
 <% else %>

@@ -11,7 +11,7 @@
 		<table class = "table">
 			<% @users.each do |user| %>
 				<tr>
-					<td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "follow-img pull-left profile-img", fallback: "no_image.jpg" %></td>
+					<td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "followers-img pull-left profile-img", fallback: "no_image.jpg" %></td>
 					<td><%= user.name %></td>
 					<td><%= "フォロー数：#{user.following.count}" %></td>
 					<td><%= "フォロワー数：#{user.followers.count}" %></td>

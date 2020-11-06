@@ -30,10 +30,6 @@
   font-size: 15px;
 }
 
-h2 {
-	margin-left: 20px;
-}
-
 .image {
 	border-radius: 50%;
 }
@@ -100,10 +96,6 @@ h2 {
 
   .post-tag {
     display: inline-block;
-
-    a {
-      color: ivory;
-    }
 
   }
 
@@ -212,8 +204,10 @@ $length:3;
 }
 
 .show-span-tag {
+  border: 1px solid #b8dbf2;
+  background: #d5e9f7 none;
+  border-radius: 3px;
   a {
-  color: ivory;
   text-decoration: none;
   }
 }
@@ -401,4 +395,16 @@ $length:3;
 
 .rank-comments:last-child {
   border-bottom: none;
+}
+
+.posts-show-text {
+  padding-top: 10px;
+}
+
+.thank-area {
+  margin-top: 10px;
+}
+
+.post-button {
+  margin-top: 5px;
 }
