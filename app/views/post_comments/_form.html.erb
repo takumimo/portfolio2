@@ -1,4 +1,5 @@
-<% if user_signed_in? %>
+<div class="post-comment-form">
+	<% if user_signed_in? %>
     <div>
 
 		<%= form_with(model:[post,post_comment], url:post_post_comments_path(post)) do |f| %>
@@ -17,3 +18,4 @@
 		<% end %>
 	</div>
 <% end %>
+</div>

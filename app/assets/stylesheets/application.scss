@@ -41,10 +41,18 @@ body {
 
 .header-ul {
 	margin-right: 300px;
+	a {
+	color: white;
+	text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+	}
 }
 
 .navbar-left {
 	margin-left: 250px;
+	a {
+	color: white;
+	text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+	}
 }
 .gretel {
 	margin-bottom: 30px;
