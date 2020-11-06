@@ -6,7 +6,7 @@
 			    <% ids = post.likes.pluck('user_id') %>
 				<% if ids.size > (ids - [current_user.id]).size %>
 					<%= f.text_area :text, class: "comment-form form-control" %>
-					<%= f.submit "コメントする" %>
+					<%= f.submit "コメントする", class: "post-comment-submit" %>
 				<% else %>
 					<span>
 						<%= render 'likes/like', post: post %>
