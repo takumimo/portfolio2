@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def new
     @post = params[:post].present? ? Post.new(post_params) : Post.new
+    @post.tag_list = params[:post].present? ? params[:post][:tag_list].split(',') : ""
     @user = current_user
   end
 
@@ -13,6 +14,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.tag_list = params[:post][:tag_list]
     @post.save
     redirect_to posts_path
   end
@@ -23,10 +25,10 @@ class PostsController < ApplicationController
     @q = Post.ransack(params[:q])
     if params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}").includes(:tags)
-    elsif
+    elsif params[:q]
       @posts = @q.result
     else
-      @posts = Post.all.includes(:tags)
+      @posts = Post.all.order(created_at: :desc)
     end
     @user = current_user
   end

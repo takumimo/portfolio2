@@ -4,7 +4,7 @@
 			<%= f.text_area :title, placeholder: "タイトル[例：不動産業界から他業界へ転職]", autofocus: true, class: "new-post-title" %>
 		</div>
 		<div>
-			<%= f.text_area :tag_list, placeholder: "タグ[例：不動産]", value: @post.tag_list.join(','), class: "new-post-tag"%>
+			<%= f.text_area :tag_list, placeholder: "タグ[例：不動産]", value: @post.tag_list, class: "new-post-tag" %>
 		</div>
 		<div class="row">
 			<div class="text col-md-6">
