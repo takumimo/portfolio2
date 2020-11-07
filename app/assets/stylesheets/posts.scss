@@ -13,7 +13,6 @@
 
 
 	padding: 10px;
-  border-bottom: 1px solid #e8e8e8;
 
 }
 
@@ -139,70 +138,6 @@
   padding: 10px;
 }
 
-.tab_wrap {
-  width: 800px;
-  margin: 10px auto;
-
-}
-
-input[type="radio"] {
-  display:none;
-}
-
-.tab_area {
-  font-size:0; margin:0 30px;
-}
-
-.tab_area label {
-  width:150px;
-  margin:0 5px;
-  display:inline-block;
-  padding:12px 0;
-  color:#999;
-  background:#ddd;
-  text-align:center;
-  font-size:13px;
-  cursor:pointer;
-  transition:ease 0.2s opacity;
-}
-
-.tab_area label:hover {
-  opacity:0.5;
-}
-
-.panel_area {
-  background:#fff;
-  border-top: 1px solid #ddd;
-
-}
-
-.tab_panel {
-  width: 100%;
-  padding: 1px 0;
-  display: none;
-}
-
-.tab_panel p {
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-align: center;
-}
-
-$i:1;
-$length:3;
-@while $i <= $length {
-  #tab#{$i}:checked {
-    ~ .tabarea1 .tab#{$i}_label {
-      background: #fff;
-      color:#000;
-    }
-    ~ .panel_area #panel#{$i} {
-    display: block;
-    }
-  }
-  $i:$i + 1;
-}
-
 .show-span-tag {
   border: 1px solid #b8dbf2;
   background: #d5e9f7 none;
@@ -304,7 +239,6 @@ $length:3;
   a {
   text-decoration: none;
   }
-  
 
 }
 
@@ -407,4 +341,31 @@ $length:3;
 
 .post-button {
   margin-top: 5px;
+}
+
+.post-status {
+  background-color: #f2f2f2;
+  width: 70px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.post-comments-count {
+  width: 70px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.post-middle {
+  border-bottom: 1px solid #e8e8e8;
+  margin-top: 10px;
+}
+
+.post-response {
+  margin-top: 10px;
+}
+
+.done {
+  background-color: #e9606d;
+  color: #fff;
 }

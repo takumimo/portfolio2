@@ -1,4 +1,9 @@
 ja:
+  enums:
+    post:
+      status:
+        doing: 受付中
+        done: 解決済
   activerecord:
     models:
       user: ユーザー

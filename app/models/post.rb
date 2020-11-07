@@ -6,6 +6,8 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :text, presence: true, length: { maximum: 200 }
 
+  enum status: {doing: 0, done: 1}
+
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
   end

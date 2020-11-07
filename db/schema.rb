@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2020_11_07_062247) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.string "status"
+    t.integer "status"
   end
 
   create_table "relationships", force: :cascade do |t|
