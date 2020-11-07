@@ -28,75 +28,68 @@
 	</div>
 	<div class="row">
 		<div class="comment-rank col-md-3">
-			<h5>コメント貢献ランキング</h5>
-			<% @all_post_comments.each.with_index(1) do |post_comment, i| %>
-				<div class="rank-comments row">
-					<div class="rank-left col-md-8">
-						<span><%= "#{i}位" %></span>
-						<span>
-							<%= attachment_image_tag post_comment.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
-						</span>
-							<%= post_comment.user.name %>
+			<div class="comment-rank-inner">
+				<h5>コメント貢献ランキング</h5>
+				<% @all_post_comments.each.with_index(1) do |post_comment, i| %>
+					<div class="rank-comments row">
+						<div class="rank-left col-md-7">
+							<span><%= "#{i}位" %></span>
+							<span>
+								<%= attachment_image_tag post_comment.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
+							</span>
+								<%= post_comment.user.name %>
+						</div>
+						<div class="comment-rank-count col-md-5">
+							<%= post_comment.thanks.count * 70 %>
+							<span class="thank-name">Contributions</span>
+						</div>
 					</div>
-					<div class="comment-rank-count col-md-4">
-						<%= post_comment.thanks.count * 70 %>
-						<p class="thank-name">Contributions</p>
-					</div>
-				</div>
-			<% end %>
+				<% end %>
+			</div>
 		</div>
 
 
 
 		<div class="col-md-6">
-
-
-
-
-
-
-					<h4><strong>相談一覧</strong></h4>
 					<% @posts.each do |post| %>
 						<div class="post-middle row">
-							<div class="col-md-2">
-								<div class="row">
-									<div class="<%= post.status %> post-status"><%= post.status_i18n %></div>
-									<div class="post-comments-count">
-										<p class="post-response">回答</p>
-										<h4><%= post.post_comments.count %></h4>
+							<div class="post-middle-inner">
+									<div class="col-md-2">
+									<div class="row">
+										<div class="<%= post.status %> post-status"><%= post.status_i18n %></div>
+										<div class="post-comments-count">
+											<p class="post-response">回答</p>
+											<h4><%= post.post_comments.count %></h4>
+										</div>
 									</div>
-									
-									
 								</div>
-								
-							</div>
-							<div class="post-index col-md-10">
-								<div class="post-article">
-									<%= link_to user_path(post.user) do %>
-											<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'image' %>
+								<div class="post-index col-md-10">
+									<div class="post-article">
+										<%= link_to user_path(post.user) do %>
+												<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'image' %>
+											<% end %>
+										<span class="index-title"><%= link_to post.title, post_path(post) %></span>
+										<!-- 興味あるボタン -->
+										<% if current_user != post.user %>
+										<span class="pull-right post-like", id="likes_buttons_<%= post.id %>">
+											<%= render 'likes/like', post: post %>
+										</span>
 										<% end %>
-									<span class="index-title"><%= link_to post.title, post_path(post) %></span>
-									
-									<!-- 興味あるボタン -->
-									<% if current_user != post.user %>
-									<span class="pull-right post-like", id="likes_buttons_<%= post.id %>">
-										<%= render 'likes/like', post: post %>
-									</span>
-									<% end %>
 
-								</div>
-								<div class="post-ul">
-									<%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿
-								</div>
-								<div class="post-tag">
-									<!-- タグ -->
-									<% post.tags.each do |tag| %>
-									<button class="post-button">
-										<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %>
-									</button>
-									<% end %>
-									<!-- タグ -->
+									</div>
+									<div class="post-ul">
+										<%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿
+									</div>
+									<div class="post-tag">
+										<!-- タグ -->
+										<% post.tags.each do |tag| %>
+										<button class="post-button">
+											<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %>
+										</button>
+										<% end %>
+										<!-- タグ -->
 
+									</div>
 								</div>
 							</div>
 						</div>
@@ -108,26 +101,35 @@
 		</div>
 		<div class="row col-md-3">
 			<div class="index-details">
-				<div class="index-detail-head">
-					<%= attachment_image_tag current_user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'detail-head-image' %>
-					<%= current_user.name %>
+				<div class="index-details-inner">
+					<div class="inner-more">
+						<div class="index-detail-head">
+							<div class="detail-head-topic">
+								<%= attachment_image_tag current_user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'detail-head-image' %>
+								<%= current_user.name %>
+							</div>
+						</div>
+						<div class="index-detail-foot row">
+							<div class="index-detail-left col-md-4">
+								<p class="index-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
+								<p class="index-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
+							</div>
+							<div class="index-detail-middle col-md-4">
+								<p class="index-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
+								<p class="index-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
+							</div>
+							<div class="index-detail-right col-md-4">
+								<p class="index-detail"><%= link_to @user.followers.count, followers_user_path(@user) %></p>
+								<p class="index-detail-letter"><%= link_to 'フォロワー', followers_user_path(@user) %></p>
+							</div>
+						</div>
+					</div>
+					
 				</div>
-				<div class="index-detail-foot row">
-					<div class="index-detail-left col-md-4">
-						<p class="index-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
-						<p class="index-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
-					</div>
-					<div class="index-detail-middle col-md-4">
-						<p class="index-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
-						<p class="index-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
-					</div>
-					<div class="index-detail-right col-md-4">
-						<p class="index-detail"><%= link_to @user.followers.count, followers_user_path(@user) %></p>
-						<p class="index-detail-letter"><%= link_to 'フォロワー', followers_user_path(@user) %></p>
-					</div>
-				</div>
+				
 			</div>
 			<div class="posts-ranking">
+				<p>注目の投稿</p>
 				<% @all_ranking_posts.each.with_index(1) do |post, i| %>
 					<div class="rank-posts">
 						<span><%= "#{i}位" %></span>
