@@ -6,6 +6,9 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :text, presence: true, length: { maximum: 200 }
 
+  has_many :stocks, dependent: :destroy
+  has_many :stock_users, through: :stocks, source: :user
+
   enum status: {doing: 0, done: 1}
 
   def liked_by?(user)
