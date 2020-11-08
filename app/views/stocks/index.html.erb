@@ -1,0 +1,10 @@
+<div class="container">
+	<% if @stock_posts.present? %>
+		<% @stock_posts.each do |post| %>
+		  <p><%= post.title %></p>
+		  <p><%= post.user.name %></p>
+		<% end %>
+	<% else %>
+		<p>ストックはまだありません</p>
+	<% end %>
+</div>
