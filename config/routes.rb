@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   post "/home/guest_sign_in" => "homes#new_guest"
   resources :relationships, only: [:create, :destroy]
+  resources :stocks, only: [:index, :create, :destroy]
 end

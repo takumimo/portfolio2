@@ -1,75 +1,80 @@
 <div class="container">
-<div class="gretel">
-	<% breadcrumb :post, @post %>
-	<%= breadcrumbs separator: " &rsaquo; " %>
-</div>
-<div class="row">
-	<div class="show">
-		<div class="show-top">
-			<%= link_to user_path(@post.user) do %>
-				<span>
-					<%= attachment_image_tag @post.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
-				</span>
+	<div class="gretel">
+		<% breadcrumb :post, @post %>
+		<%= breadcrumbs separator: " &rsaquo; " %>
+	</div>
+	<div class="row">
+		<div class="stock-icon col-md-2">
+			<!-- 自身の投稿以外 かつ ログインしているユーザーであれば -->
+			<% if current_user != @post.user && user_signed_in? %>
+				    <!-- 既にストックしている記事であれば「ストック解除ボタン」を表示 -->
+				    <% if @post.stocked?(current_user) %>
+				      <!-- stocksコントローラーのdestoryアクションにmethod: :deleteで指定して送信 -->
+				      <%= form_with model: @post.stocks.find_by(user_id: current_user.id), method: :delete do |f| %>
+				      	<%= f.button(class: "btn btn-dark") do %>
+				          <i class="fas fa-folder"></i>
+				        <% end %>
+				      <% end %>
+
+				    <!-- ストックしていない記事であれば「ストックボタン」を表示 -->
+				    <% else %>
+
+				      <!-- buildでstocksコントローラーのcreateアクションへ -->
+					    <%= form_with model: @post.stocks.build, url: stocks_path(post_id: @post.id) do |f| %>
+					        <%= f.button(class: "btn btn-outline-dark") do %>
+					        	<i class="far fa-folder"></i>
+					        <% end %>
+					    <% end %>
+				    <% end %>
 			<% end %>
-
-			
-
-			
-			<span><%= link_to @post.user.name, user_path(@post.user) %></span>
-			<% if current_user == @post.user %>
-				<span class="post-destroy">
-					<%= link_to '削除する', post_path(@post), method: :delete, data: {confirm: "本当に消しますか" } %>
-				</span>
-			<% end %>
-
-
-			<% if current_user == @post.user %>
-				<span class="post-edit">
-					<%= link_to '編集する', edit_post_path(@post) %>
-				</span>
-			<% end %>
-
-			<span class="pull-right"><%= @post.created_at.to_s(:datetime) %></span>
 		</div>
-		
-		<h2><strong><%= @post.title %></strong></h2>
-		<% @post.tags.each do |tag| %>
-			<div class="post-tag">
-				<button class="show-span-tag"><%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %></button>
+		<div class="show col-md-10">
+			<div class="show-top">
+				<%= link_to user_path(@post.user) do %>
+					<span>
+						<%= attachment_image_tag @post.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
+					</span>
+				<% end %>
+				<span><%= link_to @post.user.name, user_path(@post.user) %></span>
+				<% if current_user == @post.user %>
+					<span class="post-destroy">
+						<%= link_to '削除する', post_path(@post), method: :delete, data: {confirm: "本当に消しますか" } %>
+					</span>
+				<% end %>
+				<% if current_user == @post.user %>
+					<span class="post-edit">
+						<%= link_to '編集する', edit_post_path(@post) %>
+					</span>
+				<% end %>
+				<span class="pull-right"><%= @post.created_at.to_s(:datetime) %></span>
 			</div>
-		<% end %>
-		<h4 class="posts-show-text"><%= @post.text%></h4>
-		
-		
-	</div>
-
-
-	<div class="comment-bottom">
-		<i class="fas fa-comments"></i>
-		<span>コメント
-			<% if @post.user != current_user %>
-			<span>(気になるボタンを押す事でコメントが出来るようになります）</span>
-			<% end %>
-		</span>
-		<div class="comment-field">
-			
-				<div class="comment-area", id="post_comments_area">
-					<%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
+			<h2><strong><%= @post.title %></strong></h2>
+			<% @post.tags.each do |tag| %>
+				<div class="post-tag">
+					<button class="show-span-tag"><%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %></button>
 				</div>
-			
-		</div>
-		
-		
-	</div>
-	<div class="comment-form text-center center-block">
-			<% if current_user != @post.user%>
-		    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post }  %>
 			<% end %>
+			<h4 class="posts-show-text"><%= @post.text%></h4>
+		</div>
+		<div class="comment-bottom">
+			<i class="fas fa-comments"></i>
+			<span>コメント
+				<% if @post.user != current_user %>
+				<span>(気になるボタンを押す事でコメントが出来るようになります）</span>
+				<% end %>
+			</span>
+			<div class="comment-field">
+					<div class="comment-area", id="post_comments_area">
+						<%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
+					</div>
+			</div>
+		</div>
+		<div class="comment-form text-center center-block">
+				<% if current_user != @post.user%>
+			    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post }  %>
+				<% end %>
+		</div>
 	</div>
-
-
-	
-</div>
 </div>
 
 
