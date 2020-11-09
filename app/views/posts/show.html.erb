@@ -30,6 +30,7 @@
 		</div>
 		<div class="col-md-11">
 			<div class="show">
+				<div><%= @post.created_at.to_s(:datetime) %></div>
 				<div class="show-top">
 					<%= link_to user_path(@post.user) do %>
 						<span>
@@ -38,16 +39,19 @@
 					<% end %>
 					<span><%= link_to @post.user.name, user_path(@post.user) %></span>
 					<% if current_user == @post.user %>
-						<span class="post-destroy">
-							<%= link_to '削除する', post_path(@post), method: :delete, data: {confirm: "本当に消しますか" } %>
+						<span class="post-destroy pull-right">
+							<%= link_to post_path(@post), method: :delete, data: {confirm: "本当に消しますか" } do %>
+								<i class="far fa-trash-alt"></i>削除する
+							<% end %>
 						</span>
 					<% end %>
 					<% if current_user == @post.user %>
-						<span class="post-edit">
-							<%= link_to '編集する', edit_post_path(@post) %>
+						<span class="post-edit pull-right">
+							<%= link_to edit_post_path(@post) do %>
+								<i class="far fa-edit"></i>編集する
+							<% end %>
 						</span>
 					<% end %>
-					<span class="pull-right"><%= @post.created_at.to_s(:datetime) %></span>
 				</div>
 				<h2><strong><%= @post.title %></strong></h2>
 				<% @post.tags.each do |tag| %>
