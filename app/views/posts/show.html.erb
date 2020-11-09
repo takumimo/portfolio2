@@ -30,7 +30,7 @@
 		</div>
 		<div class="col-md-11">
 			<div class="show">
-				<div><%= @post.created_at.to_s(:datetime) %></div>
+				<div class="post-created text-right"><%= @post.created_at.to_s(:datetime) %></div>
 				<div class="show-top">
 					<%= link_to user_path(@post.user) do %>
 						<span>
