@@ -15,3 +15,5 @@
 //= require turbolinks
 //= require_tree .
 
+console.log('test2');
+
