@@ -44,54 +44,67 @@
 				<% end %>
 			</div>
 		</div>
-		<div class="col-md-6">
-			<% if @search_articles.blank? %>
-				<% @posts.each do |post| %>
-					<div class="post-middle row">
-						<div class="post-middle-inner">
-							<div class="col-md-2">
-								<div class="post-middle-left row">
-									<div class="<%= post.status %> post-status"><%= post.status_i18n %></div>
-									<div class="post-comments-count">
-										<p class="post-response">回答</p>
-										<h4><%= post.post_comments.count %></h4>
+		<div class="tab col-md-6">
+		    <ul class="menu">
+		      <li><a href="#" class="active" deta-id="main">相談一覧</a></li>
+		      <li><a href="#" deta-id="attention">注目の投稿</a></li>
+		      <li><a href="#" deta-id="solved">解決済み</a></li>
+		    </ul>
+	    	<section class="content active" id="main">
+				<% if @search_articles.blank? %>
+					<% @posts.each do |post| %>
+						<div class="post-middle row">
+							<div class="post-middle-inner">
+								<div class="col-md-2">
+									<div class="post-middle-left row">
+										<div class="<%= post.status %> post-status"><%= post.status_i18n %></div>
+										<div class="post-comments-count">
+											<p class="post-response">回答</p>
+											<h4><%= post.post_comments.count %></h4>
+										</div>
+									</div>
+								</div>
+								<div class="post-index col-md-10">
+									<div class="post-article">
+										<%= link_to user_path(post.user) do %>
+											<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'image' %>
+										<% end %>
+										<span class="index-title"><%= link_to post.title, post_path(post) %></span>
+										<!-- 興味あるボタン -->
+										<% if current_user != post.user %>
+											<span class="pull-right post-like", id="likes_buttons_<%= post.id %>">
+												<%= render 'likes/like', post: post %>
+											</span>
+										<% end %>
+									</div>
+									<div class="post-ul">
+										<%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿
+									</div>
+									<div class="post-tag">
+										<!-- タグ -->
+										<% post.tags.each do |tag| %>
+											<button class="post-button">
+												<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %>
+											</button>
+										<% end %>
+										<!-- タグ -->
 									</div>
 								</div>
 							</div>
-							<div class="post-index col-md-10">
-								<div class="post-article">
-									<%= link_to user_path(post.user) do %>
-										<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'image' %>
-									<% end %>
-									<span class="index-title"><%= link_to post.title, post_path(post) %></span>
-									<!-- 興味あるボタン -->
-									<% if current_user != post.user %>
-										<span class="pull-right post-like", id="likes_buttons_<%= post.id %>">
-											<%= render 'likes/like', post: post %>
-										</span>
-									<% end %>
-								</div>
-								<div class="post-ul">
-									<%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿
-								</div>
-								<div class="post-tag">
-									<!-- タグ -->
-									<% post.tags.each do |tag| %>
-										<button class="post-button">
-											<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %>
-										</button>
-									<% end %>
-									<!-- タグ -->
-								</div>
-							</div>
 						</div>
-					</div>
+					<% end %>
+				<% else %>
+					<% @search_articles.each do |article| %>
+						<%= article.title %>
+					<% end %>
 				<% end %>
-			<% else %>
-				<% @search_articles.each do |article| %>
-					<%= article.title %>
-				<% end %>
-			<% end %>
+			</section>
+			<section class="content" id="attention">
+	      		サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。
+	    	</section>
+	    	<section class="content" id="solved">
+		      お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。
+		    </section>
 		</div>
 		<div class="row col-md-3">
 			<div class="index-details">
