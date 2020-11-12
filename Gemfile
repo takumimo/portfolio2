@@ -43,7 +43,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
-  gem 'rspec-rails'
+  # gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
   gem 'forgery_ja'
@@ -62,10 +62,11 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
-  gem 'webdrivers', '~> 4.0'
+  # gem 'webdrivers'
   gem 'launchy', '~> 2.4.3'
 end
 
