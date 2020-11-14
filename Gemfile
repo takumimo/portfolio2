@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+  source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.7'
@@ -44,8 +44,8 @@ group :development, :test do
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
   # gem 'rspec-rails'
-  gem 'factory_bot_rails'
-  gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
+  
+  
   gem 'forgery_ja'
 end
 
@@ -63,11 +63,13 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'rspec-rails'
-  gem 'selenium-webdriver'
+  gem 'factory_bot_rails'
+  # gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
   # gem 'webdrivers'
-  gem 'launchy', '~> 2.4.3'
+  gem 'faker'
+  # gem 'launchy', '~> 2.4.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

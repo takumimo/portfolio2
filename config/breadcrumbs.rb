@@ -42,7 +42,7 @@ crumb :post do |post|
 end
 
 crumb :user do |user|
-  link "ユーザー詳細", user_path(user)
+  link "マイページ", user_path(user)
   parent :posts
 end
 
@@ -62,7 +62,7 @@ crumb :postnew do
 end
 
 crumb :useredit do |user|
-  link "ユーザー編集", edit_user_path(user)
+  link "プロフィール設定", edit_user_path(user)
   parent :user, user
 end
 

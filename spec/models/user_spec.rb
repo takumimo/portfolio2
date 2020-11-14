@@ -31,8 +31,8 @@ RSpec.describe 'Userモデルのテスト', type: :model do
     context 'introductionカラム' do
       let(:test_user) { user }
 
-      it '50文字以下であること' do
-        test_user.introduction = Faker::Lorem.characters(number: 51)
+      it '300文字以下であること' do
+        test_user.introduction = Faker::Lorem.characters(number: 301)
         is_expected.to eq false
       end
     end
@@ -45,5 +45,29 @@ RSpec.describe 'Userモデルのテスト', type: :model do
       end
     end
   end
+
+  describe "follow and unfollow" do
+    let(:user) { create(:user) }
+    let(:other_user) { create(:user) }
+
+    before { user.follow(other_user) }
+
+    describe "follow" do
+      it "succeeds" do
+        expect(user.following?(other_user)).to be_truthy
+      end
+      describe "followers" do
+        it "succeeds" do
+          expect(other_user.followers.include?(user)).to be_truthy
+        end
+      end
+    end
+    describe "unfollow" do
+      it "succeeds" do
+        user.unfollow(other_user)
+        expect(user.following?(other_user)).to be_falsy
+      end
+    end
+  end
 end
-# アソシエーションのテスト
+

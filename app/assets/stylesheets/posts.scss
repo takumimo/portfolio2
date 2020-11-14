@@ -363,6 +363,10 @@
   text-align: center;
 }
 
+.doing {
+  color: #333;
+}
+
 .post-comments-count {
   width: 70px;
   margin: 0 auto;
@@ -436,12 +440,14 @@
   padding: 8px 0;
   color: #333;
   text-decoration: none;
-  border-radius: 4px 4px 0 0;
+  
 }
 
 .menu li a.active {
-  background: #333;
-  color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
 }
 
 .menu li a:not(.active):hover {
@@ -449,12 +455,21 @@
   transition: opacity 0.4s;
 }
 
+.menu li a:not(.active) {
+  border-bottom: 1px solid #ddd;
+}
+
+.menu li {
+  margin: auto;
+}
+
 .content.active {
-  background: #333;
-  color: #fff;
+  color: #333;
   display: block;
+
 }
 
 .content {
   display: none;
+
 }
