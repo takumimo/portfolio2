@@ -8,6 +8,8 @@ class HomesController < ApplicationController
   def new_guest
     user = User.find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
+      user.name = 'guest'
+      user.introduction = 'ゲストです。よろしくお願いします。'
     end
     sign_in user
     flash[:notice] = 'ゲストユーザーとしてログインしました。'
