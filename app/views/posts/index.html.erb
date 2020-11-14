@@ -46,11 +46,11 @@
 		</div>
 		<div class="tab col-md-6">
 		    <ul class="menu">
-		      <li><a href="#" class="active" deta-id="main">相談一覧</a></li>
-		      <li><a href="#" deta-id="attention">注目の投稿</a></li>
-		      <li><a href="#" deta-id="solved">解決済み</a></li>
+		      <li><%= link_to '相談一覧', '#', class: 'active', data: {id: "main"} %></li>
+		      <li><%= link_to '注目の投稿', '#', data: {id: "attention"} %></li>
+		      <li><%= link_to '解決済み', '#', data: {id: "solved"} %></li>
 		    </ul>
-	    	<section class="content active" id="main">
+	    	<section class='content active' id="main">
 				<% if @search_articles.blank? %>
 					<% @posts.each do |post| %>
 						<div class="post-middle row">
