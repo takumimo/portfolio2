@@ -20,6 +20,10 @@
 	font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
  }
 
+.container {
+	width: 1050px;
+}
+
 nav {
 	li {
 	list-style: none;
@@ -27,7 +31,7 @@ nav {
 }
 
 header {
-	background-color: #4cb5f5;
+	background-color: #2E1031
 
 }
 
@@ -136,4 +140,9 @@ body {
 .nav > li > a:hover, .nav > li > a:focus {
 	text-decoration: none;
     background-color: #666666;
+}
+
+.index-detail-foot {
+  width: 100%;
+  margin: 0;
 }

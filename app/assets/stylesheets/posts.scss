@@ -266,8 +266,6 @@
 }
 
 .index-details-inner {
-  border: 1px solid #ddd;
-  border-radius: 10px;
   padding: 0 10px;
 }
 
@@ -377,14 +375,19 @@
   padding: 10px 20px;
 }
 
-
+.post-middle-inner {
+  height: 120px;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 5px 0;
+}
 
 .post-middle-left {
   padding-top: 15px;
 }
 
 .inner-more {
-  padding: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
 }
 
 .post-response {
@@ -399,10 +402,6 @@
 .detail-head-topic{
   width: 150px;
   margin: 0 auto;
-}
-
-.posts-ranking {
-  margin-top: 50px;
 }
 
 .text-model-edit {
@@ -460,7 +459,7 @@
 }
 
 .menu li {
-  margin: auto;
+
 }
 
 .content.active {
