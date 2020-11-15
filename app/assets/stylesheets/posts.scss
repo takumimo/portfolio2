@@ -443,10 +443,7 @@
 }
 
 .menu li a.active {
-  color: #333;
-  border: 1px solid #ddd;
-  border-bottom: 0;
-  border-radius: 4px 4px 0 0;
+  
 }
 
 .menu li a:not(.active):hover {
@@ -455,7 +452,7 @@
 }
 
 .menu li a:not(.active) {
-  border-bottom: 1px solid #ddd;
+
 }
 
 .menu li {
@@ -471,4 +468,20 @@
 .content {
   display: none;
 
+}
+
+.tab-list1 {
+  color: #333;
+  border: 1px solid #ddd;
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+}
+
+.tab-list3 {
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+
+.tab-list2 {
+  border-bottom: 1px solid #ddd;
 }
