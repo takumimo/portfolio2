@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.tag_list = params[:post][:tag_list]
     @post.save
-    redirect_to posts_path
+    redirect_to user_path(current_user)
   end
 
   def index
@@ -24,9 +24,9 @@ class PostsController < ApplicationController
     @all_post_comments = PostComment.find(Thank.group(:post_comment_id).order('count(post_comment_id) desc').limit(3).pluck(:post_comment_id).uniq)
     @q = Post.ransack(params[:q])
     if params[:tag_name]
-      @posts = Post.tagged_with("#{params[:tag_name]}").includes(:tags)
+      @posts = Post.tagged_with("#{params[:tag_name]}").includes(:tags).order(created_at: :desc)
     elsif params[:q]
-      @posts = @q.result
+      @posts = @q.result.order(created_at: :desc)
     else
       @posts = Post.all.order(created_at: :desc)
     end
@@ -56,7 +56,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    redirect_to posts_path
+    redirect_to user_path(current_user)
   end
 
   private
