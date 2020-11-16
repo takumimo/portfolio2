@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts
-    @comments = @user.post_comments
+    @posts = @user.posts.order(created_at: :desc)
+    @comments = @user.post_comments.order(created_at: :desc)
   end
 
   def edit

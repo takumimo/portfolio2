@@ -64,9 +64,6 @@ describe 'ユーザーのテスト' do
     visit user_path(user)
   end
 
-  before do
-    { user.follow(test_user2) }
-  end
   describe 'マイページのテスト' do
     context '表示の確認' do
       it 'ユーザー情報と表示される' do

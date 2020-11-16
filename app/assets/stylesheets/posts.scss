@@ -155,7 +155,7 @@
 .text-model {
 
   background-color: white;
-  padding: 20px;
+  padding: 3px;
   border: 1px solid #ccc;
   height: 600px;
   width: 600px;
@@ -170,14 +170,17 @@
 .text-form {
   height: 600px;
   width: 570px;
+  padding-left: 10px;
 }
 
 .new-post-title {
   width: 1155px;
+  padding-left: 10px;
 }
 
 .new-post-tag {
   width: 1155px;
+  padding-left: 10px;
 }
 
 .new-post-submit {
