@@ -20,26 +20,29 @@ describe 'Postのテスト' do
 				expect(current_path).to eq(posts_confirm_path)
 			end
 		end
-
-		context '確認画面' do
-			# 値がはいっている
-			# 投稿ができる
-		end
 	end
 
 	describe '投稿の編集' do
-		visit edit_post_path
-		# それぞれ変更を加える
-		fill_in 'post[title]', with: Faker::Lorem.characters(number: 10)
-		fill_in 'post[tag_list]', with: Faker::Lorem.characters(number: 5)
-		fill_in 'post[text]', with: Faker::Lorem.characters(number: 150)
-		click_button '更新する'
-		expect(current_path).to eq(user_path(current_user))
+		let(:post) { create(:post) }
+		before do
+			visit edit_post_path(post)
+		end
+		it 'それぞれ変更を加える' do
+			fill_in 'post[title]', with: Faker::Lorem.characters(number: 10)
+			fill_in 'post[tag_list]', with: Faker::Lorem.characters(number: 5)
+			fill_in 'post[text]', with: Faker::Lorem.characters(number: 150)
+			click_button '更新する'
+			expect(current_path).to eq(user_path(current_user))
+		end
 	end
 
 	describe '投稿の削除' do
-		visit post_path(post)
-		click_button '削除する'
-		expect(current_path).to eq(user_path(current_user))
+		before do
+			visit post_path(post)
+		end
+		it '投稿を削除' do
+			click_button '削除する'
+			expect(current_path).to eq(user_path(current_user))
+		end
 	end
 end
