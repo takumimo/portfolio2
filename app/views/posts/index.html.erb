@@ -1,16 +1,8 @@
 <div class="container">
-	<div style="margin-bottom: 20px;">
+	<div style="margin-bottom: 5px;">
     <%= flash[:notice] %>
   </div>
-	<div class="row">
-		<div class="search-window">
-			<%= search_form_for @q do |f| %>
-	  			<%= f.label :text_cont, "キーワード検索" %>
-	  			<%= f.search_field :text_cont %>
-				<%= f.submit "検索" %>
-			<% end %>
-		</div>
-		<div class="gretel">
+  	<div class="gretel">
 		<% if params[:q] %>
 			<% breadcrumb :postsq, @posts %>
 			<%= breadcrumbs separator: " &rsaquo; " %>
@@ -21,7 +13,18 @@
 			<% breadcrumb :posts, @posts %>
 			<%= breadcrumbs separator: " &rsaquo; " %>
 		<% end %>
+	</div>
+	<div class="row">
+		<div class="search-window">
+			
+			<%= search_form_for @q do |f| %>
+			<span class="fa fa-search">
+	  			<%= f.search_field :text_cont, placeholder: "本文検索", class: "search-input" %>
+	  			</span>
+			<% end %>
+			
 		</div>
+		
 	</div>
 	<div class="row">
 		<div class="tab col-md-8">
@@ -31,7 +34,8 @@
 		      <li class="tab-list3"><%= link_to '解決済み', '#', data: {id: "solved"} %></li>
 		    </ul>
 	    	<section class='content active' id="main">
-				<% if @search_articles.blank? %>
+	    		<% if @q.result.present? %>
+
 					<% @posts.each do |post| %>
 						<div class="post-middle row">
 							<div class="post-middle-inner">
@@ -74,9 +78,9 @@
 						</div>
 					<% end %>
 				<% else %>
-					<% @search_articles.each do |article| %>
-						<%= article.title %>
-					<% end %>
+					<div class="search-result">
+						<%= @q.text_cont %>　に関連する記事はありませんでした。
+					</div>
 				<% end %>
 			</section>
 			<section class="content" id="attention">
