@@ -1,3 +1,15 @@
 // Place all the styles related to the Stocks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.stock-tag-name {
+	border: 1px solid #b8dbf2;
+    background: #d5e9f7 none;
+    border-radius: 3px;
+    font-size: 10px;
+}
+
+.stock-tag {
+	height: 1333px;
+}

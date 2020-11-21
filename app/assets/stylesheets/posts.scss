@@ -152,13 +152,21 @@
   }
 }
 
+.new-text-field {
+  width: 100%;
+  margin: 0;
+}
+
+.text-main {
+  padding-right: 0;
+}
+
 .text-model {
 
   background-color: white;
   padding: 3px;
   border: 1px solid #ccc;
   height: 600px;
-  width: 600px;
 
 }
 
@@ -169,17 +177,16 @@
 
 .text-form {
   height: 600px;
-  width: 570px;
-  padding-left: 10px;
+  width: 495px;
 }
 
 .new-post-title {
-  width: 1155px;
+  width: 1005px;
   padding-left: 10px;
 }
 
 .new-post-tag {
-  width: 1155px;
+  width: 1005px;
   padding-left: 10px;
 }
 
@@ -251,16 +258,16 @@
 }
 
 .post-edit-title {
-  width: 1155px;
+  width: 1005px;
 }
 
 .post-edit-tag {
-  width: 1155px;
+  width: 1005px;
 }
 
 .post-edit-text {
   height: 600px;
-  width: 570px;
+  width: 495px;
 }
 
 .index-details {
@@ -317,7 +324,7 @@
 
 .comment-rank {
   background-color: white;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .comment-rank-inner {
@@ -415,12 +422,18 @@
   width: 300px;
 }
 
+.edit-text-field {
+  width: 1020px;
+  margin: 0;
+}
+
 .stock-index {
   width: 600px;
 }
 
 .stock-icon {
   width: 100px;
+  margin-top: 50px;
 }
 
 .post-articles {
@@ -487,4 +500,18 @@
 
 .tab-list2 {
   border-bottom: 1px solid #ddd;
+}
+
+.search-result {
+  margin-top: 20px;
+}
+
+.search-window {
+  margin-bottom: 15px;
+  margin-left: 13px;
+}
+
+.search-input {
+   border-radius: 5px;
+   height: 30px;
 }

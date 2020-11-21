@@ -3,13 +3,13 @@ require 'rails_helper'
 describe 'Postのテスト' do
 	describe '新規投稿' do
 		let(:user) { create(:user) }
+		context '新規作成画面' do
 			before do
 				visit new_user_session_path
 				fill_in 'user[email]', with: Faker::Internet.email
 				fill_in 'user[password]', with: user.password
 				click_button 'ログイン'
   			end
-		context '新規作成画面' do
 			it '全て入力できる' do
 
 				visit new_post_path

@@ -4,7 +4,7 @@
 		<%= breadcrumbs separator: " &rsaquo; " %>
 	</div>
 	<div class="row">
-		<div class="stock-icon col-md-1">
+		<div class="stock-icon col-md-1" title="ストックする">
 			<!-- 自身の投稿以外 かつ ログインしているユーザーであれば -->
 			<% if current_user != @post.user && user_signed_in? %>
 				    <!-- 既にストックしている記事であれば「ストック解除ボタン」を表示 -->
@@ -12,7 +12,7 @@
 				      <!-- stocksコントローラーのdestoryアクションにmethod: :deleteで指定して送信 -->
 				      <%= form_with model: @post.stocks.find_by(user_id: current_user.id), method: :delete do |f| %>
 				      	<%= f.button(class: "btn btn-dark") do %>
-				          <i class="fas fa-folder"></i>
+				          <i class="fas fa-folder fa-lg"></i>
 				        <% end %>
 				      <% end %>
 
@@ -22,7 +22,7 @@
 				      <!-- buildでstocksコントローラーのcreateアクションへ -->
 					    <%= form_with model: @post.stocks.build, url: stocks_path(post_id: @post.id) do |f| %>
 					        <%= f.button(class: "btn btn-outline-dark") do %>
-					        	<i class="far fa-folder"></i>
+					        	<i class="far fa-folder fa-lg"></i>
 					        <% end %>
 					    <% end %>
 				    <% end %>
