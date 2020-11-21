@@ -155,7 +155,6 @@
 .new-text-field {
   width: 100%;
   margin: 0;
-  padding: 0;
 }
 
 .text-main {
@@ -259,16 +258,16 @@
 }
 
 .post-edit-title {
-  width: 1155px;
+  width: 1005px;
 }
 
 .post-edit-tag {
-  width: 1155px;
+  width: 1005px;
 }
 
 .post-edit-text {
   height: 600px;
-  width: 570px;
+  width: 495px;
 }
 
 .index-details {
@@ -421,6 +420,11 @@
   border: 1px solid #ccc;
   height: 600px;
   width: 300px;
+}
+
+.edit-text-field {
+  width: 1020px;
+  margin: 0;
 }
 
 .stock-index {
