@@ -92,6 +92,7 @@
 								<%= attachment_image_tag post.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
 							</span>
 							<span><%= link_to post.title, post_path(post) %></span>
+							<span class="pull-right"><%= post.likes.count %>人が注目しています</span>
 							<div>
 								<span class="rank-content"><%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿</span>
 							</div>
