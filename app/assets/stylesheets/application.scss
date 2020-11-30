@@ -72,9 +72,10 @@ body {
 }
 
 .login, .signup, .forgot-password {
-	background-color: white;
 	border-radius: 16px;
 	padding: 20px;
+	width: 50%;
+	margin: 0 auto;
 }
 
 .header-mypage {
