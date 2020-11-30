@@ -6,10 +6,7 @@ class PostsController < ApplicationController
   end
 
   def confirm
-    @post = Post.new
-    @post.text = params[:post][:text]
-    @post.title = params[:post][:title]
-    @post.tag_list = params[:post][:tag_list]
+    @post = Post.new(post_params)
   end
 
   def create
