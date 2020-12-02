@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   validates :title, presence: true
-  validates :text, presence: true, length: { maximum: 200 }
+  validates :text, presence: true
 
   has_many :stocks, dependent: :destroy
   has_many :stock_users, through: :stocks, source: :user

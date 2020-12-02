@@ -31,7 +31,7 @@
 		    <ul class="menu">
 		      <li class="tab-list1"><%= link_to '相談一覧', '#', class: 'active', data: {id: "main"} %></li>
 		      <li class="tab-list2"><%= link_to '注目の投稿', '#', data: {id: "attention"} %></li>
-		      <li class="tab-list3"><%= link_to '解決済み', '#', data: {id: "solved"} %></li>
+		      <li class="tab-list3"><%= link_to '解決済', '#', data: {id: "solved"} %></li>
 		    </ul>
 	    	<section class='content active' id="main">
 	    		<% if @q.result.present? %>
