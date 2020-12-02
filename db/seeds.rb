@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-require './db/seeds/admin_user.rb'
+
 require './db/seeds/user.rb'
 require './db/seeds/post.rb'
