@@ -45,9 +45,9 @@
 				<% if @comments.exists? %>
 					<% @comments.each do |comment| %>
 						<div class="column-title">
-							<h4><strong><%= link_to comment.text, post_path(comment.post) %></strong></h4>
-							<p><%= link_to comment.post.user.name, user_path(comment.post.user) %>さんへのコメント</p>
+							<h4><strong><%= link_to comment.text.truncate(50), post_path(comment.post) %></strong></h4>
 							<p>投稿日時:  <%= comment.created_at.to_s(:datetime) %></p>
+							<p><%= link_to comment.post.user.name, user_path(comment.post.user) %>さんへのコメント</p>
 						</div>
 					<% end %>
 				<% else %>
