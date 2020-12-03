@@ -1,36 +1,37 @@
 <div class="container">
-<div class="gretel">
-	<% breadcrumb :user, @user %>
-	<%= breadcrumbs separator: " &rsaquo; " %>
-	</div>
-<div class="row">
-	<div class="user-show-left col-md-3">
-		
-		<div class="show-detail-head">
-			<%= attachment_image_tag @user, :profile_image, :fill, 80, 80, class: "show-detail-image", fallback: "no_image.jpg" %>
+	<div class="gretel">
+		<% breadcrumb :user, @user %>
+		<%= breadcrumbs separator: " &rsaquo; " %>
 		</div>
-		
-		<div class="show-details-middle row">
-			<div class="show-detail-left col-md-4">
-				<p class="show-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
-				<p class="show-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
+	<div class="row">
+		<div class="user-show-right col-md-3">
+			<h3><strong>ユーザー情報</strong></h3>
+			<div class="show-name">
+				<h4>名前</h4>
+				<p class="show-name-topic"><%= @user.name %></p><br>
 			</div>
-					
-				
-			<div class="show-detail-middle col-md-4">
-				<p class="show-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
-				<p class="show-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
+			<div class="show-introduction">
+				<h4>経歴</h4>
+				<p class="show-introduction-topic"><%= @user.introduction %></p><br>
 			</div>
-			<div class="show-detail-right col-md-4">
-				<p class="show-detail"><%= link_to @user.followers.count, followers_user_path(@user) %></p>
-				<p class="show-detail-letter"><%= link_to 'フォロワー', followers_user_path(@user) %></p>
+			<div class="show-email">
+				<h4>メールアドレス</h4>
+				<p class="show-email-topic"><%= @user.email %></p><br>
+			</div>
+			<div class="user-show-edit">
+				<% if @user == current_user %>
+			      	<%= link_to "プロフィールを編集する", edit_user_path(@user), class: 'btn btn-success' %>
+			    <% else %>
+			    	<% if current_user.following?(@user) %>
+				        <%= render 'users/unfollow', user: @user %>
+				    <% else %>
+				    	<%= render 'users/follow', user: @user %>
+				    <% end %>
+				<% end %>
 			</div>
 		</div>
-		
-	</div>
-	<div class="user-show-middle col-md-6">
-		<div class="show-right-top">
-			
+		<div class="user-show-middle col-md-5">
+			<div class="show-right-top">
 				<h3><strong>すべての投稿</strong></h3>
 				<% if @posts.exists? %>
 					<% @posts.each do |post| %>
@@ -42,52 +43,51 @@
 				<% else %>
 					<p>投稿はまだありません</p>
 				<% end %>
-			
-		</div>
-		<div class="show-right-bottom">
-			<h3><strong>すべてのコメント</strong></h3>
-			<% if @comments.exists? %>
-				<% @comments.each do |comment| %>
-					<div class="column-title">
-						<h4><strong><%= link_to comment.text, post_path(comment.post) %></strong></h4>
-						<p>send to  <%= link_to comment.post.user.name, user_path(comment.post.user) %>さん</p>
-						<p>投稿日時:  <%= comment.created_at.to_s(:datetime) %></p>
-					</div>
+			</div>
+			<div class="show-right-bottom">
+				<h3><strong>すべてのコメント</strong></h3>
+				<% if @comments.exists? %>
+					<% @comments.each do |comment| %>
+						<div class="column-title">
+							<h4><strong><%= link_to comment.text, post_path(comment.post) %></strong></h4>
+							<p><%= link_to comment.post.user.name, user_path(comment.post.user) %>さんへのコメント</p>
+							<p>投稿日時:  <%= comment.created_at.to_s(:datetime) %></p>
+						</div>
+					<% end %>
+				<% else %>
+					<p>コメントはまだありません</p>
 				<% end %>
-			<% else %>
-				<p>コメントはまだありません</p>
-			<% end %>
 
+			</div>
 		</div>
-	</div>
-	<div class="user-show-right col-md-3">
-	<h3><strong>ユーザー情報</strong></h3>
-		<div class="show-name">
-			<h4>名前</h4>
-			<p class="show-name-topic"><%= @user.name %></p><br>
-		</div>
-		<div class="show-introduction">
-			<h4>職務：経歴</h4>
-			<p class="show-introduction-topic"><%= @user.introduction %></p><br>
-		</div>
-		<div class="show-email">
-			<h4>メールアドレス</h4>
-			<p class="show-email-topic"><%= @user.email %></p><br>
-		</div>
-		<div class="user-show-edit">
-			<% if @user == current_user %>
-		      	<%= link_to "プロフィールを編集する", edit_user_path(@user), class: 'btn btn-success' %>
-		    <% else %>
-		    	<% if current_user.following?(@user) %>
-			        <%= render 'users/unfollow', user: @user %>
-			    <% else %>
-			    	<%= render 'users/follow', user: @user %>
-			    <% end %>
-			<% end %>
-		</div>
-	</div>
-</div>
 
+			<div class="show-details col-md-4">
+
+					<div class="show-inner-more">
+						<div class="show-detail-head">
+							<div class="show-head-topic">
+								<%= attachment_image_tag current_user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'detail-head-image' %>
+							</div>
+						</div>
+						<div class="show-detail-foot row">
+							<div class="show-detail-left col-md-4">
+								<p class="show-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
+								<p class="show-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
+							</div>
+							<div class="show-detail-middle col-md-4">
+								<p class="show-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
+								<p class="show-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
+							</div>
+							<div class="show-detail-right col-md-4">
+								<p class="show-detail"><%= link_to @user.followers.count, followers_user_path(@user) %></p>
+								<p class="show-detail-letter"><%= link_to 'フォロワー', followers_user_path(@user) %></p>
+							</div>
+						</div>
+
+				</div>
+			</div>
+
+	</div>
 </div>
 
 
