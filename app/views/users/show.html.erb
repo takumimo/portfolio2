@@ -14,10 +14,6 @@
 				<h4>経歴</h4>
 				<p class="show-introduction-topic"><%= @user.introduction %></p><br>
 			</div>
-			<div class="show-email">
-				<h4>メールアドレス</h4>
-				<p class="show-email-topic"><%= @user.email %></p><br>
-			</div>
 			<div class="user-show-edit">
 				<% if @user == current_user %>
 			      	<%= link_to "プロフィールを編集する", edit_user_path(@user), class: 'btn btn-success' %>

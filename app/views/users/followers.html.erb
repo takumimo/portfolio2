@@ -4,15 +4,18 @@
 	<%= breadcrumbs separator: " &rsaquo; " %>
 </div>
 <div class = "row">
-	<h2>Follower Users</h2>
+	<h2>フォロワー</h2>
 	<% if @users.empty? %>
 		<p>ユーザーはいません</p>
 	<% else %>
 		<table class = "table">
 			<% @users.each do |user| %>
 				<tr>
-					<td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "followers-img pull-left profile-img", fallback: "no_image.jpg" %></td>
-					<td><%= user.name %></td>
+					<td><%= link_to user_path(user) do %>
+						<%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "followers-img pull-left profile-img", fallback: "no_image.jpg" %>
+						<% end %>
+					</td>
+					<td><%= link_to user.name, user_path(user) %></td>
 					<td><%= "フォロー数：#{user.following.count}" %></td>
 					<td><%= "フォロワー数：#{user.followers.count}" %></td>
 				</tr>

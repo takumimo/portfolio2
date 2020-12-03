@@ -55,9 +55,9 @@
 				</div>
 				<h2><strong><%= @post.title %></strong></h2>
 				<% @post.tags.each do |tag| %>
-					<div class="post-tag">
+					<span class="post-tag">
 						<button class="show-span-tag"><%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %></button>
-					</div>
+					</span>
 				<% end %>
 				<h4 class="posts-show-text"><%= @post.text%></h4>
 			</div>
