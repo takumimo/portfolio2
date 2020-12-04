@@ -2,6 +2,7 @@
 20代のキャリア悩み相談所
 相談者が悩みを投稿し、そこに解決者（転職経験者など）がコメントする事が出来ます。
 下記ページで公開中です。
+
 https://notworry.net
 
 ## アプリ概要
@@ -12,6 +13,7 @@ https://notworry.net
 Ruby on Railsで制作しました。
 
 作成した背景や想いなど、より詳細な情報は下記をご覧ください。
+
 [ポートフォリオ解説](https://qiita.com/mtktkm24/private/233e30cfbea367b9cb0c)
 
 ## 機能
@@ -56,4 +58,5 @@ https://github.com/takumimo/portfolio2/issues
 
 ## 作者
 [：Twitter](https://twitter.com/takumeeem)
+
 mail to: [mtktkm242424@gmail.com](mtktkm242424@gmail.com)
