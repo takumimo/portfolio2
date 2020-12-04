@@ -11,19 +11,34 @@ RSpec.describe 'Likes', type: :system do
             fill_in 'user[password]', with: user.password
             click_button 'ログイン'
         end
-        it 'いいね、いいね解除' do
-            expect(page).to have_content '相談一覧'
-            expect(current_path).to eq(posts_path)
+        context 'index画面' do
+            it 'いいね、いいね解除' do
+                expect(page).to have_content '相談一覧'
+                expect(current_path).to eq(posts_path)
 
-            # いいねをするボタンを押す
-            find('#likes_buttons').click
-            expect(page).to have_selector 'a[data-method=post]', text: 'post'
-            expect(post.likes.count).to eq(1)
+                # いいねをするボタンを押す
+                find click_link('気になる')
+                expect(page).to have_selector 'a[data-method=post]', text: 'post'
+                expect(post.likes.count).to eq(1)
 
-            # いいねを解除する
-            find('#likes_buttons').click
-            expect(page).to have_selector 'a[data-method=delete]', text: 'delete'
-            expect(post.likes.count).to eq(0)
+                # いいねを解除する
+                find click_link('気になる')
+                expect(page).to have_selector 'a[data-method=delete]', text: 'delete'
+                expect(post.likes.count).to eq(0)
+            end
+        end
+        context 'show画面' do
+            it 'いいね、いいね解除' do
+                # いいねをするボタンを押す
+                find click_link('気になる')
+                expect(page).to have_selector 'a[data-method=post]', text: 'post'
+                expect(post.likes.count).to eq(1)
+
+                # いいねを解除する
+                find click_link('気になる')
+                expect(page).to have_selector 'a[data-method=delete]', text: 'delete'
+                expect(post.likes.count).to eq(0)
+            end
         end
     end
 end

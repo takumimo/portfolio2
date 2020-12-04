@@ -17,10 +17,6 @@ RSpec.describe 'Postモデルのテスト', type: :model do
         post.text = ''
         expect(post.valid?).to eq false
       end
-      it '200文字以下であること' do
-        post.text = Faker::Lorem.characters(number: 201)
-        expect(post.valid?).to eq false
-      end
     end
   end
 

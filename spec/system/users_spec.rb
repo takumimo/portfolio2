@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'ユーザー認証のテスト' do
+RSpec.describe 'ユーザー認証のテスト', type: :system do
   describe 'ユーザー新規登録' do
     before do
       visit new_user_registration_path

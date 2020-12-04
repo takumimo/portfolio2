@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Postのテスト' do
+RSpec.describe 'Postのテスト', type: :system do
 	describe '新規投稿' do
 		let(:user) { create(:user) }
 		context '新規作成画面' do
