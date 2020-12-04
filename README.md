@@ -1,5 +1,6 @@
 # ノットウォーリー
 20代のキャリア悩み相談所
+
 相談者が悩みを投稿し、そこに解決者（転職経験者など）がコメントする事が出来ます。
 下記ページで公開中です。
 
@@ -7,9 +8,13 @@ https://notworry.net
 
 ## アプリ概要
 以下の悩みを抱えるユーザーの問題解決をサポートするアプリです。
+
 ・転職を検討している
+
 ・自身のキャリアに不安を抱えている
+
 ・転職経験者の意見を聞きたいが相談相手がいない
+
 Ruby on Railsで制作しました。
 
 作成した背景や想いなど、より詳細な情報は下記をご覧ください。
@@ -53,10 +58,11 @@ https://drive.google.com/file/d/1wFGcRigpah1iXTGFHR4aV89FFRmNjU2m/view?usp=shari
 
 ## その他
 現在も開発を継続しており、順次実装予定です。
+
 実装予定の機能はIssuesよりご確認いただけます。
 https://github.com/takumimo/portfolio2/issues
 
 ## 作者
-[：Twitter](https://twitter.com/takumeeem)
+SNS: [Twitter](https://twitter.com/takumeeem)
 
-mail to: [mtktkm242424@gmail.com](mtktkm242424@gmail.com)
+メールアドレス: [mtktkm242424@gmail.com](mtktkm242424@gmail.com)
