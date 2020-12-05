@@ -16,7 +16,7 @@
 	</div>
 	<div class="row">
 		<div class="search-window">
-			
+
 			<%= search_form_for @q do |f| %>
 			<span class="fa fa-search">
 	  			<%= f.search_field :text_cont, placeholder: "本文検索", class: "search-input" %>
@@ -24,6 +24,10 @@
 			<% end %>
 			
 		</div>
+		<% if params[:tag_name].present? %>
+
+		# 
+		<% end %>
 		
 	</div>
 	<div class="row">
@@ -165,6 +169,12 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div>
+				人気タグ
+				<% @tags.each do |tag| %>
+					<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %>
+				<% end %>
 			</div>
 			<div class="comment-rank">
 			<div class="comment-rank-inner">

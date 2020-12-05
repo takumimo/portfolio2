@@ -32,7 +32,8 @@ class PostsController < ApplicationController
 
     
 
-    
+    @tags = Tag.all
+
 
 
     @q = Post.ransack(params[:q])
