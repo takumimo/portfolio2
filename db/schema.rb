@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_08_085635) do
+ActiveRecord::Schema.define(version: 2020_12_05_233221) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_11_08_085635) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "emoji"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
