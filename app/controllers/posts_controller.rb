@@ -24,13 +24,15 @@ class PostsController < ApplicationController
     #     select post_comment_id, count(post_comment_id) as like_count
     #     from thanks
     #     group by post_comment_id
-    #     ) AS thanks
+    #     ) as thanks
     #  on post_comments.id = thanks.post_comment_id
     #  group by user_id
     #  order by sum_like_count
     #  limit 4;
 
-    # @all_post_comments = PostComment.left_joins(Thanks.count(:post_comment_id).group(:post_comment_id).select("post_comment_id, count(post_comment_id) as like_count")).group(:user_id).select("sum(thanks.like_count) as sum_like_count").order(:sum_like_count).limit(4)
+    
+
+    
 
 
     @q = Post.ransack(params[:q])

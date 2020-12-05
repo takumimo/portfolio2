@@ -85,9 +85,8 @@
 			</section>
 			<section class="content" id="attention">
 	      		<div class="posts-ranking">
-					<% @all_ranking_posts.each.with_index(1) do |post, i| %>
+					<% @all_ranking_posts.each do |post| %>
 						<div class="rank-posts">
-							<span><%= "#{i}位" %></span>
 							<span>
 								<%= attachment_image_tag post.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
 							</span>

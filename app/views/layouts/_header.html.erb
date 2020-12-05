@@ -2,13 +2,13 @@
   <nav class="nav navbar-nav navbar-left">
     <% if user_signed_in? %>
       <li>
-        <%= link_to homes_about_path do %>
+        <%= link_to posts_path do %>
           <i class="fas fa-home"></i>
         <% end %>
       </li>
     <% else %>
       <li>
-        <%= link_to homes_about_path do %>
+        <%= link_to root_path do %>
           <i class="fas fa-home"></i>
         <% end %>
       </li>
@@ -20,11 +20,6 @@
         <li>
             <%= link_to stocks_path do %>
               <i class="fab fa-get-pocket"></i>  ストック一覧
-            <% end %>
-        </li>
-        <li>
-            <%= link_to posts_path do %>
-              <i class="fas fa-list"></i>  相談一覧
             <% end %>
         </li>
         <li><%= link_to new_post_path do %>
