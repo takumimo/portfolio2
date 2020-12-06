@@ -14,7 +14,10 @@
 		    <%= f.radio_button :status, :done %>
 		</div>
 		<div>
-			<%= f.text_area :title, autofocus: true, class: "post-edit-title" %>
+			<%= f.text_area :emoji, autofocus: true, class: "post-edit-emoji" %>
+		</div>
+		<div>
+			<%= f.text_area :title, class: "post-edit-title" %>
 		</div>
 		<div>
 			<%= f.text_area :tag_list, class: "post-edit-tag" %>

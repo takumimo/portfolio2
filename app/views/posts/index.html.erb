@@ -43,6 +43,11 @@
 					<% @posts.each do |post| %>
 						<div class="post-middle row">
 							<div class="post-middle-inner">
+								<div class="emoji col-md-2">
+									<div class="emoji-inner">
+										<%= post.emoji %>
+									</div>
+								</div>
 								<div class="col-md-2">
 									<div class="post-middle-left row">
 										<div class="<%= post.status %> post-status"><%= post.status_i18n %></div>
@@ -52,7 +57,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="post-index col-md-10">
+								<div class="post-index col-md-6">
 									<div class="post-article">
 										<%= link_to user_path(post.user) do %>
 											<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'image' %>

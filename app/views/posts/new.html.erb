@@ -1,7 +1,10 @@
 <div class="new-post">
 	<%= form_with(model:@post, local: true, url:posts_confirm_path, class: 'container') do |f| %>
 		<div>
-			<%= f.text_area :title, placeholder: "タイトル[例：不動産業界から他業界へ転職]", autofocus: true, class: "new-post-title" %>
+			<%= f.text_area :emoji, placeholder: "絵文字[control+command+スペースで入力出来ます]", autofocus: true, class: "new-post-emoji" %>
+		</div>
+		<div>
+			<%= f.text_area :title, placeholder: "タイトル[例：不動産業界から他業界へ転職]", class: "new-post-title" %>
 		</div>
 		<div>
 			<%= f.text_area :tag_list, placeholder: "タグ[例：不動産]", value: @post.tag_list, class: "new-post-tag" %>
