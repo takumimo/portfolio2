@@ -29,10 +29,12 @@
 			<% end %>
 		</div>
 		<div class="col-md-10">
+			<div class="show-emoji">
+				<%= @post.emoji %>
+			</div>
 			<div class="show">
 				<div class="post-created text-right"><%= @post.created_at.to_s(:datetime) %></div>
 				<div class="show-top">
-					<%= @post.emoji %>
 					<%= link_to user_path(@post.user) do %>
 						<span>
 							<%= attachment_image_tag @post.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
