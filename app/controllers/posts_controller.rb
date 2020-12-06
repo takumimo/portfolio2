@@ -31,8 +31,7 @@ class PostsController < ApplicationController
     #  limit 4;
 
     
-
-    @tags = Tag.all
+    @tags = Post.tag_counts_on(:tags).order('count desc')
 
 
 
