@@ -4,7 +4,7 @@
 		<%= breadcrumbs separator: " &rsaquo; " %>
 	</div>
 	<div class="row">
-		<div class="stock-icon col-md-2">
+		<div class="stock-icon">
 			<!-- 自身の投稿以外 かつ ログインしているユーザーであれば -->
 			<% if current_user != @post.user && user_signed_in? %>
 				    <!-- 既にストックしている記事であれば「ストック解除ボタン」を表示 -->
@@ -28,7 +28,10 @@
 				    <% end %>
 			<% end %>
 		</div>
-		<div class="col-md-10">
+		<div>
+			<div class="show-emoji">
+				<%= @post.emoji %>
+			</div>
 			<div class="show">
 				<div class="post-created text-right"><%= @post.created_at.to_s(:datetime) %></div>
 				<div class="show-top">

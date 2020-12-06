@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   post "/home/guest_sign_in" => "homes#new_guest"
   resources :relationships, only: [:create, :destroy]
   resources :stocks, only: [:index, :create, :destroy]
+  
 end
