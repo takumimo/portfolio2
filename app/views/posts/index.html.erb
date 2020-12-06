@@ -39,6 +39,12 @@
 					<% @posts.each do |post| %>
 						<div class="post-middle row">
 							<div class="post-middle-inner">
+								<!-- 興味あるボタン -->
+										<% if current_user != post.user %>
+											<span class="pull-right post-like", id="likes_buttons_<%= post.id %>">
+												<%= render 'likes/like', post: post %>
+											</span>
+										<% end %>
 								<div class="emoji col-md-2">
 									<div class="emoji-inner">
 										<%= post.emoji %>
@@ -59,12 +65,7 @@
 											<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'image' %>
 										<% end %>
 										<span class="index-title"><%= link_to post.title, post_path(post) %></span>
-										<!-- 興味あるボタン -->
-										<% if current_user != post.user %>
-											<span class="pull-right post-like", id="likes_buttons_<%= post.id %>">
-												<%= render 'likes/like', post: post %>
-											</span>
-										<% end %>
+										
 									</div>
 									<div class="post-ul">
 										<%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿
