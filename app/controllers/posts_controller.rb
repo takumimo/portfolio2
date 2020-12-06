@@ -18,22 +18,19 @@ class PostsController < ApplicationController
 
   def index
     @all_ranking_posts = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
-    # select user_id, sum(thanks.like_count) as sum_like_count
-    # from post_comments
-    # left join (
-    #     select post_comment_id, count(post_comment_id) as like_count
-    #     from thanks
-    #     group by post_comment_id
-    #     ) as thanks
-    #  on post_comments.id = thanks.post_comment_id
-    #  group by user_id
-    #  order by sum_like_count
-    #  limit 4;
+#     select user_id, sum(thanks.like_count) as sum_like_count from post_comments left join (select post_comment_id, count(post_comment_id) as like_count from thanks group by post_comment_id) as thanks on post_comments.id = thanks.post_comment_id group by user_id order by sum_like_count limit 4;
 
-    
+#     @all_post_comments = PostComment.select(
+#   [
+#     :user_id, Arel::Nodes::NamedFunction.new('SUM', [Thank.arel_table[:like_count]]).as('sum_like_count')
+#   ]
+# ).joins(
+#   PostComment.arel_table.join(Thank.arel_table).on(
+#     PostComment.arel_table[:id].eq(Thank.arel_table[:post_comment_id])
+#   ).join_sources
+# ).order(:sum_like_count).group(:user_id).limit(4)
+
     @tags = Post.tag_counts_on(:tags).order('count desc')
-
-
 
     @q = Post.ransack(params[:q])
     if params[:tag_name]

@@ -153,6 +153,7 @@
 					<% @tags.each do |tag| %>
 						<button class="post-button tab-bar">
 							#<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn tab-bar-tag" %>
+
 						</button>
 					<% end %>
 				</div>
@@ -185,12 +186,6 @@
 					</div>
 				</div>
 			</div>
-			
-			<div class="comment-rank">
-			<div class="comment-rank-inner">
-				
-			</div>
-		</div>
 		</div>
 	</div>
 </div>

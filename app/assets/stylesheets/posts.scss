@@ -186,9 +186,30 @@
   padding-left: 10px;
 }
 
-.new-post-emoji {
-  width: 1005px;
+.emoji-field {
+  width: 100%;
+  margin: 0;
+}
+
+.emoji-main {
+
+
+}
+
+.emoji-form {
+  width: 495px;
   padding-left: 10px;
+}
+
+.emoji-model {
+  border: 1px solid #ccc;
+  height: 46px;
+  padding: 3px;
+}
+
+.emoji-model-1 {
+  opacity: 0.5;
+  width: 400px;
 }
 
 .emoji {
@@ -542,3 +563,4 @@
 .tab-bar-tag {
   font-size: 15px;
 }
+
