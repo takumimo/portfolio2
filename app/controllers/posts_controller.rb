@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @all_ranking_posts = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+    @all_ranking_posts = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(10).pluck(:post_id))
 #     select user_id, sum(thanks.like_count) as sum_like_count from post_comments left join (select post_comment_id, count(post_comment_id) as like_count from thanks group by post_comment_id) as thanks on post_comments.id = thanks.post_comment_id group by user_id order by sum_like_count limit 4;
 
 #     @all_post_comments = PostComment.select(
