@@ -5,6 +5,8 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   validates :title, presence: true
   validates :text, presence: true
+  validates :emoji, presence: true
+  validates :tag_list, presence: true
 
   has_many :stocks, dependent: :destroy
   has_many :stock_users, through: :stocks, source: :user
