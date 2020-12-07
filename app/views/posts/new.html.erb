@@ -2,7 +2,7 @@
 	<%= form_with(model:@post, local: true, url:posts_confirm_path, class: 'container') do |f| %>
 		<div class="emoji-field row">
 			<div class="emoji-main col-md-6">
-				<%= f.text_area :emoji, value: '😁', placeholder: "絵文字[control+command+スペースで入力出来ます]", autofocus: true, class: "emoji-form" %>
+				<%= f.text_area :emoji, placeholder: "絵文字[control+command+スペースで入力出来ます]", autofocus: true, class: "emoji-form" %>
 			</div>
 			<div class="emoji-model col-md-6">
 				<span class="emoji-model-1">絵文字を選んでください(デフォルトで絵文字が設定されていますが、変更可能です)</span> 
