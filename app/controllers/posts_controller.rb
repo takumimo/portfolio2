@@ -34,9 +34,9 @@ class PostsController < ApplicationController
 
     @q = Post.ransack(params[:q])
     if params[:tag_name]
-      @posts = Post.tagged_with("#{params[:tag_name]}").includes(:tags).order(created_at: :desc)
+      @posts = Post.tagged_with("#{params[:tag_name]}").includes(:tags).order(created_at: :desc).page(params[:page]).per(10)
     elsif params[:q]
-      @posts = @q.result.order(created_at: :desc)
+      @posts = @q.result.order(created_at: :desc).page(params[:page]).per(10)
     else
       @posts = Post.all.order(created_at: :desc).page(params[:page]).per(10)
     end
