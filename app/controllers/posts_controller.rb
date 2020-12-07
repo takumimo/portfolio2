@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def new
     @post = params[:post].present? ? Post.new(post_params) : Post.new
     @post.tag_list = params[:post].present? ? params[:post][:tag_list].split(',') : ""
+    @post.emoji = params[:post].present? ? params[:post][:emoji] : "😄"
     @user = current_user
   end
 
