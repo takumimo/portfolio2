@@ -22,6 +22,11 @@ ja:
         password: パスワード
         password_confirmation: 確認用パスワード
         current_password: 現在のパスワード
+      post:
+        title: タイトル
+        text: 本文
+        tag_list: タグ
+        emoji: 絵文字
     errors:
       messages:
         record_invalid: 'が有効ではありません。'

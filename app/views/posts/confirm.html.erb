@@ -1,4 +1,14 @@
 <div class="container">
+	<div>
+		<% if @post.errors.any? %>
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+  <% end %>
+	</div>
+	
 	<div class="form-group">
 		<div class="confirm-title row">
 			<%= @post.emoji %>
