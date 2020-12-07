@@ -293,7 +293,7 @@
 }
 
 .rank-posts {
-  padding: 20px;
+  padding: 20px 0 20px 20px;
   border-bottom: 1px solid #e8e8e8;
 }
 
@@ -562,4 +562,8 @@
 
 .tab-bar-tag {
   font-size: 15px;
+}
+
+.attention-count {
+  margin-top: 10px;
 }
