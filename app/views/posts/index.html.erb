@@ -1,7 +1,7 @@
 <div class="container">
 	<div style="margin-bottom: 5px;">
-    <%= flash[:notice] %>
-  </div>
+    	<%= flash[:notice] %>
+  	</div>
   	<div class="gretel">
 		<% if params[:q] %>
 			<% breadcrumb :postsq, @posts %>
@@ -159,6 +159,7 @@
 					<% end %>
 				</div>
 		    </section>
+			<%= paginate @posts %>
 		</div>
 		<div class="row col-md-4">
 			<div class="index-details">
