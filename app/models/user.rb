@@ -11,8 +11,8 @@ class User < ApplicationRecord
 
   attachment :profile_image
 
-  validates :name, presence: true, length: { minimum: 2, maximum: 20 }
-  validates :introduction, presence: true, length: { maximum: 300 }
+  validates :name, presence: true
+  validates :introduction, presence: true
 
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
