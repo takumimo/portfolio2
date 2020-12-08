@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   belongs_to :user, optional: true
   has_many :post_comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 20 }
   validates :text, presence: true
   validates :emoji, presence: true
   validates :tag_list, presence: true
