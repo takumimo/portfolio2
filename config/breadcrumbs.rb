@@ -27,13 +27,8 @@
 # folder are loaded and reloaded automatically when you change them, just like
 # this file (`config/breadcrumbs.rb`).
 
-crumb :top do
-  link "ホーム", root_path
-end
-
 crumb :posts do
   link "相談一覧", posts_path
-  parent :top
 end
 
 crumb :post do |post|
