@@ -130,7 +130,7 @@
 								<div class="post-index col-md-8">
 									<div class="post-article">
 										<%= link_to user_path(post.user) do %>
-											<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'image' %>
+											<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "no_image.jpg", class: 'image' %>
 										<% end %>
 										<span class="index-title"><%= link_to post.title, post_path(post) %></span>
 									</div>
@@ -169,7 +169,7 @@
 					<div class="inner-more">
 						<div class="index-detail-head">
 							<div class="detail-head-topic">
-								<%= attachment_image_tag current_user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'detail-head-image' %>
+								<%= attachment_image_tag current_user, :profile_image, :fill,20, 20, format: 'jpeg', fallback: "no_image.jpg", class: 'detail-head-image' %>
 								<span class="profile-name"><%= current_user.name %></span>
 							</div>
 						</div>
