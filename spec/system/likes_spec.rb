@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Likes', type: :system do
     describe 'いいね機能' do
         let(:user) { create(:user) }
-        let!(:test_user2) { create(:user) }
-        let!(:post) { create(:post, user: user) }
+        let!(:test_user) { create(:user) }
+        let!(:user_post) { create(:post) }
         before do
             visit new_user_session_path
             fill_in 'user[email]', with: user.email
@@ -17,27 +17,24 @@ RSpec.describe 'Likes', type: :system do
                 expect(current_path).to eq(posts_path)
 
                 # いいねをするボタンを押す
-                find click_link('気になる')
-                expect(page).to have_selector 'a[data-method=post]', text: 'post'
-                expect(post.likes.count).to eq(1)
+                click_link '注目する'
+                expect(page).to have_content '注目してます'
 
                 # いいねを解除する
-                find click_link('気になる')
-                expect(page).to have_selector 'a[data-method=delete]', text: 'delete'
-                expect(post.likes.count).to eq(0)
+                click_link '注目してます'
+                expect(page).to have_content '注目する'
+                
             end
         end
         context 'show画面' do
             it 'いいね、いいね解除' do
                 # いいねをするボタンを押す
-                find click_link('気になる')
-                expect(page).to have_selector 'a[data-method=post]', text: 'post'
-                expect(post.likes.count).to eq(1)
+                click_link '注目する'
+                expect(page).to have_content '注目してます'
 
                 # いいねを解除する
-                find click_link('気になる')
-                expect(page).to have_selector 'a[data-method=delete]', text: 'delete'
-                expect(post.likes.count).to eq(0)
+                click_link '注目してます'
+                expect(page).to have_content '注目する'
             end
         end
     end
