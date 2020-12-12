@@ -56,6 +56,11 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    if @post.user == current_user
+      render 'edit'
+    else
+      redirect_back(fallback_location: posts_path, notice: "URLが有効ではありません")
+    end
   end
 
   def update

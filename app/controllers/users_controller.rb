@@ -6,11 +6,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    @user = User.find(params[:id])
+    if @user == current_user
+      render 'edit'
+    else
+      redirect_back(fallback_location: user_path(current_user), notice: "URLが有効ではありません")
+    end
   end
 
   def update
-    @user = current_user
+    @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "更新しました"
       redirect_to user_path
