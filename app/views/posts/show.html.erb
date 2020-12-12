@@ -3,6 +3,9 @@
 		<% breadcrumb :post, @post %>
 		<%= breadcrumbs separator: " &rsaquo; " %>
 	</div>
+	<div class="show-notice">
+		<%= flash[:notice] %>
+	</div>
 	<div class="row">
 		<div class="stock-icon">
 			<!-- 自身の投稿以外 かつ ログインしているユーザーであれば -->
@@ -44,14 +47,14 @@
 					<% if current_user == @post.user %>
 						<span class="post-destroy pull-right">
 							<%= link_to post_path(@post), method: :delete, data: {confirm: "本当に消しますか" } do %>
-								<i class="far fa-trash-alt"></i>削除する
+								<i class="far fa-trash-alt">削除する</i>
 							<% end %>
 						</span>
 					<% end %>
 					<% if current_user == @post.user %>
 						<span class="post-edit pull-right">
 							<%= link_to edit_post_path(@post) do %>
-								<i class="far fa-edit"></i>編集する
+								<i class="far fa-edit">編集する</i>
 							<% end %>
 						</span>
 					<% end %>

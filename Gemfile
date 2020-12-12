@@ -71,7 +71,6 @@ group :test do
   # gem 'webdrivers'
   gem 'faker'
   # gem 'launchy', '~> 2.4.3'
-  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
