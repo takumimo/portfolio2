@@ -2,11 +2,11 @@
 	<div class="gretel">
 		<% breadcrumb :user, @user %>
 		<%= breadcrumbs separator: " &rsaquo; " %>
-		</div>
+	</div>
+	<div class="user-message">
+		<%= flash[:notice] %>
+	</div>
 	<div class="row">
-		<div class="user-message">
-			<%= flash[:notice] %>
-		</div>
 		<div class="user-show-right col-md-3">
 			<h3><strong>ユーザー情報</strong></h3>
 			<div class="show-name">

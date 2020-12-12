@@ -14,6 +14,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.tag_list = params[:post][:tag_list]
     if @post.save
+      flash[:notice] = "投稿が完了しました"
       redirect_to user_path(current_user)
     else 
       render 'confirm'
@@ -70,6 +71,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
+    flash[:notice] = "削除しました"
     redirect_to user_path(current_user)
   end
 
