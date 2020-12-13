@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="user-show-right col-md-3">
 			<h3><strong>ユーザー情報</strong></h3>
-			<div class="show-name">
+			<div class="show-name"> 
 				<h4>名前</h4>
 				<p class="show-name-topic"><%= @user.name %></p><br>
 			</div>
@@ -21,7 +21,7 @@
 				<% if @user == current_user %>
 			      	<%= link_to "プロフィールを編集する", edit_user_path(@user), class: 'btn btn-success' %>
 			    <% else %>
-			    	<% if current_user.following?(@user) %>
+			    	<% if current_user.following.include?(@user) %>
 				        <%= render 'users/unfollow', user: @user %>
 				    <% else %>
 				    	<%= render 'users/follow', user: @user %>
