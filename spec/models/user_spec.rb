@@ -46,26 +46,26 @@ RSpec.describe 'Userモデルのテスト', type: :model do
     end
   end
 
-  describe "follow and unfollow" do
+  describe "フォローとフォロー解除" do
     let(:user) { create(:user) }
     let(:other_user) { create(:user) }
 
     before { user.follow(other_user) }
 
-    describe "follow" do
-      it "succeeds" do
-        expect(user.following?(other_user)).to be_truthy
+    describe "フォローする" do
+      it "成功する" do
+        expect(user.following.include?(other_user)).to be_truthy
       end
-      describe "followers" do
-        it "succeeds" do
+      describe "フォローされる" do
+        it "成功する" do
           expect(other_user.followers.include?(user)).to be_truthy
         end
       end
     end
-    describe "unfollow" do
-      it "succeeds" do
+    describe "フォロー解除" do
+      it "成功する" do
         user.unfollow(other_user)
-        expect(user.following?(other_user)).to be_falsy
+        expect(user.following.include?(other_user)).to be_falsy
       end
     end
   end

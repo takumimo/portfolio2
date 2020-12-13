@@ -1,10 +1,10 @@
 <% if post.liked_by?(current_user) %>
-  <%= link_to post_likes_path(post), method: :delete, local: true do %>
+  <%= link_to post_likes_path(post), method: :delete, remote: true do %>
     <i class="fa fa-heart index-like" style="color: red;" aria-hidden="true", id="liking-btn"></i>
     注目してます
   <% end %>
 <% else %>
-  <%= link_to post_likes_path(post), method: :post, local: true do %>
+  <%= link_to post_likes_path(post), method: :post, remote: true do %>
     <i class="far fa-heart index-like" aria-hidden="true", id="nolike-btn"></i>
     注目する
   <% end %>
