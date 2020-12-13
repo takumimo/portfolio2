@@ -22,10 +22,6 @@ class User < ApplicationRecord
 
   has_many :stocks, dependent: :destroy
 
-  def following?(other_user)
-    following.include?(other_user)
-  end
-
   def follow(other_user)
     following << other_user
   end
@@ -33,4 +29,5 @@ class User < ApplicationRecord
   def unfollow(other_user)
     active_relationships.find_by(followed_id: other_user.id).destroy
   end
+  
 end
