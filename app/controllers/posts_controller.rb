@@ -23,29 +23,21 @@ class PostsController < ApplicationController
 
   def index
     @all_ranking_posts = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(10).pluck(:post_id))
-#     select user_id, sum(thanks.like_count) as sum_like_count from post_comments left join (select post_comment_id, count(post_comment_id) as like_count from thanks group by post_comment_id) as thanks on post_comments.id = thanks.post_comment_id group by user_id order by sum_like_count limit 4;
+    @contributors = PostComment.find(PostComment.group(:user_id).order('count(id) desc').limit(5).pluck(:id))
 
-#     @all_post_comments = PostComment.select(
-#   [
-#     :user_id, Arel::Nodes::NamedFunction.new('SUM', [Thank.arel_table[:like_count]]).as('sum_like_count')
-#   ]
-# ).joins(
-#   PostComment.arel_table.join(Thank.arel_table).on(
-#     PostComment.arel_table[:id].eq(Thank.arel_table[:post_comment_id])
-#   ).join_sources
-# ).order(:sum_like_count).group(:user_id).limit(4)
 
     @tags = Post.tag_counts_on(:tags).order('count desc')
 
     @q = Post.ransack(params[:q])
     if params[:tag_name]
-      @posts = Post.tagged_with("#{params[:tag_name]}").includes(:tags).order(created_at: :desc).page(params[:page]).per(10)
+      @posts = Post.tagged_with("#{params[:tag_name]}").includes(:tags).order(created_at: :desc).per(10)
     elsif params[:q]
-      @posts = @q.result.order(created_at: :desc).page(params[:page]).per(10)
+      @posts = @q.result.order(created_at: :desc).per(10)
     else
       @posts = Post.includes(:user).all.order(created_at: :desc).page(params[:page]).per(10)
     end
     @user = current_user
+
   end
 
   def show
