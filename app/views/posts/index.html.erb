@@ -35,7 +35,7 @@
 		    </ul>
 	    	<section class='content active' id="main">
 	    		<% if @q.result.present? %>
-					<% @posts.each do |post| %>
+					<% @posts.includes(:user).each do |post| %>
 						<div class="post-middle row">
 							<div class="post-middle-inner">
 								

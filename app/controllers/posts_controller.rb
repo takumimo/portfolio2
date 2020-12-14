@@ -43,7 +43,7 @@ class PostsController < ApplicationController
     elsif params[:q]
       @posts = @q.result.order(created_at: :desc).page(params[:page]).per(10)
     else
-      @posts = Post.all.order(created_at: :desc).page(params[:page]).per(10)
+      @posts = Post.includes(:user).all.order(created_at: :desc).page(params[:page]).per(10)
     end
     @user = current_user
   end

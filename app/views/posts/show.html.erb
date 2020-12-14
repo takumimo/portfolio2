@@ -82,7 +82,9 @@
 			</div>
 			<div class="comment-form text-center center-block">
 					<% if current_user != @post.user%>
-				    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post }  %>
+						<span class="show-like", id="likes_buttons_<%= @post.id %>">
+				    		<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post }  %>
+						</span>
 					<% end %>
 			</div>
 		</div>
