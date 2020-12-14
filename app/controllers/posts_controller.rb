@@ -23,18 +23,21 @@ class PostsController < ApplicationController
 
   def index
     @all_ranking_posts = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(10).pluck(:post_id))
+    @contributors = PostComment.find(PostComment.group(:user_id).order('count(id) desc').limit(5).pluck(:id))
+
 
     @tags = Post.tag_counts_on(:tags).order('count desc')
 
     @q = Post.ransack(params[:q])
     if params[:tag_name]
-      @posts = Post.tagged_with("#{params[:tag_name]}").includes(:tags).order(created_at: :desc).page(params[:page]).per(10)
+      @posts = Post.tagged_with("#{params[:tag_name]}").includes(:tags).order(created_at: :desc).per(10)
     elsif params[:q]
-      @posts = @q.result.order(created_at: :desc).page(params[:page]).per(10)
+      @posts = @q.result.order(created_at: :desc).per(10)
     else
       @posts = Post.includes(:user).all.order(created_at: :desc).page(params[:page]).per(10)
     end
     @user = current_user
+
   end
 
   def show

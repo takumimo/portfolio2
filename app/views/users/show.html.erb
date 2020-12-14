@@ -19,7 +19,7 @@
 			</div>
 			<div class="user-show-edit">
 				<% if @user == current_user %>
-			      	<%= link_to "プロフィールを編集する", edit_user_path(@user), class: 'btn btn-success' %>
+			      	<%= link_to "プロフィールを編集する", edit_user_path(@user), class: 'btn btn-profile' %>
 			    <% else %>
 			    	<% if current_user.following.include?(@user) %>
 				        <%= render 'users/unfollow', user: @user %>

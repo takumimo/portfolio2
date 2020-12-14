@@ -111,21 +111,25 @@
 }
 
 .follow-submit {
-  background: #5CB85C none;
+  background: #f2f2f2 none;
+  color: #333333;
   border: 1px solid #b8dbf2;
-  color: white;
   border-radius: 3px;
-  height: 40px;
-  width: 100px;
+  height: 25px;
+  font-size: 10px;
 }
 
 .unfollow-submit {
-  background: #5CB85C none;
+  background: #f2f2f2 none;
+  color: #333333;
   border: 1px solid #b8dbf2;
-  color: white;
   border-radius: 3px;
-  height: 40px;
-  width: 100px;
+  height: 25px;
+  font-size: 10px;
+}
+
+.btn-profile {
+	background-color: #f2f2f2;;
 }
 
 .followers-img {

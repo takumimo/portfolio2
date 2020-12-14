@@ -126,7 +126,7 @@
 
 .user-show-edit {
     a {
-    color: ivory;
+    color: #333333;
     text-decoration: none;
   }
 }
@@ -374,12 +374,8 @@
 .comment-rank {
   background-color: white;
   margin-top: 30px;
+  margin-left: 10px;
 }
-
-/*.comment-rank-inner {
-  border-bottom: 1px solid #ddd;
-  padding: 0 10px;
-}*/
 
 .comment-rank-count {
   font-weight: bold;
@@ -390,15 +386,45 @@
   font-weight: normal;
 }
 
-.rank-comments {
+.rank-left {
   border-bottom: 1px solid #e8e8e8;
-  margin-top: 10px 0;
+  margin: 10px;
+  padding-left: 20px;
   padding-bottom: 10px;
-  padding-top: 10px;
+
 }
 
-.rank-comments:last-child {
-  border-bottom: none;
+.ranking {
+  margin-right: 5px;
+}
+
+.comment-letter {
+  margin-bottom: 30px;
+}
+
+.is-gold {
+  color: #ffc400;
+}
+
+.is-silver {
+  color: #c9c9c9;
+}
+
+.is-blonze {
+  color: #ac6d4d;
+}
+
+.other {
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.new_relationship {
+  display: inline-block;
+}
+
+.index-follow {
+  padding-top: 10px;
 }
 
 .posts-show-text {
