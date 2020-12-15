@@ -44,10 +44,10 @@
 	}
 }
 
-.topic-1 {
+.topic-1-inner {
+	padding: 10px;
 	background-color: #EDF5FF;
 	border-radius: 16px;
-	margin-right: 50px;
 }
 
 
@@ -68,22 +68,29 @@
 }
 
 .topic-2 {
-	background-color: #EDF5FF;
-	border-radius: 16px;
-	margin-right: 50px;
 	p {
 		padding:40px;
 		font-weight: bold;
 	}
 }
 
-.topic-3 {
+.topic-2-inner {
+	padding: 10px;
 	background-color: #EDF5FF;
 	border-radius: 16px;
+}
+
+.topic-3 {
 	p {
 		padding:40px;
 		font-weight: bold;
 	}
+}
+
+.topic-3-inner {
+	padding: 10px;
+	background-color: #EDF5FF;
+	border-radius: 16px;
 }
 
 .main-topic {
@@ -124,4 +131,8 @@
 		margin-left: 30px;
 		margin-bottom: 10px;
 	}
+}
+
+.about-sentence {
+	font-size: 20px;
 }
