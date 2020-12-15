@@ -30,8 +30,8 @@
 			<%= f.hidden_field :tag_list %>
 			<%= f.hidden_field :status, value: :doing %>
 			<div class="confirm-button row">
-				<%= link_to "修正する", new_post_path(post: @post.attributes), class: 'button-fix btn btn-success' %>
-				<%= f.submit "投稿する", class: 'btn btn-danger' %>
+				<%= link_to "修正する", new_post_path(post: @post.attributes), class: 'btn modifying-post' %>
+				<%= f.submit "投稿する", class: 'btn confirmed-post' %>
 			</div>
 		<% end %>
 	</div>

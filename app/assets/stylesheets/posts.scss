@@ -232,15 +232,15 @@
 }
 
 .new-post-submit {
-  background: #5CB85C none;
+  background: #EE7711 none;
   border: 1px solid #b8dbf2;
-  color: white;
+  color: #fff;
   border-radius: 3px;
   height: 40px;
 }
 
 .edit-post-submit {
-  background: #5CB85C none;
+  background: #EE7711 none;
   border: 1px solid #b8dbf2;
   color: white;
   border-radius: 3px;
@@ -249,7 +249,7 @@
 }
 
 .post-comment-submit {
-  background: #5CB85C none;
+  background: #EE7711 none;
   border: 1px solid #b8dbf2;
   color: white;
   border-radius: 3px;
@@ -481,8 +481,18 @@
 }
 
 .done {
-  background-color: #e9606d;
+  background-color: #EE7711;
   color: #fff;
+}
+
+.confirmed-post {
+  background: #EE7711 none;
+  color: #fff;
+}
+
+.modifying-post {
+  background: #f2f2f2;
+  color: #333333;
 }
 
 .detail-head-topic{
