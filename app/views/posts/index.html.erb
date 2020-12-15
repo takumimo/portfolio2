@@ -99,7 +99,7 @@
 							<span>
 								<%= attachment_image_tag post.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
 							</span>
-							<span><%= link_to post.title, post_path(post) %></span>
+							<span class="attention-title"><%= link_to post.title, post_path(post) %></span>
 							<span class="attention-count pull-right"><%= post.likes.count %>人が注目しています</span>
 							<div>
 								<span class="rank-content"><%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿</span>
@@ -223,7 +223,7 @@
 							<span>
 								<%= attachment_image_tag contributor.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
 							</span>
-							<%= link_to contributor.user.name, user_path(contributor.user) %>
+							<span class="ranking-title"><%= link_to contributor.user.name, user_path(contributor.user) %></span>
 							<span class="index-follow pull-right">
 								<% if current_user.following.include?(contributor.user) %>
 									<%= render 'users/unfollow', user: contributor.user %>

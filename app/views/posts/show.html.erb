@@ -43,7 +43,7 @@
 							<%= attachment_image_tag @post.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
 						</span>
 					<% end %>
-					<span><%= link_to @post.user.name, user_path(@post.user) %></span>
+					<span class="show-title"><%= link_to @post.user.name, user_path(@post.user) %></span>
 					<% if current_user == @post.user %>
 						<span class="post-destroy pull-right">
 							<%= link_to post_path(@post), method: :delete, data: {confirm: "本当に消しますか" } do %>
@@ -65,7 +65,7 @@
 						<button class="show-span-tag"><%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %></button>
 					</span>
 				<% end %>
-				<h4 class="posts-show-text"><%= @post.text%></h4>
+				<h4 class="posts-show-text"><%= safe_join(@post.text.split("\n"),tag(:br)) %></h4>
 			</div>
 			<div class="comment-bottom">
 				<i class="fas fa-comments"></i>

@@ -9,9 +9,9 @@
 				<span class="pull-right"><%= post_comment.created_at.to_s(:datetime) %></span>
 			</div>
 			<div class="comment-main">
-				<%= post_comment.text %>
+				<%= safe_join(post_comment.text.split("\n"),tag(:br)) %>
 				<% if post_comment.user == current_user %>
-					<span class="pull-right">
+					<span class="comment-delete pull-right">
 						<%= link_to '削除',post_comment_path(post_comment.post,post_comment), method: :delete, remote: true, data: {confirm: "本当に消しますか" } %>
 					</span>
 				<% end %>
