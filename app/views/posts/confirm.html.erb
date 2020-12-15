@@ -20,7 +20,7 @@
 			<%= @post.tag_list %>
 		</div>
 		<div class="confirm-text row">
-			<%= @post.text %>
+			<%= safe_join(@post.text.split("\n"),tag(:br)) %>
 		</div>
 		<%= form_with(model: @post, local: true, url: posts_path) do |f| %>
 			<%= f.hidden_field :user_id, value: current_user.id %>
