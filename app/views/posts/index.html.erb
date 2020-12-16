@@ -225,7 +225,9 @@
 							</span>
 							<span class="ranking-title"><%= link_to contributor.user.name, user_path(contributor.user) %></span>
 							<span class="index-follow pull-right">
-								<% if current_user.following.include?(contributor.user) %>
+								<% if contributor.user == current_user %>
+									<span class="rank-in"><%= '🎉' %></span>
+								<% elsif current_user.following.include?(contributor.user) %>
 									<%= render 'users/unfollow', user: contributor.user %>
 								<% else %>
 									<%= render 'users/follow', user: contributor.user %>
