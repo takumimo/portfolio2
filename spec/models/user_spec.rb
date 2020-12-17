@@ -62,6 +62,7 @@ RSpec.describe 'Userモデルのテスト', type: :model do
         end
       end
     end
+
     describe "フォロー解除" do
       it "成功する" do
         user.unfollow(other_user)
@@ -70,4 +71,3 @@ RSpec.describe 'Userモデルのテスト', type: :model do
     end
   end
 end
-
