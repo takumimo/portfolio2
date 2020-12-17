@@ -15,7 +15,6 @@
 	</div>
 	<div class="user-edit">
 		<h3><strong>プロフィール設定</strong></h3>
-			
 		<%= form_with(model: @user, local: true, url: user_path(@user)) do |f| %>
 			<h4>名前</h4>
 			<%= f.text_field :name, autofocus: true, class: "user-edit-name" %><br>

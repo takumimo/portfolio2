@@ -18,11 +18,9 @@
 				          <i class="fas fa-folder fa-lg"></i> ストック中
 				        <% end %>
 				      <% end %>
-
 				    <!-- ストックしていない記事であれば「ストックボタン」を表示 -->
 				    <% else %>
-
-				      <!-- buildでstocksコントローラーのcreateアクションへ -->
+				      	<!-- buildでstocksコントローラーのcreateアクションへ -->
 					    <%= form_with model: @post.stocks.build, url: stocks_path(post_id: @post.id) do |f| %>
 					        <%= f.button(class: "btn btn-outline-dark") do %>
 					        	<i class="far fa-folder fa-lg"></i> ストックする
@@ -75,17 +73,17 @@
 					<% end %>
 				</span>
 				<div class="comment-field">
-						<div class="comment-area", id="post_comments_area">
-							<%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
-						</div>
+					<div class="comment-area", id="post_comments_area">
+						<%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
+					</div>
 				</div>
 			</div>
 			<div class="comment-form text-center center-block">
-					<% if current_user != @post.user%>
-						<span class="show-like", id="likes_buttons_<%= @post.id %>">
-				    		<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post }  %>
-						</span>
-					<% end %>
+				<% if current_user != @post.user%>
+					<span class="show-like", id="likes_buttons_<%= @post.id %>">
+				    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post }  %>
+					</span>
+				<% end %>
 			</div>
 		</div>
 	</div>

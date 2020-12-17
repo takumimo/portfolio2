@@ -4,17 +4,14 @@
 			<div class="stock-tag col-md-2">
 			<h4><strong>タグ</strong></h4>
 			<% @stock_posts.each do |post| %>
-				
-					<% post.tags.each do |tag| %>
-						<button class="stock-tag-name">
-							<%= link_to tag.name, posts_path(tag_name: tag.name) %>
-						</button>
-					<% end %>
-				
+				<% post.tags.each do |tag| %>
+					<button class="stock-tag-name">
+						<%= link_to tag.name, posts_path(tag_name: tag.name) %>
+					</button>
+				<% end %>
 			<% end %>
 			</div>
 			<% @stock_posts.each do |post| %>
-				
 				<div class="stock-index col-md-10">
 					<div class="post-articles row">
 						<div class="post-article col-md-1">

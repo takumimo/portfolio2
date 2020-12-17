@@ -56,36 +56,31 @@
 				<% else %>
 					<p>コメントはまだありません</p>
 				<% end %>
-
 			</div>
 		</div>
-
-			<div class="show-details col-md-4">
-
-					<div class="show-inner-more">
-						<div class="show-detail-head">
-							<div class="show-head-topic">
-								<%= attachment_image_tag @user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'detail-head-image' %>
-							</div>
-						</div>
-						<div class="show-detail-foot row">
-							<div class="show-detail-left col-md-4">
-								<p class="show-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
-								<p class="show-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
-							</div>
-							<div class="show-detail-middle col-md-4">
-								<p class="show-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
-								<p class="show-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
-							</div>
-							<div class="show-detail-right col-md-4">
-								<p class="show-detail"><%= link_to @user.followers.count, followers_user_path(@user) %></p>
-								<p class="show-detail-letter"><%= link_to 'フォロワー', followers_user_path(@user) %></p>
-							</div>
-						</div>
-
+		<div class="show-details col-md-4">
+			<div class="show-inner-more">
+				<div class="show-detail-head">
+					<div class="show-head-topic">
+						<%= attachment_image_tag @user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'detail-head-image' %>
+					</div>
+				</div>
+				<div class="show-detail-foot row">
+					<div class="show-detail-left col-md-4">
+						<p class="show-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
+						<p class="show-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
+					</div>
+					<div class="show-detail-middle col-md-4">
+						<p class="show-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
+						<p class="show-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
+					</div>
+					<div class="show-detail-right col-md-4">
+						<p class="show-detail"><%= link_to @user.followers.count, followers_user_path(@user) %></p>
+						<p class="show-detail-letter"><%= link_to 'フォロワー', followers_user_path(@user) %></p>
+					</div>
 				</div>
 			</div>
-
+		</div>
 	</div>
 </div>
 

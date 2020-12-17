@@ -21,6 +21,12 @@ Ruby on Railsで制作しました。
 
 [ポートフォリオ解説](https://qiita.com/mtktkm24/private/233e30cfbea367b9cb0c)
 
+## アピールポイント
+- JavaScriptを使用しDOM操作によるタブの切り替え機能を実装
+- 非同期通信を一部使用しユーザストレスを軽減
+- Rspecを取り入れ、事前にバグを検知
+- AWS各種サービスを使用し、開発現場で使われる環境を構築
+
 ## 機能
 Ruby on Railsで制作したアプリです。
 
