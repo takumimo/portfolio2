@@ -1,7 +1,7 @@
 <div class="container">
 	<div style="margin-bottom: 5px;">
-    <%= flash[:notice] %>
-  </div>
+        <%= flash[:notice] %>
+  	</div>
   	<div class="gretel">
 		<% if params[:q] %>
 			<% breadcrumb :postsq, @posts %>
@@ -16,14 +16,12 @@
 	</div>
 	<div class="row">
 		<div class="search-window">
-
 			<%= search_form_for @q do |f| %>
 			<span class="fa fa-search">
 	  			<%= f.search_field :text_cont, placeholder: "本文検索", class: "search-input" %>
 	  			</span>
 			<% end %>
 		</div>
-
 	</div>
 	<div class="row">
 		<div class="tab col-md-8">
@@ -35,10 +33,9 @@
 		    </ul>
 	    	<section class='content active' id="main">
 	    		<% if @q.result.present? %>
-					<% @posts.includes(:user).each do |post| %>
+					<% @posts.each do |post| %>
 						<div class="post-middle row">
 							<div class="post-middle-inner">
-								
 								<div class="emoji col-md-2">
 									<div class="emoji-inner">
 										<%= post.emoji %>
@@ -58,8 +55,7 @@
 										<%= link_to user_path(post.user) do %>
 											<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'image' %>
 										<% end %>
-										<span class="index-title"><%= link_to post.title, post_path(post) %></span>
-											
+										<span class="index-title"><%= link_to post.title, post_path(post) %></span>	
 									</div>
 									<div class="post-ul">
 										<%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿
@@ -73,17 +69,16 @@
 										<% end %>
 										<!-- タグ -->
 										<!-- 気になるボタン -->
-								<% if current_user != post.user %>
-									<span class="pull-right post-like", id="likes_buttons_<%= post.id %>">
-										<%= render 'likes/like', post: post %>
-									</span>
-								<% end %>
-								<!-- 気になるボタン -->
+										<% if current_user != post.user %>
+											<span class="pull-right post-like", id="likes_buttons_<%= post.id %>">
+												<%= render 'likes/like', post: post %>
+											</span>
+										<% end %>
+										<!-- 気になるボタン -->
 									</div>
 								</div>
 							</div>
 						</div>
-						
 					<% end %>
 				<% else %>
 					<div class="search-result">
@@ -109,61 +104,60 @@
 				</div>
 	    	</section>
 	    	<section class="content" id="solved">
-			<% if @q.result.present? %>
-				<% @posts.each do |post| %>
-					<% if post.status == "done" %>
-						<div class="post-middle row">
-									<div class="post-middle-inner">
-										<div class="emoji col-md-2">
-											<div class="emoji-inner">
-												<%= post.emoji %>
-											</div>
+				<% if @q.result.present? %>
+					<% @posts.each do |post| %>
+						<% if post.status == "done" %>
+							<div class="post-middle row">
+								<div class="post-middle-inner">
+									<div class="emoji col-md-2">
+										<div class="emoji-inner">
+											<%= post.emoji %>
 										</div>
-										<div class="col-md-2">
-											<div class="post-middle-left row">
-												<div class="<%= post.status %> post-status"><%= post.status_i18n %></div>
-												<div class="post-comments-count">
-													<p class="post-response">回答</p>
-													<h4><%= post.post_comments.count %></h4>
-												</div>
-											</div>
-										</div>
-										<div class="post-index col-md-8">
-											<div class="post-article">
-												<%= link_to user_path(post.user) do %>
-													<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "no_image.jpg", class: 'image' %>
-												<% end %>
-												<span class="index-title"><%= link_to post.title, post_path(post) %></span>
-											</div>
-											<div class="post-ul">
-												<%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿
-											</div>
-											<div class="post-tag">
-												<!-- タグ -->
-												<% post.tags.each do |tag| %>
-													<button class="post-button">
-														<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %>
-													</button>
-												<% end %>
-												<!-- タグ -->
+									</div>
+									<div class="col-md-2">
+										<div class="post-middle-left row">
+											<div class="<%= post.status %> post-status"><%= post.status_i18n %></div>
+											<div class="post-comments-count">
+												<p class="post-response">回答</p>
+												<h4><%= post.post_comments.count %></h4>
 											</div>
 										</div>
 									</div>
+									<div class="post-index col-md-8">
+										<div class="post-article">
+											<%= link_to user_path(post.user) do %>
+												<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "no_image.jpg", class: 'image' %>
+											<% end %>
+											<span class="index-title"><%= link_to post.title, post_path(post) %></span>
+										</div>
+										<div class="post-ul">
+											<%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿
+										</div>
+										<div class="post-tag">
+											<!-- タグ -->
+											<% post.tags.each do |tag| %>
+												<button class="post-button">
+													<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %>
+												</button>
+											<% end %>
+											<!-- タグ -->
+										</div>
+									</div>
+								</div>
 							</div>
+						<% end %>
 					<% end %>
+				<% else %>
+					<div class="search-result">
+						関連する記事はありません。
+					</div>
 				<% end %>
-			<% else %>
-				<div class="search-result">
-					関連する記事はありません。
-				</div>
-			<% end %>
 		    </section>
 		    <section class="content" id="population">
 		    	<div class="population-tag">
 					<% @tags.each do |tag| %>
 						<button class="post-button tab-bar">
 							#<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn tab-bar-tag" %>
-
 						</button>
 					<% end %>
 				</div>
@@ -198,43 +192,42 @@
 			</div>
 			<div class="comment-rank">
 				<div class="comment-rank-inner">
-
 					<h4 class="comment-letter">コメント貢献者ランキング</h4>
 					<% @contributors.each.with_index(1) do |contributor,i| %>
-					<div class="rank-comments">
-						<div class="rank-left">
-							<% if i == 1 %>
-								<span class="ranking">
-									<i class="fas fa-trophy is-gold"></i>
-								</span>
-							<% elsif i == 2 %>
-								<span class="ranking">
-									<i class="fas fa-trophy is-silver"></i>
-								</span>
-							<% elsif i == 3 %>
-								<span class="ranking">
-									<i class="fas fa-trophy is-blonze"></i>
-								</span>
-							<% else %>
-								<span class="ranking other">
-									<%= i %>
-								</span>
-							<% end %>
-							<span>
-								<%= attachment_image_tag contributor.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
-							</span>
-							<span class="ranking-title"><%= link_to contributor.user.name, user_path(contributor.user) %></span>
-							<span class="index-follow pull-right">
-								<% if contributor.user == current_user %>
-									<span class="rank-in"><%= '🎉' %></span>
-								<% elsif current_user.following.include?(contributor.user) %>
-									<%= render 'users/unfollow', user: contributor.user %>
+						<div class="rank-comments">
+							<div class="rank-left">
+								<% if i == 1 %>
+									<span class="ranking">
+										<i class="fas fa-trophy is-gold"></i>
+									</span>
+								<% elsif i == 2 %>
+									<span class="ranking">
+										<i class="fas fa-trophy is-silver"></i>
+									</span>
+								<% elsif i == 3 %>
+									<span class="ranking">
+										<i class="fas fa-trophy is-blonze"></i>
+									</span>
 								<% else %>
-									<%= render 'users/follow', user: contributor.user %>
+									<span class="ranking other">
+										<%= i %>
+									</span>
 								<% end %>
-							</span>
+								<span>
+									<%= attachment_image_tag contributor.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
+								</span>
+								<span class="ranking-title"><%= link_to contributor.user.name, user_path(contributor.user) %></span>
+								<span class="index-follow pull-right">
+									<% if contributor.user == current_user %>
+										<span class="rank-in"><%= '🎉' %></span>
+									<% elsif current_user.following.include?(contributor.user) %>
+										<%= render 'users/unfollow', user: contributor.user %>
+									<% else %>
+										<%= render 'users/follow', user: contributor.user %>
+									<% end %>
+								</span>
+							</div>
 						</div>
-					</div>
 					<% end %>
 				</div>
 			</div>

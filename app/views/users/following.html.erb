@@ -1,26 +1,26 @@
 <div class="container">
-<div class="gretel">
-	<% breadcrumb :followed, @user %>
-	<%= breadcrumbs separator: " &rsaquo; " %>
-</div>
-<div class = "row">
-	<h2>フォロー中</h2>
-	<% if @users.empty? %>
-		<p>フォロー中のユーザーはまだいません</p>
-	<% else %>
-		<table class = "table">
-			<% @users.each do |user| %>
-				<tr>
-					<td><%= link_to user_path(user) do %>
-						<%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "following-img pull-left profile-img", fallback: "no_image.jpg" %>
-						<% end %>
-					</td>
-					<td><%= link_to user.name, user_path(user) %></td>
-					<td><%= "フォロー数：#{user.following.count}" %></td>
-					<td><%= "フォロワー数：#{user.followers.count}" %></td>
-				</tr>
-			<% end %>
-		</table>
-	<%end%>
-</div>
+	<div class="gretel">
+		<% breadcrumb :followed, @user %>
+		<%= breadcrumbs separator: " &rsaquo; " %>
+	</div>
+	<div class = "row">
+		<h2>フォロー中</h2>
+		<% if @users.empty? %>
+			<p>フォロー中のユーザーはまだいません</p>
+		<% else %>
+			<table class = "table">
+				<% @users.each do |user| %>
+					<tr>
+						<td><%= link_to user_path(user) do %>
+							<%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "following-img pull-left profile-img", fallback: "no_image.jpg" %>
+							<% end %>
+						</td>
+						<td><%= link_to user.name, user_path(user) %></td>
+						<td><%= "フォロー数：#{user.following.count}" %></td>
+						<td><%= "フォロワー数：#{user.followers.count}" %></td>
+					</tr>
+				<% end %>
+			</table>
+		<%end%>
+	</div>
 </div>
