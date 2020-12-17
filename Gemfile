@@ -1,4 +1,4 @@
-  source 'https://rubygems.org'
+source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.7'
@@ -44,8 +44,7 @@ group :development, :test do
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
   # gem 'rspec-rails'
-  
-  
+
   gem 'forgery_ja'
 end
 

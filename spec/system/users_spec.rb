@@ -5,11 +5,12 @@ RSpec.describe 'ユーザー認証のテスト', type: :system do
     before do
       visit new_user_registration_path
     end
+
     context '新規登録画面に遷移' do
       it '新規登録に成功する' do
         fill_in 'user[name]', with: Faker::Internet.username(specifier: 5)
         fill_in 'user[email]', with: Faker::Internet.email
-        fill_in 'user[introduction]', with: Faker::Lorem.characters(number:50)
+        fill_in 'user[introduction]', with: Faker::Lorem.characters(number: 50)
         fill_in 'user[password]', with: 'password'
         fill_in 'user[password_confirmation]', with: 'password'
         click_button '登録'
@@ -28,13 +29,17 @@ RSpec.describe 'ユーザー認証のテスト', type: :system do
       end
     end
   end
+
   describe 'ユーザーログイン' do
     let(:user) { create(:user) }
+
     before do
       visit new_user_session_path
     end
+
     context 'ログイン画面に遷移' do
       let(:test_user) { user }
+
       it 'ログインに成功する' do
         fill_in 'user[email]', with: Faker::Internet.email
         fill_in 'user[password]', with: test_user.password
@@ -56,6 +61,7 @@ describe 'ユーザーのテスト' do
   let(:user) { create(:user) }
   let!(:test_user2) { create(:user) }
   let!(:post) { create(:post, user: user) }
+
   before do
     visit new_user_session_path
     fill_in 'user[email]', with: Faker::Internet.email
@@ -92,6 +98,7 @@ describe 'ユーザーのテスト' do
         expect(current_path).to eq('/users/' + user.id.to_s + '/edit')
       end
     end
+
     context '他人の編集画面への遷移' do
       it '遷移できない' do
         visit edit_user_path(test_user2)
@@ -103,6 +110,7 @@ describe 'ユーザーのテスト' do
       before do
         visit edit_user_path(user)
       end
+
       it 'プロフィール設定と表示される' do
         expect(page).to have_content('プロフィール設定')
       end
@@ -122,7 +130,7 @@ describe 'ユーザーのテスト' do
       it '編集に失敗する' do
         fill_in 'user[name]', with: ''
         click_button '更新する'
-        expect(current_path).to eq('/users/' + user.id.to_s/'edit')
+        expect(current_path).to eq('/users/' + user.id.to_s / 'edit')
       end
     end
   end

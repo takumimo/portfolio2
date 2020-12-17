@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     if @post.save
       flash[:notice] = "投稿が完了しました"
       redirect_to user_path(current_user)
-    else 
+    else
       render 'confirm'
     end
   end
@@ -24,7 +24,6 @@ class PostsController < ApplicationController
   def index
     @all_ranking_posts = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(10).pluck(:post_id))
     @contributors = PostComment.find(PostComment.group(:user_id).order('count(id) desc').limit(5).pluck(:id))
-
 
     @tags = Post.tag_counts_on(:tags).order('count desc')
 
@@ -37,7 +36,6 @@ class PostsController < ApplicationController
       @posts = Post.includes(:user).all.order(created_at: :desc).page(params[:page]).per(10)
     end
     @user = current_user
-
   end
 
   def show

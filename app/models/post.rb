@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   has_many :stocks, dependent: :destroy
   has_many :stock_users, through: :stocks, source: :user
 
-  enum status: {doing: 0, done: 1}
+  enum status: { doing: 0, done: 1 }
 
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
@@ -31,5 +31,4 @@ class Post < ApplicationRecord
   def stocked?(user)
     stock_users.include?(user)
   end
-
 end
