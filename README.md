@@ -6,6 +6,9 @@
 
 https://notworry.net
 
+<img width="1680" alt="スクリーンショット 2020-12-15 15 22 43" src="https://user-images.githubusercontent.com/68421380/102707983-f37c8c00-42e2-11eb-92d2-9aa95dba3620.png">
+
+
 ## アプリ概要
 以下の悩みを抱えるユーザーの問題解決をサポートするアプリです。
 
