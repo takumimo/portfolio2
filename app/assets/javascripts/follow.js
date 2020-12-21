@@ -2,7 +2,7 @@
 
 document.addEventListener("turbolinks:load", function(){
 	{
-	  const menuItems = document.querySelectorAll('.menu li a');
+	  const menuItems = document.querySelectorAll('.switch li a');
 	  const contents = document.querySelectorAll('.content');
 
 	  menuItems.forEach(clickedItem => {

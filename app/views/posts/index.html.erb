@@ -180,7 +180,7 @@
 							</div>
 							<div class="index-detail-middle col-md-4">
 								<p class="index-detail"><%= link_to @user.following.count, following_user_path(@user) %></p>
-								<p class="index-detail-letter"><%= link_to 'フォロー', following_user_path(@user) %></p>
+								<p class="index-detail-letter"><%= link_to 'フォロー', followers_user_path(@user) %></p>
 							</div>
 							<div class="index-detail-right col-md-4">
 								<p class="index-detail"><%= link_to @user.followers.count, followers_user_path(@user) %></p>
