@@ -1,15 +1,14 @@
 <div class="container">
-	<ul class="switch">
+	<ul class="switch row">
 		<li class="tab-list1"><%= link_to 'フォロワー', '#', class: 'active', data: {id: "followers"} %></li>
 		<li class="tab-list2"><%= link_to 'フォロー', '#', data: {id: "following"} %></li>
 	</ul>
 	<section class='content active' id="followers">
 		<div class = "row">
-			<h2>フォロワー</h2>
 			<% if @followers_users.empty? %>
-				<p>フォロワーはまだいません</p>
+				<p class="no-follow">フォロワーはまだいません</p>
 			<% else %>
-				<table class = "table">
+				<table class = "table follow-table">
 					<% @followers_users.each do |user| %>
 						<tr>
 							<td><%= link_to user_path(user) do %>
@@ -17,8 +16,8 @@
 								<% end %>
 							</td>
 							<td><%= link_to user.name, user_path(user) %></td>
-							<td><%= "フォロー数：#{user.following.count}" %></td>
-							<td><%= "フォロワー数：#{user.followers.count}" %></td>
+							<td><%= "フォロー：#{user.following.count}" %></td>
+							<td><%= "フォロワー：#{user.followers.count}" %></td>
 						</tr>
 					<% end %>
 				</table>
@@ -27,11 +26,10 @@
 	</section>
 	<section class="content" id="following">
 		<div class = "row">
-			<h2>フォロー中</h2>
 			<% if @following_users.empty? %>
-				<p>フォロー中のユーザーはまだいません</p>
+				<p class="no-follow">フォロー中のユーザーはまだいません</p>
 			<% else %>
-				<table class = "table">
+				<table class = "table follow-table">
 					<% @following_users.each do |user| %>
 						<tr>
 							<td><%= link_to user_path(user) do %>
@@ -39,8 +37,8 @@
 								<% end %>
 							</td>
 							<td><%= link_to user.name, user_path(user) %></td>
-							<td><%= "フォロー数：#{user.following.count}" %></td>
-							<td><%= "フォロワー数：#{user.followers.count}" %></td>
+							<td><%= "フォロー：#{user.following.count}" %></td>
+							<td><%= "フォロワー：#{user.followers.count}" %></td>
 						</tr>
 					<% end %>
 				</table>

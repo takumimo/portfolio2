@@ -206,7 +206,6 @@
 	padding: 0;
 	margin: 0;
 	display: flex;
-	border-bottom: 1px solid #e8e8e8;
   }
 
   .switch li a {
@@ -237,4 +236,12 @@
   .content {
 	display: none;
   
+  }
+
+  .follow-table {
+	  margin-top: 50px;
+  }
+
+  .no-follow {
+	  margin-top: 50px;
   }
