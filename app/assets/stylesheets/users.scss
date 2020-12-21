@@ -200,3 +200,48 @@
 	padding-bottom: 10px;
 	margin-left: 5px;
 }
+
+.switch {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+  }
+
+  .switch li a {
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+	padding: 8px 0;
+	color: #333;
+	text-decoration: none;
+  }
+  
+  .switch li a.active {
+	color: #55C500;
+	border-bottom: 2px solid #55C500;
+  }
+
+  .switch li a:not(.active):hover {
+	opacity: 0.5;
+	transition: opacity 0.4s;
+  }
+
+  .content.active {
+	color: #333;
+	display: block;
+  
+  }
+
+  .content {
+	display: none;
+  
+  }
+
+  .follow-table {
+	  margin-top: 50px;
+  }
+
+  .no-follow {
+	  margin-top: 50px;
+  }

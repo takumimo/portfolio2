@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resource :tags, only: [:create, :destroy]
   resources :users, only: [:show, :edit, :update] do
     member do
-      get :following, :followers
+      get :follow
     end
   end
 
