@@ -2,7 +2,7 @@ class StocksController < ApplicationController
   def index
     # ログインユーザーがストックした記事一覧を取得
     @stock_posts = Stock.get_stock_posts(current_user)
-    end
+  end
 
   def create
     @post = Post.find(params[:post_id])
