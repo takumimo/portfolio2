@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root "homes#top"
+  
+
   get "homes/about" => "homes#about"
 
   devise_for :users, controllers: {
@@ -27,4 +29,8 @@ Rails.application.routes.draw do
   post "/home/guest_sign_in" => "homes#new_guest"
   resources :relationships, only: [:create, :destroy]
   resources :stocks, only: [:index, :create, :destroy]
+
+  #例外処理
+  get '*not_found', to: 'application#routing_error'
+  post '*not_found', to: 'application#routing_error'
 end

@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <h1 class="routing-error text-center">404</h1>
+        <h4 class="routing-error-message text-center">このページはすでに削除されているか、URLが間違っている可能性があります。</h4>
+        <%= image_tag 'Cat with a witch hat-cuate.png', :size => '400x400', class: 'center-block' %>
+        <% if user_signed_in? %>
+            <button class="routing-error-button center-block"><%= link_to  "トップへ戻る ", posts_path %></button>
+        <% else %>
+            <button class="routing-error-button center-block"><%= link_to  "トップへ戻る ", root_path %></button>
+        <% end%>
+    </div>
+</div>
