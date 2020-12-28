@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :stocks, only: [:index, :create, :destroy]
 
-  #例外処理
-  get '*not_found', to: 'application#routing_error'
-  post '*not_found', to: 'application#routing_error'
+  # #例外処理
+  # get '*not_found', to: 'application#routing_error'
+  # post '*not_found', to: 'application#routing_error'
 end
