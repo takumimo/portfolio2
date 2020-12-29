@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "homes#top"
+  root "posts#index"
   
 
   get "homes/about" => "homes#about"
@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  post "/home/guest_sign_in" => "homes#new_guest"
+  post "/home/guest_sign_in" => "posts#new_guest"
   resources :relationships, only: [:create, :destroy]
   resources :stocks, only: [:index, :create, :destroy]
 
