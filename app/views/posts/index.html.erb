@@ -1,8 +1,10 @@
-	
-	
-			<%= flash[:notice] %>
+
+		
 		<% unless user_signed_in? %>
 		<div class="login-header">
+			<div class="notification">
+				<%= flash[:notice] %>
+			</div>
 				<div class="top-left col-md-6">
 					<h1 class="top-slogan"><strong>Ask for advice.</strong></h1>
 					<p class="top-subject">ノットウォーリーは20代のキャリアの悩みを解決するサイトです</p>
@@ -12,12 +14,17 @@
 					</ul>
 				</div>
 				<div class="top-right col-md-6">
-					<%= image_tag'Devices-bro.png', :size => '600x500', class: 'login-image' %>
+					<%= image_tag'Devices-bro.png', class: 'login-image' %>
 				</div>
 		</div>
 		<% end %>
 	
 <div class="container">
+	<% if user_signed_in? %>
+	<div class="notification-login">
+				<%= flash[:notice] %>
+			</div>
+	<% end %>
   	<div class="gretel">
 		<% if params[:q] %>
 			<% breadcrumb :postsq, @posts %>
