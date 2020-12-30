@@ -68,8 +68,9 @@
 			<div class="comment-bottom">
 				<i class="fas fa-comments"></i>
 				<span>コメント
-					<% if @post.user != current_user %>
+					<% if @post.user != current_user && user_signed_in? %>
 						<span>(気になるボタンを押す事でコメントが出来るようになります）</span>
+					<% elsif @post.user != current_user || user_signed_in? %>
 					<% end %>
 				</span>
 				<div class="comment-field">

@@ -182,37 +182,35 @@
 		    </section>
 		</div>
 		<div class="row col-md-4">
-			<div class="index-details">
-				<div class="index-details-inner">
-					<div class="inner-more">
-						<div class="index-detail-head">
-							<div class="detail-head-topic">
-								<%= attachment_image_tag current_user, :profile_image, :fill,20, 20, format: 'jpeg', fallback: "no_image.jpg", class: 'detail-head-image' %>
-								<% if user_signed_in? %>
-								<span class="profile-name"><%= current_user.name %></span>
-								<% end %>
+			<% if user_signed_in? %>
+				<div class="index-details">
+					<div class="index-details-inner">
+						<div class="inner-more">
+							<div class="index-detail-head">
+								<div class="detail-head-topic">
+									<%= attachment_image_tag current_user, :profile_image, :fill,20, 20, format: 'jpeg', fallback: "no_image.jpg", class: 'detail-head-image' %>
+									<span class="profile-name"><%= current_user.name %></span>
+								</div>
+							</div>
+							<div class="index-detail-foot row">
+								<div class="index-detail-left col-md-4">
+									<p class="index-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
+									<p class="index-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
+									
+								</div>
+								<div class="index-detail-middle col-md-4">
+									<p class="index-detail"><%= link_to @user.following.count, follow_user_path(@user) %></p>
+									<p class="index-detail-letter"><%= link_to 'フォロー', follow_user_path(@user) %></p>
+								</div>
+								<div class="index-detail-right col-md-4">
+									<p class="index-detail"><%= link_to @user.followers.count, follow_user_path(@user) %></p>
+									<p class="index-detail-letter"><%= link_to 'フォロワー', follow_user_path(@user) %></p>
+								</div>
 							</div>
 						</div>
-						<% if user_signed_in? %>
-						<div class="index-detail-foot row">
-							<div class="index-detail-left col-md-4">
-								<p class="index-detail"><%= link_to @user.posts.count, user_path(@user) %></p>
-								<p class="index-detail-letter"><%= link_to '投稿', user_path(@user) %></p>
-								
-							</div>
-							<div class="index-detail-middle col-md-4">
-								<p class="index-detail"><%= link_to @user.following.count, follow_user_path(@user) %></p>
-								<p class="index-detail-letter"><%= link_to 'フォロー', follow_user_path(@user) %></p>
-							</div>
-							<div class="index-detail-right col-md-4">
-								<p class="index-detail"><%= link_to @user.followers.count, follow_user_path(@user) %></p>
-								<p class="index-detail-letter"><%= link_to 'フォロワー', follow_user_path(@user) %></p>
-							</div>
-						</div>
-						<% end %>
 					</div>
 				</div>
-			</div>
+			<% end %>
 			<div class="comment-rank">
 				<div class="comment-rank-inner">
 					<h4 class="comment-letter">コメント貢献者ランキング</h4>
