@@ -22,25 +22,22 @@
 
 .container {
 	width: 1050px;
+	padding-top: 50px;
 }
 
 nav {
+	position: static;
 	li {
 	list-style: none;
 	}
 }
 
-header {
+.navbar-fixed-top {
 	background-color: #2E1031
-
 }
 
 .navbar a {
 	text-decoration: none;
-}
-
-body {
-	margin-top: 70px;
 }
 
 .header-ul {
