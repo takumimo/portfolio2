@@ -14,5 +14,8 @@
 				<% end %>
 			<% end %>
 		</div>
+	<% else %>
+		<div class="before-login-topic">ログインするとコメント出来ます</div>
+			<button class="before-login"><%= link_to  "ログインする", new_user_session_path, class: 'before-login-btn' %></button>
 	<% end %>
 </div>
