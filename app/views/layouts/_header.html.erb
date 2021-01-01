@@ -3,13 +3,13 @@
     <% if user_signed_in? %>
       <li>
         <%= link_to posts_path do %>
-          <i class="fas fa-home"></i>
+          <i class="fas fa-tree"></i>|<span class="logo"><strong>notworry</strong></span><br>
         <% end %>
       </li>
     <% else %>
       <li>
         <%= link_to root_path do %>
-          <i class="fas fa-home"></i>
+          <i class="fas fa-tree"></i>|<span class="logo"><strong>notworry</strong></span><br>
         <% end %>
       </li>
     <% end %>
