@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
 
   get "homes/about" => "homes#about"
+  get "homes/privacy" => "homes#privacy"
 
   devise_for :users, controllers: {
     sessions: "devise/sessions",
