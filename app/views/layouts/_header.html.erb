@@ -1,21 +1,21 @@
-<div class="navbar navbar-fixed-top">
-  <nav class="nav navbar-nav navbar-left">
+<header>
+  <div class="header-left pull-left">
     <% if user_signed_in? %>
       <li>
         <%= link_to posts_path do %>
-          <i class="fas fa-home"></i>
+          <%= image_tag'notworry.png', class: "original-image" %>
         <% end %>
       </li>
     <% else %>
       <li>
         <%= link_to root_path do %>
-          <i class="fas fa-home"></i>
+          <%= image_tag'notworry.png', class: "original-image" %>
         <% end %>
       </li>
     <% end %>
-  </nav>
-  <nav>
-    <ul class="nav navbar-nav navbar-right header-ul">
+  </div>
+  <div>
+    <ul class="pull-right header-ul">
       <% if user_signed_in? %>
         <li>
             <%= link_to stocks_path do %>
@@ -42,8 +42,8 @@
         <li><%= link_to "ログイン", new_user_session_path %></li>
       <% end %>
     </ul>
-  </nav>
-</div>
+  </div>
+</header>
 
 
 
