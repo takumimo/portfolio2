@@ -74,6 +74,4 @@ $ rails db:seed
 https://github.com/takumimo/portfolio2/issues
 
 ## 作者
-SNS: [Twitter](https://twitter.com/takumeeem)
-
 メールアドレス: [mtktkm242424@gmail.com](mtktkm242424@gmail.com)
