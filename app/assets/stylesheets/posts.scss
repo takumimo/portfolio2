@@ -190,6 +190,7 @@
   border: 1px solid #ccc;
   height: 46px;
   padding: 3px;
+  background-color: white;
 }
 
 .emoji-model-1 {
@@ -310,11 +311,6 @@
   padding-left: 10px;
 }
 
-.index-details {
-  background-color: white;
-  margin-top: 10px;
-}
-
 .index-details-inner {
   padding: 0 10px;
 }
@@ -363,9 +359,18 @@
 }
 
 .comment-rank {
+  // margin-top: 30px;
+}
+
+.comment-rank-inner {
+  padding: 10px;
+}
+
+.rank-inner-more {
   background-color: white;
-  margin-top: 30px;
-  margin-left: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .comment-rank-count {
@@ -463,6 +468,7 @@
 }
 
 .inner-more {
+  background-color: white;
   border: 1px solid #ddd;
   border-radius: 10px;
 }
@@ -578,6 +584,13 @@
   margin: 20px 10px;
 }
 
+.tab {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
 .tab-bar {
   color: #787C7B;
 }
@@ -631,10 +644,6 @@
 .notification {
   padding-top: 100px;
   margin-left: 300px;
-}
-
-.notification-login {
-  padding-top: 30px;
 }
 
 .form-group {

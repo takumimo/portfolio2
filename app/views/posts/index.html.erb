@@ -220,45 +220,47 @@
 			<% end %>
 			<div class="comment-rank">
 				<div class="comment-rank-inner">
-					<h4 class="comment-letter">コメント貢献者ランキング</h4>
-					<% @contributors.each.with_index(1) do |contributor,i| %>
-						<div class="rank-comments">
-							<div class="rank-left">
-								<% if i == 1 %>
-									<span class="ranking">
-										<i class="fas fa-trophy is-gold"></i>
-									</span>
-								<% elsif i == 2 %>
-									<span class="ranking">
-										<i class="fas fa-trophy is-silver"></i>
-									</span>
-								<% elsif i == 3 %>
-									<span class="ranking">
-										<i class="fas fa-trophy is-blonze"></i>
-									</span>
-								<% else %>
-									<span class="ranking other">
-										<%= i %>
-									</span>
-								<% end %>
-								<span>
-									<%= attachment_image_tag contributor.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
-								</span>
-								<span class="ranking-title"><%= link_to contributor.user.name, user_path(contributor.user) %></span>
-								<% if user_signed_in? %>
-								<span class="index-follow pull-right">
-									<% if contributor.user == current_user %>
-										<span class="rank-in"><%= '🎉' %></span>
-									<% elsif current_user.following.include?(contributor.user) %>
-										<%= render 'users/unfollow', user: contributor.user %>
+					<div class="rank-inner-more">
+						<h4 class="comment-letter">コメント貢献者ランキング</h4>
+						<% @contributors.each.with_index(1) do |contributor,i| %>
+							<div class="rank-comments">
+								<div class="rank-left">
+									<% if i == 1 %>
+										<span class="ranking">
+											<i class="fas fa-trophy is-gold"></i>
+										</span>
+									<% elsif i == 2 %>
+										<span class="ranking">
+											<i class="fas fa-trophy is-silver"></i>
+										</span>
+									<% elsif i == 3 %>
+										<span class="ranking">
+											<i class="fas fa-trophy is-blonze"></i>
+										</span>
 									<% else %>
-										<%= render 'users/follow', user: contributor.user %>
+										<span class="ranking other">
+											<%= i %>
+										</span>
 									<% end %>
-								</span>
-								<% end %>
+									<span>
+										<%= attachment_image_tag contributor.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
+									</span>
+									<span class="ranking-title"><%= link_to contributor.user.name, user_path(contributor.user) %></span>
+									<% if user_signed_in? %>
+									<span class="index-follow pull-right">
+										<% if contributor.user == current_user %>
+											<span class="rank-in"><%= '🎉' %></span>
+										<% elsif current_user.following.include?(contributor.user) %>
+											<%= render 'users/unfollow', user: contributor.user %>
+										<% else %>
+											<%= render 'users/follow', user: contributor.user %>
+										<% end %>
+									</span>
+									<% end %>
+								</div>
 							</div>
-						</div>
-					<% end %>
+						<% end %>
+					</div>
 				</div>
 			</div>
 		</div>
