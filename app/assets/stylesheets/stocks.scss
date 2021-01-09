@@ -14,12 +14,23 @@
 	height: 1333px;
 }
 
+.stock-tag-inner {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
 .stock-page {
     margin-top: 30px;
+    padding: 10px;
 }
 
 .stock-index {
-    background-color: white;
-    border-radius: 10px;
     border: 1px solid #ddd;
+    background-color: white;
 }
+
+.stock-post-articles {
+    padding: 20px 0;
+}
+
