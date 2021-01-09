@@ -1,60 +1,59 @@
 <div class="container">
-	<ul class="switch row">
-		<li class="tab-list1"><%= link_to 'フォロワー', '#', class: 'active', data: {id: "followers"} %></li>
-		<li class="tab-list2"><%= link_to 'フォロー', '#', data: {id: "following"} %></li>
-	</ul>
-	<section class='content active' id="followers">
-		<div class = "row">
-			<% if @followers_users.empty? %>
-				<p class="no-follow">フォロワーはまだいません</p>
-			<% else %>
-					<% @followers_users.each do |user| %>
-						<div class="follow-member row">
-							<div class="col-md-3">
-								<%= link_to user_path(user) do %>
-										<%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "following-img pull-left profile-img", fallback: "no_image.jpg" %>
-								<% end %>
+
+		<ul class="switch">
+			<li class="tab-list1"><%= link_to 'フォロワー', '#', class: 'active', data: {id: "followers"} %></li>
+			<li class="tab-list2"><%= link_to 'フォロー', '#', data: {id: "following"} %></li>
+		</ul>
+	
+		<section class='content active' id="followers">
+				<% if @followers_users.empty? %>
+					<p class="no-follow">フォロワーはまだいません</p>
+				<% else %>
+						<% @followers_users.each do |user| %>
+							<div class="follow-member">
+								<div class="col-md-3">
+									<%= link_to user_path(user) do %>
+											<%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "following-img pull-left profile-img", fallback: "no_image.jpg" %>
+									<% end %>
+								</div>
+								<div class="col-md-3">
+									<%= link_to user.name, user_path(user) %>
+								</div>
+								<div class="col-md-3">
+									<%= "フォロー：#{user.following.count}" %>
+								</div>
+								<div class="col-md-3">
+									<%= "フォロワー：#{user.followers.count}" %>
+								</div>
 							</div>
-							<div class="col-md-3">
-								<%= link_to user.name, user_path(user) %>
+						<% end %>
+				<%end%>
+		</section>
+		<section class="content" id="following">
+				<% if @following_users.empty? %>
+					<p class="no-follow">フォロー中のユーザーはまだいません</p>
+				<% else %>
+					
+						<% @following_users.each do |user| %>
+							<div class="follow-member">
+								<div class="col-md-3">
+									<%= link_to user_path(user) do %>
+											<%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "following-img pull-left profile-img", fallback: "no_image.jpg" %>
+									<% end %>
+								</div>
+								<div class="col-md-3">
+									<%= link_to user.name, user_path(user) %>
+								</div>
+								<div class="col-md-3">
+									<%= "フォロー：#{user.following.count}" %>
+								</div>
+								<div class="col-md-3">
+									<%= "フォロワー：#{user.followers.count}" %>
+								</div>
 							</div>
-							<div class="col-md-3">
-								<%= "フォロー：#{user.following.count}" %>
-							</div>
-							<div class="col-md-3">
-								<%= "フォロワー：#{user.followers.count}" %>
-							</div>
-						</div>
-					<% end %>
-			<%end%>
-		</div>
-	</section>
-	<section class="content" id="following">
-		<div class = "row">
-			<% if @following_users.empty? %>
-				<p class="no-follow">フォロー中のユーザーはまだいません</p>
-			<% else %>
-				
-					<% @following_users.each do |user| %>
-						<div class="follow-member row">
-							<div class="col-md-3">
-								<%= link_to user_path(user) do %>
-										<%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "following-img pull-left profile-img", fallback: "no_image.jpg" %>
-								<% end %>
-							</div>
-							<div class="col-md-3">
-								<%= link_to user.name, user_path(user) %>
-							</div>
-							<div class="col-md-3">
-								<%= "フォロー：#{user.following.count}" %>
-							</div>
-							<div class="col-md-3">
-								<%= "フォロワー：#{user.followers.count}" %>
-							</div>
-						</div>
-					<% end %>
-				
-			<%end%>
-		</div>
-	</section>
+						<% end %>
+					
+				<%end%>
+		</section>
+
 </div>

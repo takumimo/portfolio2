@@ -287,7 +287,10 @@
   a {
   text-decoration: none;
   }
+}
 
+.rank-contents {
+  padding-top: 10px;
 }
 
 .post-edit-emoji {
@@ -311,8 +314,12 @@
   padding-left: 10px;
 }
 
+.index-details {
+  margin-bottom: 15px;
+}
+
 .index-details-inner {
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 
@@ -358,12 +365,8 @@
   color: red;
 }
 
-.comment-rank {
-  // margin-top: 30px;
-}
-
 .comment-rank-inner {
-  padding: 10px;
+  padding: 0 15px;
 }
 
 .rank-inner-more {
@@ -488,8 +491,9 @@
 }
 
 .modifying-post {
-  background: #f2f2f2;
   color: #333333;
+  background-color: white;
+  margin-right: 5px;
 }
 
 .detail-head-topic{
