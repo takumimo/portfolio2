@@ -1,12 +1,11 @@
 <div class="container">
-	<div class="follow-wrap row">
+
 		<ul class="switch">
 			<li class="tab-list1"><%= link_to 'フォロワー', '#', class: 'active', data: {id: "followers"} %></li>
 			<li class="tab-list2"><%= link_to 'フォロー', '#', data: {id: "following"} %></li>
 		</ul>
 	
 		<section class='content active' id="followers">
-			<div class = "row">
 				<% if @followers_users.empty? %>
 					<p class="no-follow">フォロワーはまだいません</p>
 				<% else %>
@@ -29,10 +28,8 @@
 							</div>
 						<% end %>
 				<%end%>
-			</div>
 		</section>
 		<section class="content" id="following">
-			<div class = "">
 				<% if @following_users.empty? %>
 					<p class="no-follow">フォロー中のユーザーはまだいません</p>
 				<% else %>
@@ -57,7 +54,6 @@
 						<% end %>
 					
 				<%end%>
-			</div>
 		</section>
-	</div>
+
 </div>

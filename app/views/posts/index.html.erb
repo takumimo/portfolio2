@@ -121,7 +121,7 @@
 							</span>
 							<span class="attention-title"><%= link_to post.title, post_path(post) %></span>
 							<span class="attention-count pull-right"><%= post.likes.count %>人が注目しています</span>
-							<div>
+							<div class="rank-contents">
 								<span class="rank-content"><%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿</span>
 							</div>
 						</div>
