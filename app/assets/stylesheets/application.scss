@@ -41,7 +41,7 @@ header {
 }
 
 .header-left {
-	margin-left: 250px;
+	// margin-left: 250px;
 	list-style: none;
 	li {
 		line-height: 50px;
@@ -198,18 +198,35 @@ footer {
 	line-height: 50px;
 }
 
+@media (max-width: 1440px) {
+	.top-slogan {
+		font-size: 30px;
+	}
+}
 
 
-@media (max-width: 959px) {
+@media (max-width: 991px) {
 	.login-header {
 		background-color: gold;
 	}
 	body {
 		background-color: gold;
 	}
+	.top-left {
+		margin-top: 50px;
+		text-align: center;
+	}
+	.login-image {
+		width: 400px;
+		height: 400px;
+		padding: 0;
+	}
+	.top-right {
+		text-align: center;
+	}
 }
 
-@media (max-width: 559px) {
+@media (max-width: 768px) {
 	.login-header {
 		background-color: red;
 	}
