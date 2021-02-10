@@ -1,33 +1,94 @@
-<div class="gretel">
-	<% breadcrumb :post, @post %>
-	<%= breadcrumbs separator: " &rsaquo; " %>
-</div>
-<div class="row">
-	<div class="show">
-
-			<h2><strong><%= @post.title %></strong></h2>
-			<div id="likes_buttons_<%= @post.id %>">
-				<%= render 'likes/like', post: @post %>
+<div class="container">
+	<div class="gretel">
+		<% breadcrumb :post, @post %>
+		<%= breadcrumbs separator: " &rsaquo; " %>
+	</div>
+	<div class="show-notice">
+		<%= flash[:notice] %>
+	</div>
+	<div class="row">
+		<div class="stock-icon">
+			<!-- 自身の投稿以外 かつ ログインしているユーザーであれば -->
+			<% if current_user != @post.user && user_signed_in? %>
+				    <!-- 既にストックしている記事であれば「ストック解除ボタン」を表示 -->
+				    <% if @post.stocked?(current_user) %>
+				      <!-- stocksコントローラーのdestoryアクションにmethod: :deleteで指定して送信 -->
+				      <%= form_with model: @post.stocks.find_by(user_id: current_user.id), method: :delete do |f| %>
+				      	<%= f.button(class: "btn btn-dark") do %>
+				          <i class="fas fa-folder fa-lg"></i> ストック中
+				        <% end %>
+				      <% end %>
+				    <!-- ストックしていない記事であれば「ストックボタン」を表示 -->
+				    <% else %>
+				      	<!-- buildでstocksコントローラーのcreateアクションへ -->
+					    <%= form_with model: @post.stocks.build, url: stocks_path(post_id: @post.id) do |f| %>
+					        <%= f.button(class: "btn btn-outline-dark") do %>
+					        	<i class="far fa-folder fa-lg"></i> ストックする
+					        <% end %>
+					    <% end %>
+				    <% end %>
+			<% end %>
+		</div>
+		<div>
+			<div class="show-emoji">
+				<%= @post.emoji %>
 			</div>
-
-
-			<h3><%= @post.text %></h3>
-
-
+			<div class="show">
+				<div class="post-created text-right"><%= @post.created_at.to_s(:datetime) %></div>
+				<div class="show-top">
+					<%= link_to user_path(@post.user) do %>
+						<span>
+							<%= attachment_image_tag @post.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", class: 'image' %>
+						</span>
+					<% end %>
+					<span class="show-title"><%= link_to @post.user.name, user_path(@post.user) %></span>
+					<% if current_user == @post.user %>
+						<span class="post-destroy pull-right">
+							<%= link_to post_path(@post), method: :delete, data: {confirm: "本当に消しますか" } do %>
+								<i class="far fa-trash-alt">削除する</i>
+							<% end %>
+						</span>
+					<% end %>
+					<% if current_user == @post.user %>
+						<span class="post-edit pull-right">
+							<%= link_to edit_post_path(@post) do %>
+								<i class="far fa-edit">編集する</i>
+							<% end %>
+						</span>
+					<% end %>
+				</div>
+				<h2><strong><%= @post.title %></strong></h2>
+				<% @post.tags.each do |tag| %>
+					<span class="post-tag">
+						<button class="show-span-tag"><%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %></button>
+					</span>
+				<% end %>
+				<h4 class="posts-show-text"><%= safe_join(@post.text.split("\n"),tag(:br)) %></h4>
+			</div>
+			<div class="comment-bottom">
+				<i class="fas fa-comments"></i>
+				<span>コメント
+					<% if @post.user != current_user && user_signed_in? %>
+						<span>(気になるボタンを押す事でコメントが出来るようになります）</span>
+					<% elsif @post.user != current_user || user_signed_in? %>
+					<% end %>
+				</span>
+				<div class="comment-field">
+					<div class="comment-area", id="post_comments_area">
+						<%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
+					</div>
+				</div>
+			</div>
+			<div class="comment-form text-center center-block">
+				<% if current_user != @post.user%>
+					<span class="show-like", id="likes_buttons_<%= @post.id %>">
+				    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post }  %>
+					</span>
+				<% end %>
+			</div>
+		</div>
 	</div>
-	<% if @post_comment.present? %>
-	<div class="comment-area", id="post_comments_area">
-	    <%= render partial: 'post_comments/postcomment', locals: { post: @post } %>
-	</div>
-	<% end %>
-	<div class="comment-form text-center center-block">
-		<% if user_signed_in? %>
-	    	<%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post }  %>
-		<% end %>
-	</div>
-	
 </div>
-
 
 
 

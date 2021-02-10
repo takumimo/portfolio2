@@ -8,20 +8,18 @@ RSpec.describe 'Postモデルのテスト', type: :model do
     context 'titleカラム' do
       it '空欄でないこと' do
         post.title = ''
-        expect(post.valid?).to eq false;
+        expect(post.valid?).to eq false
       end
     end
+
     context 'textカラム' do
       it '空欄でないこと' do
         post.text = ''
-        expect(post.valid?).to eq false;
-      end
-      it '200文字以下であること' do
-        post.text = Faker::Lorem.characters(number:201)
-        expect(post.valid?).to eq false;
+        expect(post.valid?).to eq false
       end
     end
   end
+
   describe 'アソシエーションのテスト' do
     context 'Userモデルとの関係' do
       it 'N:1となっている' do

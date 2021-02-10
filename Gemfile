@@ -43,9 +43,8 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
-  gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
+  # gem 'rspec-rails'
+
   gem 'forgery_ja'
 end
 
@@ -57,22 +56,25 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'spring-commands-rspec'
+  gem 'bullet'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
   # gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
-  gem 'webdrivers', '~> 4.0'
-  gem 'launchy', '~> 2.4.3'
+  # gem 'webdrivers'
+  gem 'faker'
+  # gem 'launchy', '~> 2.4.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
-gem 'activeadmin'
 gem 'refile', require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem "pry-rails"
@@ -80,8 +82,10 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
-gem 'active_admin_flat_skin'
 gem 'bootstrap-sass'
 gem 'acts-as-taggable-on'
 gem 'ransack'
 gem 'gretel'
+gem 'rubocop-airbnb'
+gem 'enum_help'
+gem 'kaminari'

@@ -4,18 +4,19 @@
 
 
 .row {
-	
 	a {
 	text-decoration: none;
 }
 	}
-	
-.top-topic {
+
+.top-subject {
 	margin-top: 30px;
+	padding-left: 40px;
 }
 
 .top-btn {
 	margin-top: 30px;
+	padding-left: 40px;
 }
 
 .top-btn li {
@@ -40,29 +41,22 @@
 }
 
 .main-topic {
-	
 	li {
 		display: inline-block;
 	}
 }
 
-.topic-1 {
+.topic-1-inner {
+	padding: 10px;
 	background-color: #EDF5FF;
 	border-radius: 16px;
-	margin-right: 50px;
 }
 
-.row {
-	h1 {
-		padding-left: 21px;
+.top-slogan {
+		padding-left: 40px;
 	}
 
-	p {
-		padding-left: 21px;
-	}
-}
-
-li {
+.topic-1 {
 	p {
 		padding:40px;
 		font-weight: bold;
@@ -70,12 +64,27 @@ li {
 }
 
 .topic-2 {
+	p {
+		padding:40px;
+		font-weight: bold;
+	}
+}
+
+.topic-2-inner {
+	padding: 10px;
 	background-color: #EDF5FF;
 	border-radius: 16px;
-	margin-right: 50px;
 }
 
 .topic-3 {
+	p {
+		padding:40px;
+		font-weight: bold;
+	}
+}
+
+.topic-3-inner {
+	padding: 10px;
 	background-color: #EDF5FF;
 	border-radius: 16px;
 }
@@ -92,6 +101,10 @@ li {
 
 .side-left {
 	display: inline-block;
+	p {
+		padding:40px;
+		font-weight: bold;
+	}
 }
 
 .side-right {
@@ -99,11 +112,12 @@ li {
 
 	p {
 		line-height: 2;
+		font-weight: bold;
 	}
 }
 
 .top-left {
-	margin-top: 150px;
+	margin-top: 100px;
 }
 
 #error_explanation {
@@ -113,4 +127,8 @@ li {
 		margin-left: 30px;
 		margin-bottom: 10px;
 	}
+}
+
+.about-sentence {
+	font-size: 20px;
 }

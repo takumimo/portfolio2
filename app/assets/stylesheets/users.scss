@@ -2,18 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 .image {
 	border-radius: 50%;
 }
 
-.user-show {
-	text-align: center;
-	background-color: white;
-	border-radius: 16px;
-	padding: 20px;
-	width: 500px;
-	margin-left: 330px;
-}
+
 
 .show-name-topic {
 	border-bottom: 1px solid #eee;
@@ -29,10 +24,226 @@
 
 .user-edit {
 	background-color: white;
-	border-radius: 16px;
+	border-radius: 10px;
 	padding: 20px;
+	width: 500px;
+	text-align: center;
+	margin-left: 330px;
+	border: 1px solid #ddd;
 }
 
 .edit-mail {
 	margin-bottom: 20px;
+}
+
+.user-edit-form {
+	margin-left: 58px;
+}
+
+.show-right-top {
+	background-color: white;
+	padding: 20px;
+	border: 1px solid #ddd;
+  	border-radius: 10px;
+  	margin-left: 15px;
+}
+
+.column-title {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 30px;
+	padding-bottom: 10px;
+}
+
+.show-right-bottom {
+	background-color: white;
+	padding: 20px;
+	margin-top: 30px;
+	border: 1px solid #ddd;
+  	border-radius: 10px;
+  	margin-left: 15px;
+}
+
+.user-edit-introduction {
+	width: 400px;
+	height: 100px;
+}
+
+.follow-img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+}
+
+.user-show-right {
+	background-color: white;
+	border-radius: 10px;
+	padding: 20px;
+	text-align: center;
+	border: 1px solid #ddd;
+}
+
+.user-edit-name {
+	text-align: center;
+}
+
+.user-edit-email {
+	text-align: center;
+}
+
+.edit-user-submit {
+  background: #EE7711 none;
+  border: 1px solid #b8dbf2;
+  color: white;
+  border-radius: 3px;
+  height: 40px;
+  width: 80px;
+  margin-top: 15px;
+}
+
+.follow-submit {
+  background: #f2f2f2 none;
+  color: #333333;
+  border: 1px solid #b8dbf2;
+  border-radius: 3px;
+  height: 25px;
+  font-size: 10px;
+}
+
+.unfollow-submit {
+  background: #f2f2f2 none;
+  color: #333333;
+  border: 1px solid #b8dbf2;
+  border-radius: 3px;
+  height: 25px;
+  font-size: 10px;
+}
+
+.btn-profile {
+	background-color: #f2f2f2;;
+}
+
+.followers-img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+.following-img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+.show-detail {
+  font-size: 20px;
+}
+
+.show-detail-letter {
+  font-size: 12px;
+}
+
+.detail-head-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.show-detail-head {
+  border-bottom: 1px solid #e8e8e8;
+  padding: 10px 0;
+  height: 80px;
+}
+
+.show-detail-left {
+  border-right: 1px solid #e8e8e8;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.show-detail-middle {
+  border-right: 1px solid #e8e8e8;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.show-detail-right {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.show-head-topic {
+	width: 60px;
+	margin: 0 auto;
+}
+
+.show-inner-more .row {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.show-inner-more {
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	background-color: white;
+}
+
+.user-message {
+	padding-bottom: 10px;
+	margin-left: 5px;
+}
+
+.switch {
+	list-style: none;
+	padding-top: 30px;
+	margin: 0;
+	border-bottom: 1px solid #e8e8e8;
+	display: flex;
+  }
+
+  .switch li a {
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+	padding: 8px 0;
+	color: #333;
+	text-decoration: none;
+  }
+  
+  .switch li a.active {
+	color: #55C500;
+	border-bottom: 2px solid #55C500;
+  }
+
+  .switch li a:not(.active):hover {
+	opacity: 0.5;
+	transition: opacity 0.4s;
+  }
+
+  .content.active {
+	color: #333;
+	display: block;
+  
+  }
+
+  .content {
+	display: none;
+  
+  }
+
+  .follow-table {
+	  margin-top: 50px;
+  }
+
+  .no-follow {
+	  margin-top: 50px;
+  }
+
+.follow-member {
+	margin-top: 10px;
+	padding-bottom: 10px;
+	height: 100px;
+	padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
 }

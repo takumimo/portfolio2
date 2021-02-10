@@ -1,2 +1,38 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class="container">
+	<div class="gretel">
+		<% breadcrumb :postedit, @post %>
+		<%= breadcrumbs separator: " &rsaquo; " %>
+	</div>
+	<div class="post-edit">
+		<%= form_with(model: @post, url: post_path(@post)) do |f| %>
+			<div>
+				<span>回答：</span>
+				<%= f.label :name, "受付中" %>
+				<%= f.radio_button :status, :doing ,{checked: true} %>
+				<%= f.label :name, "解決済" %>
+				<%= f.radio_button :status, :done %>
+			</div>
+			<div>
+				<%= f.text_area :emoji, autofocus: true, class: "post-edit-emoji" %>
+			</div>
+			<div>
+				<%= f.text_area :title, class: "post-edit-title" %>
+			</div>
+			<div>
+				<%= f.text_area :tag_list, class: "post-edit-tag" %>
+			</div>
+			<div class="edit-text-field row">
+				<div class="col-md-6">
+					<%= f.text_area :text, class: "post-edit-text" %>
+				</div>
+				<div class="text-model-edit col-md-6">
+					<span class="text-model-1">[例：私は新卒で不動産仲介会社に入社しました。<br>
+					その後営業部に配属され、約3年間営業活動に励んでいましたがふと自分の将来について考えると、このまま同じように営業していていいのかと疑問に思ってしまいました。<br>
+					というのも、営業という仕事なので当然ですが数字に追われる毎日で、最初はやりがいを感じていたのですが次第にやる気もなくなってしまいました。<br>このままじゃまずいと思い上司に自分の気持ちを正直に伝えたところ、数字を追ってそれを達成することにやりがいを感じられなければこの業界で営業していくのは難しいかもなと言われました。<br>
+					営業自体は嫌いではないですし、他の業界も見てみたいという気持ちもありますがどうすればいいでしょうか。不動産業界から転職した方など、アドバイス頂けると嬉しいです。</span>
+				</div>
+			</div>
+			<%= f.submit "更新する", class: "edit-post-submit" %>
+		<% end %>
+	</div>
+</div>

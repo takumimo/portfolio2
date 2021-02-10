@@ -1,3 +1,26 @@
 // Place all the styles related to the PostComments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment-delete {
+    margin-top: 10px;
+}
+
+.before-login {
+    background-color: #3EA8FF;
+    border-radius: 3px;
+    border: 1px solid #b8dbf2;
+    height: 40px;
+}
+
+.before-login-btn {
+    color: white;
+    padding: 20px;
+    
+}
+
+.before-login-topic {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    color: #93a5b1;
+}

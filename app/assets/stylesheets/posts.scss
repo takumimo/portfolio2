@@ -2,28 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.post-index {
-	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
-	border-radius: 16px;
-	padding: 12px;
-	margin-bottom: 25px;
-	margin-top: 20px;
-	background-color: #fff;
 
+.image {
+  width: 40px;
+  height: 40px;
 }
 
+.post-index {
+	padding: 10px;
+}
 
 .post-index {
-
-
 	a {
 	    text-decoration: none;
 	}
 }
 
-
-h2 {
-	margin-left: 20px;
+.index-title {
+  font-size: 15px;
+  margin-left: 5px;
 }
 
 .image {
@@ -35,106 +32,44 @@ h2 {
 }
 
 .btn btn-success {
-
 	a {
 		text-decoration: none;
 	}
 
 }
 
+.tag-btn {
+  font-size: 13px;
+}
+
+.post-button {
+  border: 1px solid #b8dbf2;
+  background: #d5e9f7 none;
+  border-radius: 3px;
+}
+
 .post-image {
 	margin-right: 10px;
 }
 
-.post-text {
-}
-
-.search-window {
-	margin-bottom: 30px;
-	padding-left: 17px;
+.show-emoji {
+  font-size: 75px;
+  text-align: center;
 }
 
 .show {
-	position: relative;
-  display: inline-block;
-  margin: 1.5em 0 1.5em 15px;
-  padding: 7px 10px;
-  min-width: 120px;
-  max-width: 500px;
-  color: #555;
-  font-size: 16px;
-  background: #FFF;
-  border: solid 3px #555;
-  box-sizing: border-box;
-  border-radius: 16px;
-  margin-bottom: 30px;
+  background-color: white;
+  padding: 20px;
+  width: 700px;
+  margin: 0 auto;
 }
 
-.show:before {
-	content: "";
-  position: absolute;
-  top: 50%;
-  left: -24px;
-  margin-top: -12px;
-  border: 12px solid transparent;
-  border-right: 12px solid #FFF;
-  z-index: 2;
-
-}
-
-.show:after {
-	content: "";
-  position: absolute;
-  top: 50%;
-  left: -30px;
-  margin-top: -14px;
-  border: 14px solid transparent;
-  border-right: 14px solid #555;
-  z-index: 1;
-
-}
-
-.comment-area {
-	position: relative;
-  display: inline-block;
-  margin: 1.5em 15px 1.5em 0;
-  padding: 20px 20px;
-  min-width: 500px;
-  max-width: 500px;
-  color: #555;
-  font-size: 16px;
-  background: #FFF;
-  border: solid 3px #555;
-  box-sizing: border-box;
-  border-radius: 16px;
-  margin-top: 30px;
-  margin-left: 600px;
-}
-
-.comment-area:before {
-	content: "";
-  position: absolute;
-  top: 50%;
-  right: -24px;
-  margin-top: -12px;
-  border: 12px solid transparent;
-  border-left: 12px solid #FFF;
-  z-index: 2;
-}
-
-.comment-area:after {
-	content: "";
-  position: absolute;
-  top: 50%;
-  right: -30px;
-  margin-top: -14px;
-  border: 14px solid transparent;
-  border-left: 14px solid #555;
-  z-index: 1;
-}
-
-.new-tag {
-	margin-bottom: 30px;
+.comment-bottom {
+	background-color: white;
+  padding: 20px;
+  width: 700px;
+  border-top: 1px solid #ddd;
+  margin: 0 auto;
 }
 
 .post-ul {
@@ -142,6 +77,10 @@ h2 {
   .post-image {
     display: inline-block;
   }
+
+.btn-success {
+  list-style: none;
+}
 
 
   .post-like {
@@ -153,29 +92,564 @@ h2 {
   .post-tag {
     display: inline-block;
 
-    a {
-      color: ivory;
-    }
-
   }
 
   .post-destroy {
     display: inline-block;
+    p {
+    padding-right: 30px;
+    }
   }
 }
 
+.post-edit {
+  display: inline-block;
+  p {
+  padding-right: 10px;
+  }
+  margin-right: 15px;
+}
+
+.post-created {
+  margin-bottom: 5px;
+}
+
+
 .user-show-edit {
     a {
-    color: ivory;
+    color: #333333;
     text-decoration: none;
   }
 }
 
 .comment-form {
   form {
-    width: 400px;
-    margin-left: 300px;
     margin-top: 100px;
   }
-  
+}
+
+.post-comment-form {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.comment-whole {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 10px;
+}
+
+.show-span-tag {
+  border: 1px solid #b8dbf2;
+  background: #d5e9f7 none;
+  border-radius: 3px;
+  a {
+  text-decoration: none;
+  }
+}
+
+.new-text-field {
+  width: 100%;
+  margin: 0;
+}
+
+.text-main {
+  padding-right: 0;
+}
+
+.text-model {
+
+  background-color: white;
+  padding: 3px;
+  border: 1px solid #ccc;
+  height: 600px;
+
+}
+
+.text-model-1 {
+  opacity: 0.5;
+
+}
+
+.text-form {
+  height: 600px;
+  width: 495px;
+  padding-left: 10px;
+}
+
+.emoji-field {
+  width: 100%;
+  margin: 0;
+}
+.emoji-form {
+  width: 495px;
+  padding-left: 10px;
+}
+
+.emoji-model {
+  border: 1px solid #ccc;
+  height: 46px;
+  padding: 3px;
+  background-color: white;
+}
+
+.emoji-model-1 {
+  opacity: 0.5;
+  width: 400px;
+}
+
+.emoji {
+  font-size: 30px;
+  background-color: #F1F5F9;
+  border: 1px solid #b8dbf2;
+  border-radius: 3px;
+  width: 100%;
+  height: 100px;
+}
+
+.emoji-inner {
+  margin: 20px 20px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.new-post-title {
+  width: 1005px;
+  padding-left: 10px;
+}
+
+.new-post-tag {
+  width: 1005px;
+  padding-left: 10px;
+}
+
+.new-post-submit {
+  background: #EE7711 none;
+  border: 1px solid #b8dbf2;
+  color: #fff;
+  border-radius: 3px;
+  height: 40px;
+}
+
+.edit-post-submit {
+  background: #EE7711 none;
+  border: 1px solid #b8dbf2;
+  color: white;
+  border-radius: 3px;
+  height: 40px;
+  width: 80px;
+}
+
+.post-comment-submit {
+  background: #EE7711 none;
+  border: 1px solid #b8dbf2;
+  color: white;
+  border-radius: 3px;
+  height: 40px;
+  width: 100px;
+}
+
+.confirm-title {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 600px;
+}
+
+.confirm-text {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 600px;
+}
+
+.confirm-tag {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 600px;
+}
+
+.confirm-button {
+  margin-top: 20px;
+}
+
+.button-fix {
+  margin-right: 5px;
+}
+
+.rank-posts {
+  padding: 20px 0 20px 20px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.rank-content {
+  a {
+  text-decoration: none;
+  }
+}
+
+.rank-contents {
+  padding-top: 10px;
+}
+
+.post-edit-emoji {
+  width: 1005px;
+  padding-left: 10px;
+}
+
+.post-edit-title {
+  width: 1005px;
+  padding-left: 10px;
+}
+
+.post-edit-tag {
+  width: 1005px;
+  padding-left: 10px;
+}
+
+.post-edit-text {
+  height: 600px;
+  width: 495px;
+  padding-left: 10px;
+}
+
+.index-details {
+  margin-bottom: 15px;
+}
+
+.index-details-inner {
+  padding: 0 15px;
+}
+
+
+
+.index-detail {
+  font-size: 20px;
+}
+
+.index-detail-letter {
+  font-size: 12px;
+}
+
+.detail-head-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.index-detail-head {
+  border-bottom: 1px solid #e8e8e8;
+  padding: 10px 0;
+  height: 80px;
+}
+
+.index-detail-left {
+  border-right: 1px solid #e8e8e8;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.index-detail-middle {
+  border-right: 1px solid #e8e8e8;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.index-detail-right {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.thank-image {
+  color: red;
+}
+
+.comment-rank-inner {
+  padding: 0 15px;
+}
+
+.rank-inner-more {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.comment-rank-count {
+  font-weight: bold;
+  text-align: center;
+}
+
+.thank-name {
+  font-weight: normal;
+}
+
+.rank-left {
+  border-bottom: 1px solid #e8e8e8;
+  margin: 10px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+
+}
+
+.ranking {
+  margin-right: 5px;
+}
+
+.comment-letter {
+  margin-bottom: 30px;
+  padding-left: 7px;
+}
+
+.is-gold {
+  color: #ffc400;
+}
+
+.is-silver {
+  color: #c9c9c9;
+}
+
+.is-blonze {
+  color: #ac6d4d;
+}
+
+.other {
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.new_relationship {
+  display: inline-block;
+}
+
+.index-follow {
+  padding-top: 10px;
+}
+
+.posts-show-text {
+  padding-top: 10px;
+}
+
+.thank-area {
+  margin-top: 10px;
+}
+
+.post-button {
+  margin-top: 5px;
+}
+
+.post-status {
+  background-color: #f2f2f2;
+  width: 70px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.doing {
+  color: #333;
+}
+
+.post-comments-count {
+  width: 70px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.post-middle {
+  padding: 0 15px;
+}
+
+.post-middle-inner {
+  height: 120px;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 10px 0;
+}
+
+.post-middle-left {
+  padding-top: 15px;
+}
+
+.inner-more {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.post-response {
+  margin-top: 10px;
+}
+
+.done {
+  background-color: #EE7711;
+  color: #fff;
+}
+
+.confirmed-post {
+  background: #EE7711 none;
+  color: #fff;
+}
+
+.modifying-post {
+  color: #333333;
+  background-color: white;
+  margin-right: 5px;
+}
+
+.detail-head-topic{
+  width: 150px;
+  margin: 0 auto;
+}
+
+.text-model-edit {
+  background-color: white;
+  padding-top: 3px;
+  border: 1px solid #ccc;
+  height: 600px;
+  width: 300px;
+}
+
+.edit-text-field {
+  width: 1020px;
+  margin: 0;
+}
+
+.stock-index {
+  width: 600px;
+}
+
+.stock-icon {
+  width: 100px;
+  margin-top: 50px;
+}
+
+.post-articles {
+  border-bottom: 1px solid #e8e8e8;
+  padding: 20px 0;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.menu li a {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  padding: 8px 0;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu li a.active {
+  color: #55C500;
+  border-bottom: 2px solid #55C500;
+}
+
+.menu li a:not(.active):hover {
+  opacity: 0.5;
+  transition: opacity 0.4s;
+}
+
+.content.active {
+  color: #333;
+  display: block;
+
+}
+
+.content {
+  display: none;
+
+}
+
+.search-result {
+  margin-top: 20px;
+}
+
+.search-window {
+  margin-bottom: 15px;
+  margin-left: 13px;
+}
+
+.search-input {
+   border-radius: 5px;
+   height: 30px;
+}
+
+.profile-name {
+  margin-left: 10px;
+}
+
+.population-tag {
+  margin: 20px 10px;
+}
+
+.tab {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.tab-bar {
+  color: #787C7B;
+}
+
+.tab-bar-tag {
+  font-size: 15px;
+}
+
+.attention-count {
+  margin-top: 5px;
+}
+
+.attention-title {
+  margin-left: 5px;
+}
+
+.show-notice {
+  margin-left: 4px;
+}
+
+.ranking-title {
+  margin-left: 5px
+}
+
+.show-title {
+  margin-left: 5px;
+}
+
+.rank-in {
+  font-size: large;
+  margin-right: 22px;
+}
+
+.login-header {
+  background-color: #EBF5FF;
+  height: 600px;
+  width: 100%;
+}
+
+.login-image {
+  width: 600px;
+  height: 500px;
+  padding-right: 100px;
+  padding-bottom: 100px;
+}
+
+.new-post {
+  margin-top: 30px;
+}
+
+.notification {
+  padding-top: 100px;
+  margin-left: 300px;
+}
+
+.form-group {
+  margin-top: 30px;
 }

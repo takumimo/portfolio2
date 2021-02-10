@@ -1,14 +1,22 @@
-<div class="row">
-	<div class="top-left col-md-6">
-		<h1><strong>Ask for advice.</strong></h1>
-	<p class="top-topic">ウォーリーは20代のキャリアの悩みを解決するサイトです</p>
-	<ul class="top-btn">
-		<li class="top-guestlogin"><%= link_to "ゲストログイン（閲覧用）", home_guest_sign_in_path, method: :post, class: 'btn btn-success' %></li>
-		<li class="top-about"><%= link_to "about ウォーリー", homes_about_path, class: "btn btn-warning" %></li>
-	</ul>
+<%
+=begin%>
+ <div class="container">
+	<div style="margin-bottom: 20px;">
+    	<%= flash[:notice] %>
+  	</div>
+	<div class="row">
+		<div class="top-left col-md-6">
+			<h1 class="top-slogan"><strong>Ask for advice.</strong></h1>
+			<p class="top-topic">ノットウォーリーは20代のキャリアの悩みを解決するサイトです</p>
+			<ul class="top-btn">
+				<li class="top-guestlogin"><%= link_to "ゲストログイン（閲覧用）", home_guest_sign_in_path, method: :post, class: 'btn btn-success' %></li>
+				<li class="top-about"><%= link_to "about ノットウォーリー", homes_about_path, class: "btn btn-warning" %></li>
+			</ul>
+		</div>
+		<div class="top-right col-md-6">
+			<%= image_tag'Devices-bro.png', :size => '700x600' %>
+		</div>
 	</div>
-	
-	<div class="top-right col-md-6">
-		<%= image_tag'Devices-bro.png', :size => '700x600' %>
-	</div>
-</div>
+</div> 
+<%
+=end%>
