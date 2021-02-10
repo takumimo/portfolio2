@@ -1,23 +1,14 @@
 <header>
-  <div class="header-left pull-left">
+  <div class="header-left">
+    <ul class="header-list">
     <% if user_signed_in? %>
+      
       <li>
         <%= link_to posts_path do %>
           <%= image_tag'notworry.png', class: "original-image" %>
         <% end %>
       </li>
-    <% else %>
       <li>
-        <%= link_to root_path do %>
-          <%= image_tag'notworry.png', class: "original-image" %>
-        <% end %>
-      </li>
-    <% end %>
-  </div>
-  <div>
-    <ul class="pull-right header-ul">
-      <% if user_signed_in? %>
-        <li>
             <%= link_to stocks_path do %>
               <i class="fab fa-get-pocket"></i>  ストック一覧
             <% end %>
@@ -36,12 +27,18 @@
             <i class="fas fa-sign-out-alt"></i>  ログアウト
           <% end %>
         </li>
-      <% else %>
-        <li><%= link_to "ゲストログイン(閲覧用)", home_guest_sign_in_path, method: :post %></li></li>
-        <li><%= link_to "新規登録", new_user_registration_path %></li>
-        <li><%= link_to "ログイン", new_user_session_path %></li>
-      <% end %>
+    <% else %>
+      <li>
+        <%= link_to root_path do %>
+          <%= image_tag'notworry.png', class: "original-image" %>
+        <% end %>
+      </li>
+      <li><%= link_to "ゲストログイン(閲覧用)", home_guest_sign_in_path, method: :post %></li></li>
+      <li><%= link_to "新規登録", new_user_registration_path %></li>
+      <li><%= link_to "ログイン", new_user_session_path %></li>
+    <% end %>
     </ul>
+
   </div>
 </header>
 

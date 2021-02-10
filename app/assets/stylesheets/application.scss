@@ -31,6 +31,10 @@ header {
 	background-color:  #2E1031;
 }
 
+.header-list {
+	display: flex;
+}
+
 .header-left {
 	margin-left: 250px;
 	list-style: none;
