@@ -629,9 +629,14 @@
 }
 
 .login-header {
-  background-color: #EBF5FF;
   height: 600px;
   width: 100%;
+}
+
+.topper {
+  width: 100%;
+  height: 600px;
+  background-color: #EBF5FF;
 }
 
 .login-image {
@@ -647,7 +652,6 @@
 
 .notification {
   padding-top: 100px;
-  margin-left: 300px;
 }
 
 .form-group {
