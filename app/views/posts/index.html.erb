@@ -1,23 +1,25 @@
-
-		
-		<% unless user_signed_in? %>
-		<div class="login-header">
-			<div class="notification">
-				<%= flash[:notice] %>
-			</div>
+<% unless user_signed_in? %>
+	<div class="topper">
+		<div class="container">		
+			<div class="login-header">
+				<div class="notification">
+					<%= flash[:notice] %>
+				</div>
 				<div class="top-left col-lg-6 col-md-6">
 					<h1 class="top-slogan"><strong>Ask for advice.</strong></h1>
 					<p class="top-subject">ノットウォーリーは20代のキャリアの悩みを解決するサイトです</p>
-					<ul class="top-btn">
-						<li class="top-guestlogin"><%= link_to "ゲストログイン（閲覧用）", home_guest_sign_in_path, method: :post, class: 'btn btn-success' %></li>
-						<li class="top-about"><%= link_to "about ノットウォーリー", homes_about_path, class: "btn btn-warning" %></li>
-					</ul>
+					<div class="top-btn">
+						<span class="top-guestlogin"><%= link_to "ゲストログイン（閲覧用）", home_guest_sign_in_path, method: :post, class: 'btn btn-success' %></span>
+						<span class="top-about"><%= link_to "About notworry", homes_about_path, class: "btn btn-warning" %></span>
+					</div>
 				</div>
 				<div class="top-right col-lg-6 col-md-6">
 					<%= image_tag'Devices-bro.png', class: 'login-image' %>
 				</div>
+			</div>
 		</div>
-		<% end %>
+	</div>
+<% end %>
 	
 <div class="container">
 	<% if user_signed_in? %>
@@ -59,12 +61,12 @@
 					<% @posts.each do |post| %>
 						<div class="post-middle row">
 							<div class="post-middle-inner">
-								<div class="emoji col-xs-2">
+								<div class="emoji col-sm-2 col-xs-3">
 									<div class="emoji-inner">
 										<%= post.emoji %>
 									</div>
 								</div>
-								<div class="col-xs-2">
+								<div class="comment-counts col-sm-2 col-xs-3">
 									<div class="post-middle-left row">
 										<div class="<%= post.status %> post-status"><%= post.status_i18n %></div>
 										<div class="post-comments-count">
@@ -73,16 +75,22 @@
 										</div>
 									</div>
 								</div>
-								<div class="post-index col-xs-8">
+								<div class="post-index col-sm-8 col-xs-6">
 									<div class="post-article">
-										<%= link_to user_path(post.user) do %>
-											<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'image' %>
-										<% end %>
+										
 										<span class="index-title"><%= link_to post.title, post_path(post) %></span>	
 									</div>
 									<div class="post-ul">
-										<%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿
+										<span>
+										<%= link_to user_path(post.user) do %>
+											<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'post-image' %>
+										<% end %>
+										</span>
+										
 									</div>
+									<span>
+										<%= link_to post.user.name, user_path(post.user) %>
+									</span>
 									<div class="post-tag">
 										<!-- タグ -->
 										<% post.tags.each do |tag| %>
@@ -117,12 +125,12 @@
 					<% @all_ranking_posts.each do |post| %>
 						<div class="rank-posts">
 							<span>
-								<%= attachment_image_tag post.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
+								<%= attachment_image_tag post.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'post-image' %>
 							</span>
 							<span class="attention-title"><%= link_to post.title, post_path(post) %></span>
-							<span class="attention-count pull-right"><%= post.likes.count %>人が注目しています</span>
+							<span class="attention-count pull-right"><%= post.likes.count %>人が注目</span>
 							<div class="rank-contents">
-								<span class="rank-content"><%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿</span>
+								<span class="rank-content"><%= link_to post.user.name, user_path(post.user) %>が<%= time_ago_in_words(post.created_at) %>前に投稿</span>
 							</div>
 						</div>
 					<% end %>
@@ -134,12 +142,12 @@
 						<% if post.status == "done" %>
 							<div class="post-middle row">
 								<div class="post-middle-inner">
-									<div class="emoji col-md-2">
+									<div class="emoji col-sm-2 col-xs-3">
 										<div class="emoji-inner">
 											<%= post.emoji %>
 										</div>
 									</div>
-									<div class="col-md-2">
+									<div class="comment-counts col-sm-2 col-xs-3">
 										<div class="post-middle-left row">
 											<div class="<%= post.status %> post-status"><%= post.status_i18n %></div>
 											<div class="post-comments-count">
@@ -148,26 +156,33 @@
 											</div>
 										</div>
 									</div>
-									<div class="post-index col-md-8">
-										<div class="post-article">
-											<%= link_to user_path(post.user) do %>
-												<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "no_image.jpg", class: 'image' %>
-											<% end %>
-											<span class="index-title"><%= link_to post.title, post_path(post) %></span>
-										</div>
-										<div class="post-ul">
-											<%= link_to post.user.name, user_path(post.user) %>さんが<%= time_ago_in_words(post.created_at) %>前に投稿
-										</div>
-										<div class="post-tag">
-											<!-- タグ -->
-											<% post.tags.each do |tag| %>
-												<button class="post-button">
-													<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %>
-												</button>
-											<% end %>
-											<!-- タグ -->
-										</div>
+									<div class="post-index col-sm-8 col-xs-6">
+									<div class="post-article">
+										
+										<span class="index-title"><%= link_to post.title, post_path(post) %></span>	
 									</div>
+									<div class="post-ul">
+										<span>
+										<%= link_to user_path(post.user) do %>
+											<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'post-image' %>
+										<% end %>
+										</span>
+										
+									</div>
+									<span>
+										<%= link_to post.user.name, user_path(post.user) %>
+									</span>
+									<div class="post-tag">
+										<!-- タグ -->
+										<% post.tags.each do |tag| %>
+											<button class="post-button">
+												<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %>
+											</button>
+										<% end %>
+										<!-- タグ -->
+										
+									</div>
+								</div>
 								</div>
 							</div>
 						<% end %>
@@ -188,14 +203,14 @@
 				</div>
 		    </section>
 		</div>
-		<div class="row col-md-4">
+		<div class="row col-md-4 user-info">
 			<% if user_signed_in? %>
 				<div class="index-details">
 					<div class="index-details-inner">
 						<div class="inner-more">
 							<div class="index-detail-head">
 								<div class="detail-head-topic">
-									<%= attachment_image_tag current_user, :profile_image, :fill,20, 20, format: 'jpeg', fallback: "no_image.jpg", class: 'detail-head-image' %>
+									<span><%= attachment_image_tag current_user, :profile_image, :fill,20, 20, format: 'jpeg', fallback: "no_image.jpg", class: 'detail-head-image' %></span>
 									<span class="profile-name"><%= current_user.name %></span>
 								</div>
 							</div>
@@ -243,7 +258,7 @@
 										</span>
 									<% end %>
 									<span>
-										<%= attachment_image_tag contributor.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'image' %>
+										<%= attachment_image_tag contributor.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'post-image' %>
 									</span>
 									<span class="ranking-title"><%= link_to contributor.user.name, user_path(contributor.user) %></span>
 									<% if user_signed_in? %>
