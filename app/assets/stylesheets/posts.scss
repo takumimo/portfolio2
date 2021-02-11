@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.image {
+.post-image {
+  border-radius: 10%;
   width: 40px;
   height: 40px;
 }
@@ -20,7 +21,6 @@
 
 .index-title {
   font-size: 15px;
-  margin-left: 5px;
 }
 
 .image {
@@ -74,6 +74,7 @@
 
 .post-ul {
   list-style: none;
+  display: inline;
   .post-image {
     display: inline-block;
   }
@@ -497,7 +498,7 @@
 }
 
 .detail-head-topic{
-  width: 150px;
+  width: 200px;
   margin: 0 auto;
 }
 
