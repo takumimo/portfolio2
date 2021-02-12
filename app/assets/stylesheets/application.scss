@@ -54,6 +54,7 @@ header {
 }
 
 .gretel {
+	margin-top: 20px;
 	margin-bottom: 30px;
 	padding-left: 3px;
 }
@@ -249,12 +250,21 @@ footer {
 	}
 	.user-show-right {
 		margin-right: 15px;
-		margin-left: 30px;
 		margin-bottom: 30px;
 	}
+	.user-show-middle {
+		padding-left: 0;
+	}
+	.show-right-top {
+		margin-left: 0;
+	}
+	.show-right-bottom {
+		margin-left: 0;
+	}
 	.show-details {
-		margin-left: 15px;
+		margin-left: 0;
 		margin-top: 30px;
+		padding-left: 0;
 	}
 	.index-details-inner {
 		padding-left: 0;
@@ -331,6 +341,15 @@ footer {
 	}
 	.post-row {
 		padding-left: 15px;
+	}
+	.user-show-right {
+		margin-left: 15px;
+	}
+	.user-show-middle {
+		margin-left: 15px;
+	}
+	.show-details {
+		margin-left: 15px;
 	}
 }
 

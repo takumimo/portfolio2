@@ -1,10 +1,12 @@
 <div class="container">
-	<div class="gretel">
-		<% breadcrumb :user, @user %>
-		<%= breadcrumbs separator: " &rsaquo; " %>
-	</div>
-	<div class="user-message">
-		<%= flash[:notice] %>
+	<div class="row">
+		<div class="gretel">
+			<% breadcrumb :user, @user %>
+			<%= breadcrumbs separator: " &rsaquo; " %>
+		</div>
+		<div class="user-message">
+			<%= flash[:notice] %>
+		</div>
 	</div>
 	<div class="row">
 		<div class="user-show-right col-md-3">

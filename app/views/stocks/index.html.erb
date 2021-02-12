@@ -1,7 +1,8 @@
-<div class="container stock-container">
+
 	<% if @stock_posts.present? %>
+
+		<div class="stock-page container">
 		<div class="row stock-container-inner">
-		<div class="stock-page">
 			<div class="stock-tag col-md-2 col-sm-3 col-xs-4">
 				<div class="stock-tag-inner">
 					<h4><strong>タグ</strong></h4>
@@ -15,8 +16,8 @@
 				</div>
 			</div>
 			<% @stock_posts.each do |post| %>
-				<div class="stock-index col-md-10 col-sm-9 col-xs-8 row">
-					<div class="stock-post-articles">
+				<div class="stock-index col-md-10 col-sm-9 col-xs-8">
+					<div class="stock-post-articles row">
 						<div class="stock-post-article col-md-1">
 							<%= link_to user_path(post.user) do %>
 								<%= attachment_image_tag post.user, :profile_image, :fill, 20, 20,fallback: "no_image.jpg", class: 'post-image' %>
@@ -46,7 +47,7 @@
 			<% end %>
 		</div>
 		</div>
+
 	<% else %>
 		<p>ストックはまだありません</p>
 	<% end %>
-</div>
