@@ -29,6 +29,10 @@ header {
 	height: 50px;
 }
 
+.header-container {
+	padding-left: 0;
+}
+
 .header-list {
 	list-style: none;
 	display: flex;
@@ -45,7 +49,7 @@ header {
 	}
 }
 
-.header-element {
+.header-element:not(:last-child) {
 	margin-right: 10px;
 }
 
@@ -252,6 +256,12 @@ footer {
 		margin-left: 15px;
 		margin-top: 30px;
 	}
+	.index-details-inner {
+		padding-left: 0;
+	}
+	.comment-rank-inner {
+		padding-left: 0;
+	}
 }
 
 @media (max-width: 767px) {
@@ -308,10 +318,13 @@ footer {
 		margin: 0 15px;
 	}
 	.index-details {
-		margin: 0 15px;
+
 	}
 	.comment-rank {
 		margin: 15px;
+	}
+	.index-details {
+		margin: 0 15px;
 	}
 }
 
