@@ -149,15 +149,6 @@
   }
 }
 
-.new-text-field {
-  width: 100%;
-  margin: 0;
-}
-
-.text-main {
-  padding-right: 0;
-}
-
 .text-model {
 
   background-color: white;
@@ -178,13 +169,17 @@
   padding-left: 10px;
 }
 
-.emoji-field {
-  width: 100%;
-  margin: 0;
-}
 .emoji-form {
-  width: 495px;
-  padding-left: 10px;
+  width: 45%;
+
+}
+
+.emoji-field {
+  height: 46px;
+}
+
+.post-row {
+  padding-right: 15px;
 }
 
 .emoji-model {
@@ -196,7 +191,7 @@
 
 .emoji-model-1 {
   opacity: 0.5;
-  width: 400px;
+  width: 50%;
 }
 
 .emoji {
@@ -215,12 +210,11 @@
 }
 
 .new-post-title {
-  width: 1005px;
-  padding-left: 10px;
+  // width: 100%;
 }
 
 .new-post-tag {
-  width: 1005px;
+  width: 100%;
   padding-left: 10px;
 }
 
@@ -320,7 +314,7 @@
 }
 
 .index-details-inner {
-  padding: 0 15px;
+  padding-left: 15px;
 }
 
 
@@ -367,7 +361,7 @@
 }
 
 .comment-rank-inner {
-  padding: 0 15px;
+  padding-left: 15px;
 }
 
 .rank-inner-more {
@@ -573,8 +567,12 @@
 }
 
 .search-window {
+  width: 210px;
+  margin-top: 50px;
   margin-bottom: 15px;
-  margin-left: 13px;
+}
+.post-search {
+  margin-right: 15px;
 }
 
 .search-input {
@@ -658,4 +656,9 @@
 
 .form-group {
   margin-top: 30px;
+}
+
+.user-info {
+  margin: 0;
+  padding-right: 0;
 }

@@ -29,6 +29,10 @@ header {
 	height: 50px;
 }
 
+.header-container {
+	padding-left: 0;
+}
+
 .header-list {
 	list-style: none;
 	display: flex;
@@ -45,11 +49,12 @@ header {
 	}
 }
 
-.header-element {
+.header-element:not(:last-child) {
 	margin-right: 10px;
 }
 
 .gretel {
+	margin-top: 20px;
 	margin-bottom: 30px;
 	padding-left: 3px;
 }
@@ -245,12 +250,27 @@ footer {
 	}
 	.user-show-right {
 		margin-right: 15px;
-		margin-left: 30px;
 		margin-bottom: 30px;
 	}
+	.user-show-middle {
+		padding-left: 0;
+	}
+	.show-right-top {
+		margin-left: 0;
+	}
+	.show-right-bottom {
+		margin-left: 0;
+	}
 	.show-details {
-		margin-left: 15px;
+		margin-left: 0;
 		margin-top: 30px;
+		padding-left: 0;
+	}
+	.index-details-inner {
+		padding-left: 0;
+	}
+	.comment-rank-inner {
+		padding-left: 0;
 	}
 }
 
@@ -308,10 +328,28 @@ footer {
 		margin: 0 15px;
 	}
 	.index-details {
-		margin: 0 15px;
+
 	}
 	.comment-rank {
 		margin: 15px;
+	}
+	.index-details {
+		margin: 0 15px;
+	}
+	.new-post-title {
+		width: 100%;
+	}
+	.post-row {
+		padding-left: 15px;
+	}
+	.user-show-right {
+		margin-left: 15px;
+	}
+	.user-show-middle {
+		margin-left: 15px;
+	}
+	.show-details {
+		margin-left: 15px;
 	}
 }
 
