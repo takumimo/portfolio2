@@ -1,5 +1,5 @@
 <div class="new-post container">
-	<%= form_with(model:@post, local: true, url:posts_confirm_path, class: "row") do |f| %>
+	<%= form_with(model:@post, local: true, url:posts_confirm_path, class: "row post-row") do |f| %>
 		<div class="emoji-field">
 				<%= f.text_area :emoji, placeholder: "絵文字[control+command+スペースで入力出来ます]", autofocus: true, class: "emoji-form col-md-6 col-sm-6 col-xs-6" %>
 				<div class="emoji-model col-md-6 col-sm-6 col-xs-6">

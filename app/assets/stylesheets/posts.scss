@@ -169,12 +169,17 @@
   padding-left: 10px;
 }
 
-.emoji-field {
+.emoji-form {
+  width: 45%;
 
 }
-.emoji-form {
-  width: 50%;
 
+.emoji-field {
+  height: 46px;
+}
+
+.post-row {
+  padding-right: 15px;
 }
 
 .emoji-model {
@@ -205,11 +210,11 @@
 }
 
 .new-post-title {
-  width: 100%;
+  // width: 100%;
 }
 
 .new-post-tag {
-  width: 1005px;
+  width: 100%;
   padding-left: 10px;
 }
 
