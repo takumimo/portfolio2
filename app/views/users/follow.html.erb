@@ -1,5 +1,5 @@
 <div class="container">
-
+	<div class="row">
 		<ul class="switch">
 			<li class="tab-list1"><%= link_to 'フォロワー', '#', class: 'active', data: {id: "followers"} %></li>
 			<li class="tab-list2"><%= link_to 'フォロー', '#', data: {id: "following"} %></li>
@@ -11,18 +11,18 @@
 				<% else %>
 						<% @followers_users.each do |user| %>
 							<div class="follow-member">
-								<div class="col-md-3">
+								<div class="col-md-3 col-sm-3 col-xs-2">
 									<%= link_to user_path(user) do %>
 											<%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "following-img pull-left profile-img", fallback: "no_image.jpg" %>
 									<% end %>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-3 col-sm-3 col-xs-2">
 									<%= link_to user.name, user_path(user) %>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-3 col-sm-3 col-xs-4">
 									<%= "フォロー：#{user.following.count}" %>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-3 col-sm-3 col-xs-4">
 									<%= "フォロワー：#{user.followers.count}" %>
 								</div>
 							</div>
@@ -36,18 +36,18 @@
 					
 						<% @following_users.each do |user| %>
 							<div class="follow-member">
-								<div class="col-md-3">
+								<div class="col-sm-3 col-xs-3">
 									<%= link_to user_path(user) do %>
 											<%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "following-img pull-left profile-img", fallback: "no_image.jpg" %>
 									<% end %>
 								</div>
-								<div class="col-md-3">
+								<div class="col-sm-3 col-xs-3">
 									<%= link_to user.name, user_path(user) %>
 								</div>
-								<div class="col-md-3">
+								<div class="col-sm-3 col-xs-3">
 									<%= "フォロー：#{user.following.count}" %>
 								</div>
-								<div class="col-md-3">
+								<div class="col-sm-3 col-xs-3">
 									<%= "フォロワー：#{user.followers.count}" %>
 								</div>
 							</div>
@@ -55,5 +55,5 @@
 					
 				<%end%>
 		</section>
-
+	</div>
 </div>

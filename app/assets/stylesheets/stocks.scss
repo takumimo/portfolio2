@@ -12,17 +12,19 @@
 
 .stock-tag {
 	height: 1333px;
+    padding-left: 0;
 }
 
 .stock-tag-inner {
     background-color: white;
     padding: 10px;
     border: 1px solid #ddd;
+    margin-right: 20px;
+    margin-left: 0;
 }
 
 .stock-page {
     margin-top: 30px;
-    padding: 10px;
 }
 
 .stock-index {
@@ -38,3 +40,6 @@
     font-size: 15px;
 }
 
+.stock-container {
+    padding: 0;
+}

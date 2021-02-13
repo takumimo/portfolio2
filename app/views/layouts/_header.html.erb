@@ -1,52 +1,52 @@
+<div class="outof-header">
+<div class="container header-container">
 <header>
-  <div class="header-left pull-left">
+  <div class="header-left">
+    <div class="top-imagephoto">
     <% if user_signed_in? %>
-      <li>
-        <%= link_to posts_path do %>
-          <%= image_tag'notworry.png', class: "original-image" %>
-        <% end %>
-      </li>
+      <%= link_to posts_path do %>
+            <%= image_tag'notworry.png', class: "original-image" %>
+      <% end %>
     <% else %>
-      <li>
-        <%= link_to root_path do %>
+      <%= link_to root_path do %>
           <%= image_tag'notworry.png', class: "original-image" %>
-        <% end %>
-      </li>
+      <% end %>
     <% end %>
-  </div>
-  <div>
-    <ul class="pull-right header-ul">
-      <% if user_signed_in? %>
-        <li>
+    </div>
+    <ul class="header-list pull-right">
+    <% if user_signed_in? %>
+      
+      <li class="text-right header-element">
             <%= link_to stocks_path do %>
               <i class="fab fa-get-pocket"></i>  ストック一覧
             <% end %>
         </li>
-        <li><%= link_to new_post_path do %>
+        <li class="text-right header-element">
+            <%= link_to new_post_path do %>
               <i class="fas fa-pen"></i>  投稿する
             <% end %>
         </li>
-        <li>
+        <li class="text-right header-element">
             <%= link_to user_path(current_user) do %>
               <i class="fas fa-user"></i>  マイページ
             <% end %>
         </li>
-        <li>
+        <li class="text-right header-element">
           <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fas fa-sign-out-alt"></i>  ログアウト
           <% end %>
         </li>
-      <% else %>
-        <li><%= link_to "ゲストログイン(閲覧用)", home_guest_sign_in_path, method: :post %></li></li>
-        <li><%= link_to "新規登録", new_user_registration_path %></li>
-        <li><%= link_to "ログイン", new_user_session_path %></li>
-      <% end %>
+    <% else %>
+      <li><%= link_to "ゲストログイン(閲覧用)", home_guest_sign_in_path, method: :post %></li></li>
+      <li><%= link_to "新規登録", new_user_registration_path %></li>
+      <li><%= link_to "ログイン", new_user_session_path %></li>
+    <% end %>
     </ul>
+
   </div>
 </header>
-
-
-
+</div>
+</div>
 
 
 
