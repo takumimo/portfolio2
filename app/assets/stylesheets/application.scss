@@ -225,9 +225,6 @@ footer {
 
 
 @media (max-width: 991px) {
-	body {
-		background-color: gold;
-	}
 	.top-left {
 		margin-top: 50px;
 		text-align: center;
@@ -286,9 +283,6 @@ footer {
 	.top-btn {
 		padding-left: 0;
 	}
-	body {
-		background-color: red;
-	}
 	.btn-success {
 		font-size: 10px;
 	}
@@ -307,7 +301,7 @@ footer {
 		display: inline;
 	}
 	.footer-line {
-		padding: 0;
+		padding-left: 0;
 	}
 	.outof-footer {
 		height: 200px;
@@ -325,9 +319,6 @@ footer {
 	}
 	.tab {
 		margin: 0 15px;
-	}
-	.index-details {
-
 	}
 	.comment-rank {
 		margin: 15px;
@@ -378,9 +369,6 @@ footer {
 }
 
 @media (max-width: 374px) {
-	body {
-		background-color: yellow;
-	}
 	.top-slogan {
 		font-size: 30px;
 	}

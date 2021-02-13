@@ -23,24 +23,18 @@
 
 <div class="search-window container">
 	<div class="row">
-			<%= search_form_for @q do |f| %>
+		<% if user_signed_in? %>
+			<div class="notification-login">
+					<%= flash[:notice] %>
+			</div>
+		<% end %>
+		<%= search_form_for @q do |f| %>
 			<span class="fa fa-search">
 	  			<%= f.search_field :text_cont, placeholder: "本文検索", class: "search-input" %>
-	  			</span>
-			<% end %>
+	  		</span>
+		<% end %>
 	</div>
-</div>
-
-
-
-	
-<div class="container post-index-container">
-	<% if user_signed_in? %>
-	<div class="notification-login">
-				<%= flash[:notice] %>
-			</div>
-	<% end %>
-  	<div class="gretel">
+	<div class="gretel">
 		<% if params[:q] %>
 			<% breadcrumb :postsq, @posts %>
 			<%= breadcrumbs separator: " &rsaquo; " %>
@@ -52,9 +46,9 @@
 			<%= breadcrumbs separator: " &rsaquo; " %>
 		<% end %>
 	</div>
-
-		
-
+</div>
+	
+<div class="container post-index-container">
 	<div class="row">
 		<div class="tab col-md-7">
 		    <ul class="menu">
