@@ -104,11 +104,10 @@
 }
 
 .post-edit {
-  display: inline-block;
+  margin: 0 auto;
   p {
-  padding-right: 10px;
+
   }
-  margin-right: 15px;
 }
 
 .post-created {
@@ -289,23 +288,26 @@
 }
 
 .post-edit-emoji {
-  width: 1005px;
+  width: 100%;
   padding-left: 10px;
 }
 
+.post-edit-emoji-outer {
+  width: 100%;
+}
+
 .post-edit-title {
-  width: 1005px;
+  width: 100%;
   padding-left: 10px;
 }
 
 .post-edit-tag {
-  width: 1005px;
+  width: 100%;
   padding-left: 10px;
 }
 
 .post-edit-text {
   height: 600px;
-  width: 495px;
   padding-left: 10px;
 }
 
@@ -499,15 +501,15 @@
 
 .text-model-edit {
   background-color: white;
-  padding-top: 3px;
+  padding: 3px;
   border: 1px solid #ccc;
   height: 600px;
-  width: 300px;
 }
 
-.edit-text-field {
-  width: 1020px;
-  margin: 0;
+.text-model-edit-1 {
+  background-color: white;
+  border: 1px solid #ccc;
+  height: 600px;
 }
 
 .stock-index {
