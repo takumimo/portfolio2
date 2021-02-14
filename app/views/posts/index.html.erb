@@ -1,20 +1,22 @@
 <% unless user_signed_in? %>
 	<div class="topper">
-		<div class="container">		
-			<div class="login-header">
-				<div class="notification">
-					<%= flash[:notice] %>
-				</div>
-				<div class="top-left col-lg-6 col-md-6">
-					<h1 class="top-slogan"><strong>Ask for advice.</strong></h1>
-					<p class="top-subject">ノットウォーリーは20代のキャリアの悩みを解決するサイトです</p>
-					<div class="top-btn">
-						<span class="top-guestlogin"><%= link_to "ゲストログイン（閲覧用）", home_guest_sign_in_path, method: :post, class: 'btn btn-success' %></span>
-						<span class="top-about"><%= link_to "About notworry", homes_about_path, class: "btn btn-warning" %></span>
+		<div class="container">
+			<div class="row">		
+				<div class="login-header">
+					<div class="notification">
+						<%= flash[:notice] %>
 					</div>
-				</div>
-				<div class="top-right col-lg-6 col-md-6">
-					<%= image_tag'Devices-bro.png', class: 'login-image' %>
+					<div class="top-left col-lg-6 col-md-6">
+						<h1 class="top-slogan"><strong>Ask for advice.</strong></h1>
+						<p class="top-subject">ノットウォーリーは20代のキャリアの悩みを解決するサイトです</p>
+						<div class="top-btn">
+							<span class="top-guestlogin"><%= link_to "ゲストログイン（閲覧用）", home_guest_sign_in_path, method: :post, class: 'btn btn-success' %></span>
+							<span class="top-about"><%= link_to "About notworry", homes_about_path, class: "btn btn-warning" %></span>
+						</div>
+					</div>
+					<div class="top-right col-lg-6 col-md-6">
+						<%= image_tag'Devices-bro.png', class: 'login-image' %>
+					</div>
 				</div>
 			</div>
 		</div>

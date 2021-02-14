@@ -633,6 +633,9 @@
 .login-header {
   height: 600px;
   width: 100%;
+  div {
+    padding-left: 0;
+  }
 }
 
 .topper {
@@ -644,7 +647,6 @@
 .login-image {
   width: 600px;
   height: 500px;
-  padding-right: 100px;
   padding-bottom: 100px;
 }
 
@@ -678,3 +680,6 @@
   margin-bottom: 50px;
 }
 
+.row .top-right {
+  padding-right: 0;
+}
