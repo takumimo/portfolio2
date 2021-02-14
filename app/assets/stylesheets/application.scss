@@ -20,6 +20,13 @@
 	font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
  }
 
+.wrap {
+	min-height: 100vh;
+	position: relative;
+	padding-bottom: 100px;
+    box-sizing: border-box;
+}
+
 .outof-header {
 	height: 50px;
 	background-color:  #2E1031;
@@ -159,6 +166,8 @@ body {
 footer {
 	  height: 100px;
 		ul {
+			margin-left: 0;
+			padding-left: 0;
 			height: 100px;
 			list-style: none;
 			text-align: center;
@@ -179,12 +188,16 @@ footer {
 
 .outof-footer {
 	height: 100px;
+	width: 100%;
 	background-color: #2E1031;
-	margin-top: 560px;
+	margin-top: 50px;
+	position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
 }
 
 .footer-inner {
 	height: 100px;
+	padding-left: 0;
 }
 
 .footer-list {
