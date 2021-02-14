@@ -37,9 +37,9 @@
           <% end %>
         </li>
     <% else %>
-      <li><%= link_to "ゲストログイン(閲覧用)", home_guest_sign_in_path, method: :post %></li></li>
-      <li><%= link_to "新規登録", new_user_registration_path %></li>
-      <li><%= link_to "ログイン", new_user_session_path %></li>
+      <li class="text-right header-element"><%= link_to "ゲストログイン(閲覧用)", home_guest_sign_in_path, method: :post %></li></li>
+      <li class="text-right header-element"><%= link_to "新規登録", new_user_registration_path %></li>
+      <li class="text-right header-element"><%= link_to "ログイン", new_user_session_path %></li>
     <% end %>
     </ul>
 
