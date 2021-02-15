@@ -561,7 +561,7 @@
 
 .content {
   display: none;
-
+  margin-right: 15px;
 }
 
 .search-result {
@@ -703,4 +703,8 @@
     padding-left: 0;
     margin: 0 auto;
   }
+}
+
+.post-show-container {
+  margin-bottom: 30px;
 }
