@@ -25,6 +25,9 @@
 
 .stock-page {
     margin-top: 30px;
+    .stock-container-inner {
+        margin-right: 1px;
+    }
 }
 
 .stock-index {
@@ -42,4 +45,10 @@
 
 .stock-container {
     padding: 0;
+}
+
+.stock-container-inner {
+    .stock-tag {
+        padding-left: 0;
+    }
 }
