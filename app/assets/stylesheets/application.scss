@@ -84,6 +84,10 @@ body {
 	text-align: center;
 }
 
+.login-letter {
+	text-align: center;
+}
+
 .header-mypage {
 	position: relative;
 }
@@ -152,6 +156,17 @@ input[value="登録"] {
 	}
 }
 
+.devise-new-link {
+	height: 30px;
+	width: 100%;
+	text-align: center;
+	a {
+		display: inline-block;
+  		text-align: left;
+	}
+}
+
+
 .login-link-inner {
 	height: 30px;
 	width: 200px;
@@ -163,7 +178,31 @@ input[value="登録"] {
 	a {
 		color: black;
 		line-height: 30px;
+		text-decoration: none;
 	}
+}
+
+.login-link-inner:hover {
+	background-color: #F2F2F2;
+}
+
+.new-link-inner {
+	height: 30px;
+	width: 200px;
+	margin: auto;
+	margin-top: 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: white;
+	a {
+		color: black;
+		line-height: 30px;
+		text-decoration: none;
+	}
+}
+
+.new-link-inner:hover {
+	background-color: #F2F2F2;
 }
 
 .devise-checkbox-field {
@@ -172,6 +211,8 @@ input[value="登録"] {
 
 .devise-session-submit {
 	margin-top: 10px;
+	width: 200px;
+	height: 30px;
 }
 
 .devise-new-link {
