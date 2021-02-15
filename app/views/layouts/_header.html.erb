@@ -18,26 +18,25 @@
       
       <li class="text-right header-element">
             <%= link_to stocks_path do %>
-              <i class="fab fa-get-pocket"></i>  ストック一覧
+              <i class="fab fa-get-pocket"></i>
             <% end %>
         </li>
         <li class="text-right header-element">
             <%= link_to new_post_path do %>
-              <i class="fas fa-pen"></i>  投稿する
+              <i class="fas fa-pen"></i>
             <% end %>
         </li>
         <li class="text-right header-element">
             <%= link_to user_path(current_user) do %>
-              <i class="fas fa-user"></i>  マイページ
+              <i class="fas fa-user"></i>
             <% end %>
         </li>
         <li class="text-right header-element">
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fas fa-sign-out-alt"></i>  ログアウト
+            <i class="fas fa-sign-out-alt"></i> 
           <% end %>
         </li>
     <% else %>
-      <li class="text-right header-element"><%= link_to "ゲストログイン(閲覧用)", home_guest_sign_in_path, method: :post %></li></li>
       <li class="text-right header-element"><%= link_to "新規登録", new_user_registration_path %></li>
       <li class="text-right header-element"><%= link_to "ログイン", new_user_session_path %></li>
     <% end %>
