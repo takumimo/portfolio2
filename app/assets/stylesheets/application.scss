@@ -80,6 +80,14 @@ body {
 	margin: 0 auto;
 }
 
+.signup-letter {
+	text-align: center;
+}
+
+.login-letter {
+	text-align: center;
+}
+
 .header-mypage {
 	position: relative;
 }
@@ -112,12 +120,89 @@ body {
 	margin-top: 10px;
 }
 
-.devise-new-submit {
+.actions {
+	line-height: 36px;
+	width: 100%;
+	height: 36px;
+	text-align: center;
 	margin-top: 10px;
 }
 
+input[value="登録"] {
+	line-height: 18px; 
+	width: 200px;
+	height: 30px;
+}​
+
+.devise-new-submit {
+	color: black;
+	display: inline-block;
+	text-align: left;
+	width: 340px;
+	height: 24px;
+	text-align: center;
+	border-color: #ffcc00;
+	box-shadow: none;
+	background-color: #ffcc00;
+}
+
 .devise-login-link {
+	height: 30px;
+	width: 100%;
+	text-align: center;
+	a {
+		display: inline-block;
+  		text-align: left;
+	}
+}
+
+.devise-new-link {
+	height: 30px;
+	width: 100%;
+	text-align: center;
+	a {
+		display: inline-block;
+  		text-align: left;
+	}
+}
+
+
+.login-link-inner {
+	height: 30px;
+	width: 200px;
+	margin: auto;
 	margin-top: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: white;
+	a {
+		color: black;
+		line-height: 30px;
+		text-decoration: none;
+	}
+}
+
+.login-link-inner:hover {
+	background-color: #F2F2F2;
+}
+
+.new-link-inner {
+	height: 30px;
+	width: 200px;
+	margin: auto;
+	margin-top: 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: white;
+	a {
+		color: black;
+		line-height: 30px;
+		text-decoration: none;
+	}
+}
+
+.new-link-inner:hover {
+	background-color: #F2F2F2;
 }
 
 .devise-checkbox-field {
@@ -126,6 +211,8 @@ body {
 
 .devise-session-submit {
 	margin-top: 10px;
+	width: 200px;
+	height: 30px;
 }
 
 .devise-new-link {

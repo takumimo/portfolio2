@@ -1,17 +1,17 @@
 <div class="container">
-  <h2>新規登録</h2>
+  <h2 class="signup-letter">新規登録</h2>
   <div class="signup">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class="row">
-        <div class="devise-email-field col-md-8">
+        <div class="devise-email-field col-md-12">
           <%= f.label :email %><br />
           <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
         </div>
       </div>
       
       <div class="row">
-        <div class="devise-name-field col-md-7">
+        <div class="devise-name-field col-md-12">
           <%= f.label :name %><br />
           <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
         </div>
@@ -25,7 +25,7 @@
       </div>
       
       <div class="row">
-        <div class="password-field col-md-8">
+        <div class="password-field col-md-12">
           <%= f.label :password %>
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> 文字以上で入力してください)</em>
@@ -35,22 +35,23 @@
       </div>
       
       <div class="row">
-        <div class="password-conf-field col-md-8">
+        <div class="password-conf-field col-md-12">
           <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"%>
         </div>
-
       </div>
-      
-      <div class="actions">
-        <%= f.submit "登録", class: "devise-new-submit" %>
+
+      <div class="row">
+        <div class="actions">
+          <%= f.submit "登録", class: "devise-new-submit btn btn-warning" %>
+        </div>
+        <div class="devise-login-link">
+          <div class="login-link-inner">
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
       </div>
     <% end %>
-    <div class="devise-login-link">
-      <%= render "devise/shared/links" %>
-    </div>
-
-
   </div>
 </div>
 
