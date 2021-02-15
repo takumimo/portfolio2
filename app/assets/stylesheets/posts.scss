@@ -561,7 +561,7 @@
 
 .content {
   display: none;
-
+  margin-right: 15px;
 }
 
 .search-result {
@@ -652,6 +652,7 @@
 
 .new-post {
   margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 .notification {
@@ -659,7 +660,15 @@
 }
 
 .form-group {
-  margin-top: 30px;
+  margin-top: 15px;
+}
+
+.confirm-title, .confirm-tag, .confirm-text {
+  margin: 0 auto;
+}
+
+.confirm-button {
+  text-align: center;
 }
 
 .user-info {
@@ -682,4 +691,20 @@
 
 .row .top-right {
   padding-right: 0;
+}
+
+.post-edit-container {
+  margin-bottom: 50px;
+}
+
+.post-message {
+  margin-top: 15px;
+  ul {
+    padding-left: 0;
+    margin: 0 auto;
+  }
+}
+
+.post-show-container {
+  margin-bottom: 30px;
 }

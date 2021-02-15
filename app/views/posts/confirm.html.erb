@@ -9,29 +9,27 @@
 		</div>
 	<% end %>
 	<div class="form-group">
-		<div class="confirm-title row">
+		<div class="confirm-title">
 			<%= @post.emoji %>
 		</div>
-		<div class="confirm-title row">
+		<div class="confirm-title">
 			<%= @post.title %>
 		</div>
-		<div class="confirm-tag row">
+		<div class="confirm-tag">
 			<%= @post.tag_list %>
 		</div>
-		<div class="confirm-text row">
+		<div class="confirm-text">
 			<%= safe_join(@post.text.split("\n"),tag(:br)) %>
 		</div>
-		<%= form_with(model: @post, local: true, url: posts_path) do |f| %>
+		<%= form_with(model: @post, local: true, url: posts_path, class: "confirm-button") do |f| %>
 			<%= f.hidden_field :user_id, value: current_user.id %>
 			<%= f.hidden_field :emoji %>
 			<%= f.hidden_field :title %>
 			<%= f.hidden_field :text %>
 			<%= f.hidden_field :tag_list %>
 			<%= f.hidden_field :status, value: :doing %>
-			<div class="confirm-button row">
 				<%= link_to "修正する", new_post_path(post: @post.attributes), class: 'btn modifying-post' %>
 				<%= f.submit "投稿する", class: 'btn confirmed-post' %>
-			</div>
 		<% end %>
 	</div>
 </div>
