@@ -6,7 +6,8 @@
 
 https://notworry.net
 
-<img width="1680" alt="スクリーンショット 2020-12-15 15 22 43" src="https://user-images.githubusercontent.com/68421380/102707983-f37c8c00-42e2-11eb-92d2-9aa95dba3620.png">
+<img width="1665" alt="スクリーンショット 2021-02-15 11 50 29" src="https://user-images.githubusercontent.com/68421380/107900439-5c4f5000-6f84-11eb-86d3-aeedda2c6695.png">
+
 
 
 ## アプリ概要
@@ -25,8 +26,9 @@ Ruby on Railsで制作しました。
 ## アピールポイント
 - JavaScriptを使用しDOM操作によるタブの切り替え機能を実装
 - 非同期通信を一部使用しユーザストレスを軽減
-- Rspecを取り入れ、事前にバグを検知
+- Rspecを取り入れ、リリース前にバグを検知
 - AWS各種サービスを使用し、開発現場で使われる環境を構築
+- メディアクエリを使用しレスポンシブデザインに対応
 
 ## 機能
 
