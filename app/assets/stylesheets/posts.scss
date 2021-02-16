@@ -332,7 +332,7 @@
 .detail-head-image {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
+  border-radius: 10%;
 }
 
 .index-detail-head {
@@ -707,4 +707,12 @@
 
 .post-show-container {
   margin-bottom: 30px;
+}
+
+.posts-show-text {
+  line-height: 2;
+}
+
+.post-post-image {
+  height: 50px;
 }
