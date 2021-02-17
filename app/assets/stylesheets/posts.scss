@@ -10,10 +10,6 @@
 }
 
 .post-index {
-	padding: 10px;
-}
-
-.post-index {
 	a {
 	    text-decoration: none;
 	}
@@ -46,10 +42,6 @@
   border: 1px solid #b8dbf2;
   background: #d5e9f7 none;
   border-radius: 3px;
-}
-
-.post-image {
-	margin-right: 10px;
 }
 
 .show-emoji {
@@ -85,14 +77,14 @@
 
 
   .post-like {
-    display: inline-block;
+    display: inline;
     margin-right: 40px;
-    margin-left: 21px;
+    position: absolute;
+    bottom: 0;
   }
 
   .post-tag {
     display: inline-block;
-
   }
 
   .post-destroy {
@@ -199,13 +191,24 @@
   border: 1px solid #b8dbf2;
   border-radius: 3px;
   width: 100%;
-  height: 100px;
+  max-width: 100px;
+  margin: 0 auto;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: relative;
 }
 
+// .emoji:before{
+//   display: block;
+//   content: '';
+//   padding-top: 100%;
+// }
+
 .emoji-inner {
-  margin: 20px 20px;
-  text-align: center;
-  line-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center 
 }
 
 .new-post-title {
@@ -455,11 +458,12 @@
 
 .post-middle {
   padding: 0 15px;
+  position: relative;
+
 }
 
 .post-middle-inner {
   height: 120px;
-  border-bottom: 1px solid #e8e8e8;
   padding: 10px 0;
 }
 
