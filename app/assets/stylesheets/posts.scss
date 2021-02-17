@@ -569,12 +569,9 @@
 }
 
 .search-window {
-  width: auto;
+  width: 210px;
   margin-top: 50px;
   margin-bottom: 15px;
-  form {
-    text-align: center;
-  }
 }
 .fa-search {
   margin-top: 15px;
@@ -686,7 +683,7 @@
   margin-top: 50px;
 }
 
-.app-link-row span {
+.app-link-row div {
   font-size: 20px;
   padding-left: 0;
   margin-bottom: 100px;
