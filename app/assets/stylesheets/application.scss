@@ -130,8 +130,8 @@ body {
 
 input[value="登録"] {
 	line-height: 18px; 
-	width: 200px;
-	height: 30px;
+	width: 194px;
+	height: 34px;
 }​
 
 .devise-new-submit {
@@ -150,6 +150,7 @@ input[value="登録"] {
 	height: 30px;
 	width: 100%;
 	text-align: center;
+	margin-bottom: 100px;
 	a {
 		display: inline-block;
   		text-align: left;
@@ -160,6 +161,8 @@ input[value="登録"] {
 	height: 30px;
 	width: 100%;
 	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 100px;
 	a {
 		display: inline-block;
   		text-align: left;
@@ -168,8 +171,8 @@ input[value="登録"] {
 
 
 .login-link-inner {
-	height: 30px;
-	width: 200px;
+	height: 34px;
+	width: 194px;
 	margin: auto;
 	margin-top: 10px;
 	border: 1px solid #ccc;
@@ -187,10 +190,9 @@ input[value="登録"] {
 }
 
 .new-link-inner {
-	height: 30px;
-	width: 200px;
+	height: 34px;
+	width: 194px;
 	margin: auto;
-	margin-top: 20px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	background-color: white;
@@ -211,12 +213,8 @@ input[value="登録"] {
 
 .devise-session-submit {
 	margin-top: 10px;
-	width: 200px;
-	height: 30px;
-}
-
-.devise-new-link {
-	margin-top: 10px;
+	width: 194px;
+	height: 34px;
 }
 
 .devise-mail-submit {
@@ -412,9 +410,12 @@ footer .footer-list-1 {
 	}
 	.footer-line {
 		padding-left: 0;
+		a, .copy-right {
+			line-height: 150px;
+		}
 	}
 	.outof-footer {
-		height: 200px;
+		height: 150px;
 	}
 	.post-middle-inner {
 		height: 120px;
@@ -476,6 +477,11 @@ footer .footer-list-1 {
 		list-style: none;
 		height: 38px;
 	}
+	.footer-line {
+		a, .copy-right {
+			line-height: normal;
+		}
+	}
 }
 
 @media (max-width: 374px) {
@@ -509,3 +515,20 @@ footer .footer-list-1 {
 .top-subject {
 	font-size: 19px;
 }
+
+.guest-login-outer {
+	margin-top: 10px;
+	height: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.guest-login {
+	height: 30px;
+    width: 200px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 4px;
+}
+
+
