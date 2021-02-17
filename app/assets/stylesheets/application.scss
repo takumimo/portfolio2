@@ -455,6 +455,9 @@ footer .footer-list-1 {
 	.content {
 		margin: 0 15px;
 	}
+	.app-link-container {
+		margin-bottom: 100px;
+	}
 }
 
 @media (max-width: 635px) {
@@ -496,9 +499,6 @@ footer .footer-list-1 {
 	.post-middle-inner {
 		height: 170px;
 	}
-	// .post-middle-left {
-	// 	width: 50px;
-	// }
 	.post-status {
 		width: 55px;
 		margin: 0 auto;
@@ -506,6 +506,12 @@ footer .footer-list-1 {
 	.post-index {
 		padding: 0;
 	}
+	.search-window {
+		width: auto;
+		form {
+		  text-align: center;
+		}
+	  }
 }
 
 .wrap {
