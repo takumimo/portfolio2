@@ -16,7 +16,6 @@
           </div>
         </div>
         
-
         <% if devise_mapping.rememberable? %>
           <div class="devise-checkbox-field">
             <%= f.check_box :remember_me %>
@@ -28,13 +27,19 @@
           <%= f.submit "ログイン", class: "devise-session-submit btn btn-warning" %>
         </div>
     <% end %>
+    <div class="guest-login-outer">
+      <div class="guest-login">
+        <p>機能を試したい方はこちら</p>
+        <%= link_to "ゲストログイン（閲覧用）", home_guest_sign_in_path, method: :post, class: 'btn btn-success' %>
+      </div>
+    </div>
     <div class="devise-new-link">
+      <p>はじめての方はこちら</p>
       <div class="new-link-inner">
+        
         <%= render "devise/shared/links" %>
       </div>
     </div>
-    
-
   </div>
 </div>
 
