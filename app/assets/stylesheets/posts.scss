@@ -42,6 +42,7 @@
   border: 1px solid #b8dbf2;
   background: #d5e9f7 none;
   border-radius: 3px;
+  margin-bottom: 5px;
 }
 
 .show-emoji {
@@ -435,10 +436,6 @@
   margin-top: 10px;
 }
 
-.post-button {
-  margin-top: 5px;
-}
-
 .post-status {
   background-color: #f2f2f2;
   width: 70px;
@@ -719,4 +716,12 @@
 
 .post-post-image {
   height: 50px;
+}
+
+.index-like, .likes-count {
+  color: #93A5B1;
+}
+
+.post-article {
+  margin-bottom: 9px;
 }

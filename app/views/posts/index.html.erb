@@ -87,26 +87,18 @@
 										<%= link_to post.user.name, user_path(post.user) %>
 									</span>
 									<!-- 気になるボタン -->
+									<div>
 										<% if user_signed_in? %>
-										<% if current_user != post.user %>
-											<span class="post-like", id="likes_buttons_<%= post.id %>">
-												<%= render 'likes/like', post: post %>
-											</span>
+											<% if current_user != post.user %>
+												<i class="far fa-heart index-like" aria-hidden="true", id="nolike-btn"></i>
+												<span class="likes-count">
+													<%= post.likes.count %>
+												</span>
+											<% end %>
 										<% end %>
-										<% end %>
-										<!-- 気になるボタン -->
-									<div class="post-tag">
-										<!-- タグ -->
-										<% post.tags.each do |tag| %>
-											<button class="post-button">
-												<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %>
-											</button>
-										<% end %>
-										<!-- タグ -->
-										
 									</div>
+									<!-- 気になるボタン -->
 								</div>
-								
 							</div>
 							
 						</div>
@@ -165,16 +157,18 @@
 									<span>
 										<%= link_to post.user.name, user_path(post.user) %>
 									</span>
-									<div class="post-tag">
-										<!-- タグ -->
-										<% post.tags.each do |tag| %>
-											<button class="post-button">
-												<%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %>
-											</button>
+									<!-- 気になるボタン -->
+									<div>
+										<% if user_signed_in? %>
+											<% if current_user != post.user %>
+												<i class="far fa-heart index-like" aria-hidden="true", id="nolike-btn"></i>
+												<span class="likes-count">
+													<%= post.likes.count %>
+												</span>
+											<% end %>
 										<% end %>
-										<!-- タグ -->
-										
 									</div>
+									<!-- 気になるボタン -->
 								</div>
 								</div>
 							</div>
