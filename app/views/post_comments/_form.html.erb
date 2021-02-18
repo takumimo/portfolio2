@@ -8,9 +8,7 @@
 					<%= f.text_area :text, class: "comment-form form-control" %>
 					<%= f.submit "コメントする", class: "post-comment-submit" %>
 				<% else %>
-					<span>
-						<%= render 'likes/like', post: post %>
-					</span>
+					<i class="far fa-heart index-like" aria-hidden="true", id="nolike-btn"></i> を押すとコメント出来ます
 				<% end %>
 			<% end %>
 		</div>

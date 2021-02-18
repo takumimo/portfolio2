@@ -57,6 +57,15 @@
 								<% end %>
 							</span>
 						<% end %>
+						<!-- 気になるボタン -->
+										<% if user_signed_in? %>
+										<% if current_user != @post.user %>
+											<span class="pull-right post-like", id="likes_buttons_<%= @post.id %>">
+												<%= render 'likes/like', post: @post %>
+											</span>
+										<% end %>
+										<% end %>
+										<!-- 気になるボタン -->
 					</div>
 					<h2><strong><%= @post.title %></strong></h2>
 					<% @post.tags.each do |tag| %>
@@ -64,7 +73,7 @@
 							<button class="show-span-tag"><%= link_to tag.name, posts_path(tag_name: tag.name), class: "tag-btn" %></button>
 						</span>
 					<% end %>
-					<h4 class="posts-show-text"><%= safe_join(@post.text.split("\n"),tag(:br)) %></h4>
+					<p class="posts-show-text"><%= safe_join(@post.text.split("\n"),tag(:br)) %></p>
 				</div>
 				<div class="comment-bottom">
 					<i class="fas fa-comments"></i>
