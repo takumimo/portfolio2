@@ -1,11 +1,17 @@
 <div class="outof-footer">
     <div class="container footer-inner">
         <footer>
-            <ul class="footer-line">
-                <li class="copy-right pull-left">©notworry</li>
-                <%= link_to  "プライバシーポリシー", homes_privacy_path, class: "footer-list-1 pull-right" %>
-                <%= link_to  "notworryの使い方", homes_about_path, class: "footer-list-2 pull-right" %>
-            </ul>
+
+ 
+                <%= link_to  "プライバシーポリシー", homes_privacy_path, class: "footer-list-1" %>
+                <%= link_to  "notworryの使い方", homes_about_path, class: "footer-list-2" %>
+                <div class="tree">
+                    <%= image_tag'tree.png', class: "tree-image" %>
+                </div>
+
+
+                <div class="copy-right"><span>©notworry<span></div>
+
         </footer>
     </div>
 </div>

@@ -53,14 +53,12 @@
 .show {
   background-color: white;
   padding: 20px;
-  width: 700px;
   margin: 0 auto;
 }
 
 .comment-bottom {
 	background-color: white;
   padding: 20px;
-  width: 700px;
   border-top: 1px solid #ddd;
   margin: 0 auto;
 }
@@ -118,11 +116,11 @@
 .comment-form {
   form {
     margin-top: 100px;
+    margin-bottom: 100px;
   }
 }
 
 .post-comment-form {
-  width: 700px;
   margin: 0 auto;
 }
 
@@ -430,6 +428,7 @@
 
 .posts-show-text {
   padding-top: 10px;
+  font-size: 18px;
 }
 
 .thank-area {
@@ -461,11 +460,7 @@
 
 .post-middle-inner {
   height: 120px;
-  padding: 10px 0;
-}
-
-.post-middle-left {
-  padding-top: 15px;
+  padding: 15px 0;
 }
 
 .inner-more {
@@ -607,7 +602,7 @@
 }
 
 .attention-count {
-  margin-top: 5px;
+  margin-top: 9px;
 }
 
 .attention-title {
@@ -724,4 +719,8 @@
 
 .post-article {
   margin-bottom: 9px;
+}
+
+.comment-area {
+  padding-top: 10px;
 }
