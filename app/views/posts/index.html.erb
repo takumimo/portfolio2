@@ -114,13 +114,15 @@
 	      		<div class="posts-ranking">
 					<% @all_ranking_posts.each do |post| %>
 						<div class="rank-posts">
-							<span>
-								<%= attachment_image_tag post.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'post-image' %>
-							</span>
+							
 							<span class="attention-title"><%= link_to post.title, post_path(post) %></span>
-							<span class="attention-count pull-right"><%= post.likes.count %>人が注目</span>
+							
 							<div class="rank-contents">
-								<span class="rank-content"><%= link_to post.user.name, user_path(post.user) %>が<%= time_ago_in_words(post.created_at) %>前に投稿</span>
+								<span>
+									<%= attachment_image_tag post.user, :profile_image, :fill,20, 20,fallback: "no_image.jpg", class: 'post-image' %>
+								</span>
+								<span class="rank-content"><%= time_ago_in_words(post.created_at) %>前に投稿</span>
+								<span class="attention-count pull-right"><%= post.likes.count %>人が注目</span>
 							</div>
 						</div>
 					<% end %>
