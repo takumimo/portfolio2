@@ -58,14 +58,14 @@
 							</span>
 						<% end %>
 						<!-- 気になるボタン -->
-										<% if user_signed_in? %>
-										<% if current_user != @post.user %>
-											<span class="pull-right post-like", id="likes_buttons_<%= @post.id %>">
-												<%= render 'likes/like', post: @post %>
-											</span>
-										<% end %>
-										<% end %>
-										<!-- 気になるボタン -->
+						<% if user_signed_in? %>
+							<% if current_user != @post.user %>
+								<span class="pull-right post-like", id="likes_buttons_<%= @post.id %>">
+									<%= render 'likes/like', post: @post %>
+								</span>
+							<% end %>
+						<% end %>
+						<!-- 気になるボタン -->
 					</div>
 					<h2><strong><%= @post.title %></strong></h2>
 					<% @post.tags.each do |tag| %>
@@ -79,7 +79,7 @@
 					<i class="fas fa-comments"></i>
 					<span>コメント
 						<% if @post.user != current_user && user_signed_in? %>
-							<span>(気になるボタンを押す事でコメントが出来るようになります）</span>
+							<span>( <i class="far fa-heart index-like" aria-hidden="true", id="nolike-btn"></i> を押す事でコメントが出来るようになります）</span>
 						<% elsif @post.user != current_user || user_signed_in? %>
 						<% end %>
 					</span>
